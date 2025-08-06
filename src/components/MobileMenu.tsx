@@ -3,6 +3,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
 
 type NavItem = {
     name: string
@@ -15,6 +16,7 @@ type MobileMenuProps = {
 }
 
 export default function MobileMenu({ navItems, currentPath }: MobileMenuProps) {
+    const router = useRouter();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const toggleMobileMenu = () => {
@@ -69,7 +71,10 @@ export default function MobileMenu({ navItems, currentPath }: MobileMenuProps) {
                     <div className="pt-4 border-t border-gray-100 mt-4">
                         <Button
                             className="w-full bg-button-gradient hover:bg-button-gradient-hover shadow-card text-white py-2 rounded-4xl"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={() => {
+                                router.push('/request-demo')
+                                setIsMobileMenuOpen(false)
+                            }}
                         >
                             Request Demo
                         </Button>

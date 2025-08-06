@@ -1,6 +1,35 @@
 /* app/globals.css */
 @import 'tailwindcss';
 
+
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proxima-nova/proxima-nova-regular.woff2') format('woff2'),
+    url('/fonts/proxima-nova/proxima-nova-regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proxima-nova/proxima-nova-semibold.woff2') format('woff2'),
+    url('/fonts/proxima-nova/proxima-nova-semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/proxima-nova/proxima-nova-bold.woff2') format('woff2'),
+    url('/fonts/proxima-nova/proxima-nova-bold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
@@ -73,6 +102,27 @@
 
 /* Custom shadow utilities */
 @layer utilities {
+
+  .font-proxima {
+    font-family: 'Proxima Nova', sans-serif;
+  }
+
+  .font-merriweather {
+    font-family: var(--font-merriweather), serif;
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins), sans-serif;
+  }
+
+  .font-geist-sans {
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+
+  .font-geist-mono {
+    font-family: var(--font-geist-mono), monospace;
+  }
+
   .bg-button-gradient {
     background: linear-gradient(to right, rgba(24, 102, 255, 1), rgba(25, 103, 255, 1));
   }
@@ -116,12 +166,19 @@
   .shadow-request-demo {
     box-shadow: 0px 4.18px 16.71px 0px #2C30401F;
   }
+
+  .shadow-4 {
+    box-shadow: 0px 12px 36px 0px rgba(44, 48, 64, 0.12);
+  }
+
+  .animate-slide-in-out {
+    animation: slide-in-out 4s ease-in-out infinite;
+  }
+
+  .animate-slide-in-out-reverse {
+    animation: slide-in-out-reverse 4s ease-in-out infinite;
+  }
 }
-
-
-/* * {
-  border-color: hsl(var(--border));
-} */
 
 body {
   color: hsl(var(--foreground));
@@ -175,11 +232,6 @@ html {
   transition: all 0.3s ease;
 }
 
-/* .btn-gradient:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
-} */
-
 /* Floating Animation */
 @keyframes float {
   0% {
@@ -215,59 +267,6 @@ html {
 
 
 /* Kiosk Card Animation */
-
-/* @keyframes slideInOut {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-
-  20% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  80% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-@keyframes slideInOutReverse {
-  0% {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-
-  20% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  80% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  100% {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-}
-
-.animate-slide-in-out {
-  animation: slideInOut 4s ease-in-out infinite;
-}
-
-.animate-slide-in-out-reverse {
-  animation: slideInOutReverse 4s ease-in-out infinite;
-} */
-
 @keyframes slide-in-out {
   0% {
     transform: translateX(100%);
@@ -310,13 +309,4 @@ html {
     transform: translateX(50px);
     opacity: 0;
   }
-}
-
-/* Define custom utilities */
-@utility animate-slide-in-out {
-  animation: slide-in-out 4s ease-in-out infinite;
-}
-
-@utility animate-slide-in-out-reverse {
-  animation: slide-in-out-reverse 4s ease-in-out infinite;
 }

@@ -1,24 +1,8 @@
 // components/Header.tsx
 import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import MobileMenu from './MobileMenu'
+import Navigation from './Navigation'
 
-type NavItem = {
-    name: string
-    href: string
-}
-
-type HeaderProps = {
-    currentPath: string
-}
-
-export default function Header({ currentPath }: HeaderProps) {
-    const navItems: NavItem[] = [
-        { name: 'Home', href: '/' },
-        { name: 'Features', href: '/features' },
-        { name: 'FAQ', href: '/faq' },
-    ]
-
+export default function Header() {
     return (
         <header className="w-full bg-white shadow-sm sticky top-0 z-50">
             {/* Contacts */}
@@ -47,39 +31,7 @@ export default function Header({ currentPath }: HeaderProps) {
                     </div>
                 </div>
 
-                <div className="flex justify-end">
-                    <nav className="hidden md:flex space-x-8">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className={`flex items-center px-3 py-2 text-sm font-medium transition-colors ${currentPath === item.href
-                                    ? 'text-primary font-semibold'
-                                    : 'text-grey-1 hover:text-gray-900'
-                                    }`}
-                            >
-                                {item.name}
-                                {item.name === 'Features' &&
-                                    <span className='ml-2 mt-1'>
-                                        <Image
-                                            src={'/icons/ArrowDown.png'}
-                                            alt={'ArrowDown'}
-                                            width={10}
-                                            height={5}
-                                        />
-                                    </span>
-                                }
-                            </a>
-                        ))}
-                    </nav>
-                    <div className="hidden md:block ml-15">
-                        <Button className="cursor-pointer bg-button-gradient hover:bg-button-gradient-hover shadow-card text-white rounded-4xl">
-                            Request Demo
-                        </Button>
-                    </div>
-                </div>
-
-                <MobileMenu navItems={navItems} currentPath={currentPath} />
+                <Navigation />
             </div>
         </header>
     )
