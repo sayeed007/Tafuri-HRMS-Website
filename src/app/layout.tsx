@@ -4,6 +4,8 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import { headers } from 'next/headers'
+import RequestDemoPopup from '@/components/RequestDemoPopup'
+import Footer from '@/components/Footer'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,7 +37,11 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header currentPath={currentPath} />
-        <div className="">{children}</div>
+        <div className="">
+          {children}
+          <RequestDemoPopup />
+        </div>
+        <Footer />
       </body>
     </html>
   )

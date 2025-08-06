@@ -1,0 +1,10 @@
+{
+    "title": "Leave Management",
+    "slug": "leave-management",
+    "faqs": [
+        {
+            "question": "How do I apply for leave?",
+            "answer": "Navigate to the Leave Management section and click on 'Apply Leave'. Fill in the required details including leave type, dates, and reason."
+        }
+    ]
+}

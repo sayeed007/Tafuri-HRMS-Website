@@ -1,0 +1,10 @@
+{
+    "title": "HR",
+    "slug": "hr",
+    "faqs": [
+        {
+            "question": "How do I manage employee records?",
+            "answer": "The HR module provides comprehensive employee record management including personal information, employment history, documents, and performance tracking."
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "title": "Integration",
+    "slug": "integration",
+    "faqs": [
+        {
+            "question": "Can I integrate the HRMS with other tools?",
+            "answer": "Yes, Tafuri HR offers various integration options with popular business tools including accounting software, attendance devices, and third-party applications through our API."
+        },
+        {
+            "question": "Can we customize the HRMS for our organization\"s specific needs?",
+            "answer": "Absolutely! Tafuri HR is highly customizable. We can configure workflows, forms, approval processes, and reports to match your organization\"s specific requirements."
+        },
+        {
+            "question": "Can I run payroll from a mobile phone or tablet?",
+            "answer": "Yes, our mobile-responsive design allows you to access all HRMS features including payroll processing from any mobile device or tablet."
+        },
+        {
+            "question": "Can I add earning and deduction in payrun?",
+            "answer": "Yes, you can add or modify earnings and deductions during payroll processing for individual employees or in bulk before finalizing the payrun."
+        },
+        {
+            "question": "Can I customize earning and deduction during Final Settlement?",
+            "answer": "Yes, final settlements can be fully customized with specific earnings and deductions based on company policies and individual employee circumstances."
+        }
+    ]
+}

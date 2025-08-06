@@ -3,7 +3,6 @@ import AnimatedKioskCard from '@/components/AnimatedKioskCard'
 import CoreHRSection from '@/components/CoreHRSection'
 import DataSection from '@/components/DataSection'
 import FeaturesSection from '@/components/FeaturesSection'
-import Footer from '@/components/Footer'
 import HeroSection from '@/components/HeroSection'
 import MadeForAllSection from '@/components/MadeForAllSection'
 import MobileAppSection from '@/components/MobileAppSection'
@@ -24,7 +23,6 @@ export default function Home() {
       <PartnersSection />
       <TestimonialsSection />
       <MobileAppSection />
-      <Footer />
     </main>
   )
 }

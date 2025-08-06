@@ -1,0 +1,10 @@
+{
+    "title": "Onboarding",
+    "slug": "onboarding",
+    "faqs": [
+        {
+            "question": "What is the onboarding process?",
+            "answer": "Our digital onboarding process guides new employees through document submission, policy acknowledgment, and system access setup in a streamlined workflow."
+        }
+    ]
+}

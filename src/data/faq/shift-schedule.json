@@ -1,0 +1,10 @@
+{
+    "title": "Shift Schedule",
+    "slug": "shift-schedule",
+    "faqs": [
+        {
+            "question": "How do I create shift schedules?",
+            "answer": "You can create flexible shift schedules using our intuitive scheduler. Define shift patterns, assign employees, and manage rotations with ease."
+        }
+    ]
+}

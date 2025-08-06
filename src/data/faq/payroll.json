@@ -1,0 +1,26 @@
+{
+    "title": "Payroll",
+    "slug": "payroll",
+    "faqs": [
+        {
+            "question": "Does the HRMS account for deductions like absences, lateness, taxes, and other bills in payroll?",
+            "answer": "Yes, our HRMS system automatically calculates all deductions including absences, lateness penalties, taxes, and other configured deductions during payroll processing."
+        },
+        {
+            "question": "What are all the things I can do with Tafuri HR payroll?",
+            "answer": "With Tafuri HR payroll, you can process monthly salaries, manage tax deductions, handle overtime calculations, generate payslips, manage bonuses, process final settlements, and generate comprehensive payroll reports."
+        },
+        {
+            "question": "Can I run payroll from a mobile phone or tablet?",
+            "answer": "Yes, Tafuri HR is fully responsive and mobile-optimized. You can run payroll processes from any mobile device or tablet with internet connectivity."
+        },
+        {
+            "question": "Can I add earning and deduction in payrun?",
+            "answer": "Absolutely! You can add additional earnings and deductions during payroll processing. The system allows you to modify individual employee payroll before finalizing the payrun."
+        },
+        {
+            "question": "Can I customize earning and deduction during Final Settlement?",
+            "answer": "Yes, during final settlement processing, you have full control to customize earnings and deductions specific to that employee\"s final settlement calculation."
+        }
+    ]
+}

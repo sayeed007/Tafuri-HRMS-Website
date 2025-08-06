@@ -1,0 +1,10 @@
+{
+    "title": "Help Desk",
+    "slug": "help-desk",
+    "faqs": [
+        {
+            "question": "How do I contact support?",
+            "answer": "You can reach our support team through the built-in help desk system, email, or phone. We provide 24/7 technical support for all users."
+        }
+    ]
+}

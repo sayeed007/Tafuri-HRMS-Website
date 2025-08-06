@@ -1,0 +1,10 @@
+{
+    "title": "Time Tracking",
+    "slug": "time-tracking",
+    "faqs": [
+        {
+            "question": "How do I track time for different projects?",
+            "answer": "You can easily track time by selecting the project from the dropdown menu when starting your timer. The system automatically categorizes your time entries by project."
+        }
+    ]
+}
