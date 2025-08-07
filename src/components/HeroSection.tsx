@@ -35,6 +35,7 @@ export default function HeroSection() {
                         playsInline
                         // poster="/images/video-poster.jpg" // Optional: Add a poster image
                         preload="metadata"
+                        aria-hidden="true"
                     >
                         <source src="/videos/Tafurihrms_promo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.

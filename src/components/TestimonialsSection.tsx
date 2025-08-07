@@ -70,13 +70,13 @@ export default function TestimonialsSection() {
             <div className="flex flex-col mx-10 lg:flex-row gap-8">
                 {/* Left Side - Title (20% width) */}
                 <div className="lg:w-1/5 flex flex-col justify-center">
-                    <h4 className='font-semibold text-lg uppercase spacing-md tracking-[6px] text-primary'>
+                    <p className='font-semibold text-lg uppercase spacing-md tracking-[6px] text-primary'>
                         Testimonials
-                    </h4>
-                    <h2 className="text-4xl md:text-5xl  text-black mb-6 leading-tight">
+                    </p>
+                    <p className="text-4xl md:text-5xl  text-black mb-6 leading-tight">
                         What our<br />
                         clients say
-                    </h2>
+                    </p>
                 </div>
 
                 {/* Right Side - Testimonials (80% width) */}
@@ -180,6 +180,7 @@ export default function TestimonialsSection() {
                             <button
                                 onClick={prevTestimonial}
                                 className="cursor-pointer w-10 h-10 bg-navigation-indicator shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200"
+                                aria-label="Previous testimonial"
                             >
                                 <ChevronLeft className="w-5 h-5 text-gray-600" />
                             </button>
@@ -187,6 +188,7 @@ export default function TestimonialsSection() {
                             <button
                                 onClick={nextTestimonial}
                                 className="cursor-pointer w-10 h-10 bg-navigation-indicator shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200"
+                                aria-label="Next testimonial"
                             >
                                 <ChevronRight className="w-5 h-5 text-gray-600" />
                             </button>

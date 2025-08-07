@@ -42,7 +42,7 @@ export default function ContactSection() {
 
                     {/* Contact Support */}
                     <div className="bg-white rounded-lg shadow-4 p-8 text-center max-w-[400px]">
-                        <h3 className="text-2xl font-bold text-black mb-4">
+                        <h3 className="text-2xl font-merriweather font-bold text-black mb-4">
                             Contact Support
                         </h3>
                         <p className="text-lg text-grey-2 mb-6 leading-relaxed">

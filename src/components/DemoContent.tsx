@@ -1,6 +1,7 @@
 // components/DemoContent.tsx
 
 import Image from "next/image";
+import PartnersCarouselSmall from "./PartnersCarouselSmall";
 
 export default function DemoContent() {
 
@@ -21,7 +22,7 @@ export default function DemoContent() {
             </div>
 
             {/* Description */}
-            <p className="text-black font-proxima text-xl mb-8 leading-relaxed">
+            <p className="text-black text-xl mb-8 leading-relaxed">
                 From onboarding to offboarding, Tafuri Hr brings your
                 HR workflow together in one intuitive hub.
             </p>
@@ -53,9 +54,7 @@ export default function DemoContent() {
                 <h3 className="text-xl font-semibold text-gray-800 mb-6">
                     Key partners in our journey
                 </h3>
-                <div className="flex flex-wrap items-center gap-6 opacity-60">
-                    {/* CAROUSEL WILL BE HERE */}
-                </div>
+                <PartnersCarouselSmall />
             </div>
         </div>
     )
