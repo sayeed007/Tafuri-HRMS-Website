@@ -74,7 +74,7 @@ const RequestDemoPopup = () => {
                         {/* Close Button */}
                         <button
                             onClick={handleClose}
-                            className="absolute top-6 right-6 z-10 p-2 hover:bg-gray-100 rounded-full transition-colors group"
+                            className="cursor-pointer absolute top-6 right-6 z-10 p-2 hover:bg-gray-100 rounded-full transition-colors group"
                             aria-label="Close popup"
                         >
                             <X className="w-6 h-6 text-gray-600 group-hover:text-gray-800" />
@@ -84,7 +84,7 @@ const RequestDemoPopup = () => {
                             {/* Left Side - Content */}
                             <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
                                 <div className="max-w-lg">
-                                    <h1 className="text-4xl lg:text-5xl font-bold text-black leading-tight mb-6">
+                                    <h1 className="text-4xl lg:text-5xl font-bold font-merriweather text-black leading-tight mb-6">
                                         Easy-to-Track HR Solution That Works the Way You Do
                                     </h1>
 

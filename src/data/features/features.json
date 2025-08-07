@@ -1,0 +1,54 @@
+{
+  "features": [
+    {
+      "name": "Time & Attendance",
+      "description": "Time tracking and time off request",
+      "slug": "time-attendance"
+    },
+    {
+      "name": "Leave Management",
+      "description": "Track all type of leaves and approve request",
+      "slug": "leave-management"
+    },
+    {
+      "name": "Payroll",
+      "description": "Manages employee salaries, taxes, and benefits efficiently.",
+      "slug": "payroll"
+    },
+    {
+      "name": "Help Desk",
+      "description": "Help Desk supports employee inquiries and issue resolution.",
+      "slug": "help-desk"
+    },
+    {
+      "name": "Customize Report",
+      "description": "Generate tailored reports based on specific HR data and insights",
+      "slug": "customize-report"
+    },
+    {
+      "name": "HR Letter",
+      "description": "Job offers, employment verification, appraisals, or terminations.",
+      "slug": "hr-letter"
+    },
+    {
+      "name": "Performance Tracking",
+      "description": "Evaluates employee productivity, goals, and progress",
+      "slug": "performance-tracking"
+    },
+    {
+      "name": "Onboarding",
+      "description": "simplifies new employee integration and engagement.",
+      "slug": "onboarding"
+    },
+    {
+      "name": "Organization Hierarchy",
+      "description": "Defines roles, reporting, and authority in a company.",
+      "slug": "organization-hierarchy"
+    },
+    {
+      "name": "Vacancy & Resignation",
+      "description": "Manages job openings and employee exit processes efficiently.",
+      "slug": "vacancy-resignation"
+    }
+  ]
+}

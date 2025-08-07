@@ -131,7 +131,7 @@ export default function FAQPage({ data }: FAQPageProps) {
                             key={section.slug}
                             onClick={() => handleNavigationClick(section.slug)}
                             className={cn(
-                                "cursor-pointer w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                                "cursor-pointer w-full text-left px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200",
                                 activeSection === section.slug
                                     ? "text-primary shadow-sm bg-primary/10"
                                     : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -163,7 +163,7 @@ export default function FAQPage({ data }: FAQPageProps) {
                             >
                                 {/* Section Title */}
                                 <div className="mb-6">
-                                    <h2 className="text-3xl font-bold text-gray-900">
+                                    <h2 className="text-3xl font-merriweather font-bold text-gray-900">
                                         {section.title}
                                     </h2>
                                 </div>
