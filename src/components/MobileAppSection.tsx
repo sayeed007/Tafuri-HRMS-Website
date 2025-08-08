@@ -17,7 +17,7 @@ export default function MobileAppSection() {
 
                 {/* Right Content */}
                 <div className="col-span-1 md:col-span-2 lg:col-span-2">
-                    <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+                    <h2 className="text-4xl md:text-5xl font-merriweather font-bold text-black mb-6 leading-tight">
                         Manage HR on the go with
                         <br />
                         the <span className="text-blue-600">Tafuri HR </span> mobile app.

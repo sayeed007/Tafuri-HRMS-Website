@@ -14,7 +14,7 @@ export default function AnimatedKioskCard() {
                     </h2>
 
                     <button
-                        className="text-white font-semibold underline underline-offset-4 hover:underline-offset-8 transition-all duration-300 text-lg">
+                        className="text-white font-semibold font-poppins underline underline-offset-4 hover:underline-offset-8 transition-all duration-300 text-lg">
                         Learn More
                     </button>
                 </div>

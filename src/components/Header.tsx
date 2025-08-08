@@ -9,7 +9,7 @@ export default function Header() {
             <div className="h-[30px] bg-primary flex justify-between text-white font-semibold text-sm px-10 md:px-20">
                 <div className="flex gap-2 items-center">
                     <Image src={'/icons/Mail.png'} alt={'Mail'} width={20} height={20} />
-                    <span className='text-white font-semibold ml-2'>sales@tafurihr.com</span>
+                    <span className='text-white font-semibold text-base ml-2'>sales@tafurihr.com</span>
                 </div>
                 <div className="flex gap-4 items-center">
                     <Image src={'/icons/Facebook.png'} alt={'Facebook'} width={6} height={12} />

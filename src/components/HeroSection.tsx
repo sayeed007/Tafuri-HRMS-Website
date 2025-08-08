@@ -5,7 +5,7 @@ export default function HeroSection() {
     return (
         <section className="relative bg-hero-gradient overflow-hidden px-10 md:px-20">
             <div className="flex flex-col items-center justify-center p-8">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black leading-tight mb-6">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-merriweather font-bold text-black leading-tight mb-6">
                     Transform your business
                     <br />
                     with AI-powered{' '}
@@ -14,19 +14,19 @@ export default function HeroSection() {
                     </span>
                 </h1>
 
-                <p className="text-lg md:text-xl text-gray-600 mb-4">
+                <p className="text-lg md:text-xl text-grey-2 mb-4">
                     Take the Hassle Out of HR- Automate, Manage, and Grow
                 </p>
 
                 <Button
                     size="lg"
-                    className="bg-button-gradient hover:bg-button-gradient-hover text-white px-8 py-4 rounded-full text-lg font-semibold mb-8"
+                    className="bg-button-gradient hover:bg-button-gradient-hover text-white px-12 py-8 rounded-full text-lg font-semibold mb-8"
                 >
                     Request Demo
                 </Button>
 
                 {/* Promo Video */}
-                <div className="relative lg:ml-8 w-9/10 h-[550px] rounded-lg overflow-hidden">
+                <div className="relative lg:ml-8 w-9/10 h-[550px] rounded-lg overflow-hidden mb-6">
                     <video
                         className="w-full h-full object-cover"
                         autoPlay

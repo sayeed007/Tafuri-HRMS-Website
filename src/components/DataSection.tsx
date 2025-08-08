@@ -18,7 +18,7 @@ export default function DataSection() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 {/* Left Content */}
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-merriweather font-bold text-black mb-6 leading-tight">
                         Empower Decision-Making with Data
                     </h2>
 
@@ -43,20 +43,15 @@ export default function DataSection() {
                 </div>
 
                 {/* Right Content - Multiple Design Options */}
-                <div className="relative">
-                    {/* Option 1: Background Image with Content Overlay */}
-                    <div
-                        className="relative h-96 lg:h-[500px] bg-[url('/icons/DataSectionBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl"
-                    >
-                        {/* Content overlay */}
-                        <div className="relative z-10 p-8 h-full flex flex-col justify-center">
-                            <DailyAttendanceCard />
-                            <EmployeePerformanceCard />
-                            <EmployeeGrowthCard />
-                        </div>
-                    </div>
+                <div
+                    className="relative h-96 lg:h-[550px] bg-[url('/icons/DataSectionBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl"
+                >
+                    {/* Content overlay */}
+                    <DailyAttendanceCard />
+                    <EmployeePerformanceCard />
+                    <EmployeeGrowthCard />
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

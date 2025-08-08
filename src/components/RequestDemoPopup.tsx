@@ -44,10 +44,10 @@ const RequestDemoPopup = () => {
     };
 
     // For development/testing - add a reset button
-    const resetPopupState = () => {
-        localStorage.removeItem('hr-popup-seen');
-        setIsOpen(true);
-    };
+    // const resetPopupState = () => {
+    //     localStorage.removeItem('hr-popup-seen');
+    //     setIsOpen(true);
+    // };
 
     // Don't render anything until we've checked localStorage
     if (!isLoaded) {
@@ -57,7 +57,7 @@ const RequestDemoPopup = () => {
     return (
         <>
             {/* Development helper - remove in production */}
-            {process.env.NODE_ENV === 'development' && (
+            {/* {process.env.NODE_ENV === 'development' && (
                 <div className="fixed bottom-4 left-4 z-50">
                     <button
                         onClick={resetPopupState}
@@ -66,7 +66,7 @@ const RequestDemoPopup = () => {
                         Reset Popup (Dev Only)
                     </button>
                 </div>
-            )}
+            )} */}
 
             {isOpen && (
                 <div className="fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 z-50 animate-in fade-in duration-300">
@@ -77,7 +77,7 @@ const RequestDemoPopup = () => {
                             className="cursor-pointer absolute top-6 right-6 z-10 p-2 hover:bg-gray-100 rounded-full transition-colors group"
                             aria-label="Close popup"
                         >
-                            <X className="w-6 h-6 text-gray-600 group-hover:text-gray-800" />
+                            <X className="w-6 h-6 text-grey-2 group-hover:text-gray-800" />
                         </button>
 
                         <div className="flex flex-col lg:flex-row min-h-[500px]">

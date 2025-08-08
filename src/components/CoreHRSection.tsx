@@ -16,7 +16,7 @@ export default function CoreHRSection() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 {/* Left Content */}
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-merriweather font-bold text-black mb-6 leading-tight">
                         Streamlined Core HR
                     </h2>
 
@@ -46,7 +46,7 @@ export default function CoreHRSection() {
                 <div className="relative">
                     {/* Option 1: Background Image with Content Overlay */}
                     <div
-                        className="relative h-96 lg:h-[500px] bg-[url('/icons/CoreHRBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl"
+                        className="relative h-96 lg:h-[480px] bg-[url('/icons/CoreHRBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl"
                     >
                         {/* Content overlay */}
                         <div className="relative z-10 p-8 h-full flex flex-col justify-center">
@@ -55,7 +55,7 @@ export default function CoreHRSection() {
                                 alt={'CoreHRImage'}
                                 width={1280}
                                 height={600}
-                                className="absolute max-w-[170%] top-0 right-[-180px] h-auto"
+                                className="absolute w-[680px] top-[75px] right-[55px] h-auto"
                             />
                         </div>
                     </div>

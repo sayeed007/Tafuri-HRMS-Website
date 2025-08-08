@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
                     <p className='font-semibold text-lg uppercase spacing-md tracking-[6px] text-primary'>
                         Testimonials
                     </p>
-                    <p className="text-4xl md:text-5xl  text-black mb-6 leading-tight">
+                    <p className="text-4xl md:text-5xl font-merriweather text-black mb-6 leading-tight">
                         What our<br />
                         clients say
                     </p>
@@ -84,14 +84,10 @@ export default function TestimonialsSection() {
                     <div className="flex gap-4 mb-8">
                         {/* Current Testimonial - 70% */}
                         <div className="w-[70%]">
-                            <div className={`flex flex-col justify-between rounded-2xl px-8 py-12 h-full shadow-lg transition-all duration-500 ${current.cardType === 'green'
-                                ? `bg-[url('/icons/TestimonialsGreenBG.png')] bg-cover bg-center bg-no-repeat text-white`
-                                : `bg-[url('/icons/TestimonialsLightBG.png')] bg-cover bg-center bg-no-repeat text-black`
-                                }`}>
+                            <div className={`flex flex-col justify-between rounded-2xl px-8 py-12 h-full shadow-lg transition-all duration-500 bg-[url('/icons/TestimonialsGreenBG.png')] bg-cover bg-center bg-no-repeat text-white`}>
 
                                 {/* Testimonial Content */}
-                                <blockquote className={`text-xl font-semibold leading-relaxed ${current.cardType === 'green' ? 'text-white' : 'text-black'
-                                    }`}>
+                                <blockquote className={`text-xl font-semibold leading-relaxed text-white`}>
                                     {current.content}
                                 </blockquote>
 
@@ -109,12 +105,10 @@ export default function TestimonialsSection() {
 
                                     {/* Author Info */}
                                     <div className="">
-                                        <h3 className={`font-semibold text-xl mb-1 ${current.cardType === 'green' ? 'text-white' : 'text-black'
-                                            }`}>
+                                        <h3 className={`font-semibold text-xl mb-1 text-white`}>
                                             {current.name}
                                         </h3>
-                                        <p className={`text-base mb-1 ${current.cardType === 'green' ? 'text-white' : 'text-black'
-                                            }`}>
+                                        <p className={`text-base mb-1 text-white`}>
                                             {current.role}, {current.company}
                                         </p>
 
@@ -126,16 +120,11 @@ export default function TestimonialsSection() {
 
                         {/* Next Testimonial Preview - 30% */}
                         <div className="w-[30%]">
-                            <div className={`flex flex-col justify-between rounded-2xl px-8 py-12 h-full shadow-lg transition-all duration-500 cursor-pointer 
-                                ${next.cardType === 'green'
-                                    ? `bg-[url('/icons/TestimonialsGreenBG.png')] bg-cover bg-center bg-no-repeat text-white`
-                                    : `bg-[url('/icons/TestimonialsLightBG.png')] bg-cover bg-center bg-no-repeat text-black`
-                                }`}
+                            <div className={`flex flex-col justify-between rounded-2xl px-8 py-12 h-full shadow-lg transition-all duration-500 cursor-pointer bg-[url('/icons/TestimonialsLightBG.png')] bg-cover bg-center bg-no-repeat text-black`}
                                 onClick={nextTestimonial}>
 
                                 {/* Testimonial Content */}
-                                <blockquote className={`text-base font-semibold leading-relaxed ${next.cardType === 'green' ? 'text-white' : 'text-black'
-                                    }`}>
+                                <blockquote className={`text-base font-semibold leading-relaxed text-black`}>
                                     {next.content.substring(0, 80)}{'...'}
                                 </blockquote>
 
@@ -153,12 +142,10 @@ export default function TestimonialsSection() {
 
                                     {/* Author Info */}
                                     <div className="">
-                                        <h3 className={`font-semibold text-xl mb-1 ${next.cardType === 'green' ? 'text-white' : 'text-black'
-                                            }`}>
+                                        <h3 className={`font-semibold text-xl mb-1 text-black`}>
                                             {next.name}
                                         </h3>
-                                        <p className={`text-base mb-1 ${next.cardType === 'green' ? 'text-white' : 'text-black'
-                                            }`}>
+                                        <p className={`text-base mb-1 text-black`}>
                                             {next.role}, {next.company}
                                         </p>
                                     </div>
@@ -171,7 +158,7 @@ export default function TestimonialsSection() {
                     {/* Controls Below */}
                     <div className="flex justify-between items-center">
                         {/* Counter */}
-                        <div className="text-gray-600 font-medium">
+                        <div className="text-grey-2 font-medium">
                             {String(currentTestimonial + 1).padStart(2, '0')} / {String(testimonials.length).padStart(2, '0')}
                         </div>
 
@@ -182,7 +169,7 @@ export default function TestimonialsSection() {
                                 className="cursor-pointer w-10 h-10 bg-navigation-indicator shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200"
                                 aria-label="Previous testimonial"
                             >
-                                <ChevronLeft className="w-5 h-5 text-gray-600" />
+                                <ChevronLeft className="w-5 h-5 text-grey-2" />
                             </button>
 
                             <button
@@ -190,7 +177,7 @@ export default function TestimonialsSection() {
                                 className="cursor-pointer w-10 h-10 bg-navigation-indicator shadow-lg rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200"
                                 aria-label="Next testimonial"
                             >
-                                <ChevronRight className="w-5 h-5 text-gray-600" />
+                                <ChevronRight className="w-5 h-5 text-grey-2" />
                             </button>
                         </div>
                     </div>

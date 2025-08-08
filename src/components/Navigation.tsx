@@ -28,10 +28,8 @@ export default function Navigation() {
         setShowFeaturesDropdown(false)
     }
 
-    console.log('Current path:', currentPath)
-
     return (
-        <div className="flex justify-end">
+        <div className="flex justify-end items-center">
             <nav className="hidden md:flex space-x-8">
                 {navItems.map((item) => (
                     <div
@@ -42,9 +40,10 @@ export default function Navigation() {
                     >
                         <a
                             href={item.href}
-                            className={`flex items-center px-3 py-2 text-base font-medium transition-colors ${currentPath === item.href
-                                ? 'text-primary font-semibold'
-                                : 'text-grey-1 hover:text-gray-900'
+                            className={`flex items-center px-3 py-2 text-lg font-semibold transition-colors 
+                                ${(currentPath === item.href) || (item.name === 'Features' && currentPath?.includes(item.href))
+                                    ? 'text-primary font-bold'
+                                    : 'text-grey-1 hover:text-black'
                                 }`}
                         >
                             {item.name}
@@ -73,7 +72,7 @@ export default function Navigation() {
             <div className="hidden md:block ml-15">
                 <Button
                     onClick={() => router.push('/request-demo')}
-                    className="cursor-pointer bg-button-gradient hover:bg-button-gradient-hover shadow-card text-white rounded-4xl"
+                    className="cursor-pointer bg-button-gradient hover:bg-button-gradient-hover shadow-card text-white text-lg font-semibold rounded-4xl"
                 >
                     Request Demo
                 </Button>

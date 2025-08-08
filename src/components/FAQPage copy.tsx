@@ -53,7 +53,7 @@ export default function FAQPage({ data }: FAQPageProps) {
                                 "cursor-pointer w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
                                 activeSection === section.slug
                                     ? "text-primary shadow-sm"
-                                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                    : "text-gray-700 hover:bg-gray-100 hover:text-black"
                             )}
                         >
                             {section.title}
@@ -65,7 +65,7 @@ export default function FAQPage({ data }: FAQPageProps) {
             {/* Right Content - FAQ Questions and Answers */}
             <div className="lg:w-3/4">
                 <div className="flex items-center justify-between mb-8">
-                    <h2 className="text-3xl font-bold text-gray-900">
+                    <h2 className="text-3xl font-bold text-black">
                         {currentSection?.title}
                     </h2>
                 </div>
@@ -84,7 +84,7 @@ export default function FAQPage({ data }: FAQPageProps) {
                                 <div
                                     className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                                 >
-                                    <span className="font-medium text-gray-900 pr-8">
+                                    <span className="font-medium text-black pr-8">
                                         {faq.question}
                                     </span>
 
@@ -109,7 +109,7 @@ export default function FAQPage({ data }: FAQPageProps) {
                                 >
                                     <div className="px-6 pb-4">
                                         <div className="h-px bg-gray-200 mb-4"></div>
-                                        <p className="text-gray-600 leading-relaxed">
+                                        <p className="text-grey-2 leading-relaxed">
                                             {faq.answer}
                                         </p>
                                     </div>

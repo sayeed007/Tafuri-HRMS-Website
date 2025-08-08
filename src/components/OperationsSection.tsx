@@ -36,7 +36,7 @@ export default function OperationsSection() {
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-4xl font-normal text-black mb-4">
+                    <h2 className="text-3xl md:text-4xl font-merriweather font-normal text-black mb-4">
                         All your operations. All in one place
                     </h2>
                 </div>
@@ -56,7 +56,7 @@ export default function OperationsSection() {
                                     width={64}
                                     height={64}
                                 />
-                                <h3 className="mt-4 text-base text-grey-2 text-center leading-tight">
+                                <h3 className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight">
                                     {operation.title}
                                 </h3>
                             </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const DailyAttendanceCard = () => {
   return (
-    <div className="absolute top-[85px] left-[-25px] bg-white rounded-lg p-4 w-full max-w-[200px] shadow-elevation-5 z-10">
+    <div className="absolute top-[85px] left-[50px] bg-white rounded-lg p-4 w-full max-w-[200px] shadow-elevation-5 z-10">
       <h2 className="text-xs font-semibold text-black text-center">
         Daily Attendance
       </h2>

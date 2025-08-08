@@ -24,7 +24,7 @@ export default function PartnersSection() {
         <section className="py-10 bg-white overflow-hidden">
             <div className="mx-10 overflow-hidden">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-4xl md:text-4xl font-merriweather font-bold text-black mb-4">
                         Key partners in our journey
                     </h2>
                 </div>
@@ -124,7 +124,7 @@ export default function PartnersSection() {
 //         <section className="py-16 bg-gray-50 overflow-hidden">
 //             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 //                 <div className="text-center mb-12">
-//                     <h2 className="text-4xl md:text-4xl font-bold text-gray-900 mb-4">
+//                     <h2 className="text-4xl md:text-4xl font-bold text-black mb-4">
 //                         Key partners in our journey
 //                     </h2>
 //                 </div>
@@ -156,7 +156,7 @@ export default function PartnersSection() {
 //                                     </div>
 //                                 </div>
 //                                 <div className="text-center mt-3">
-//                                     <div className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
+//                                     <div className="text-sm font-medium text-gray-700 group-hover:text-black">
 //                                         {partner.name}
 //                                     </div>
 //                                 </div>

@@ -25,7 +25,7 @@ export default function MadeForAllSection() {
 
                 {/* Right Content - Multiple Design Options */}
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-black mb-6 leading-tight">
+                    <h2 className="text-3xl md:text-4xl font-merriweather font-bold text-black mb-6 leading-tight">
                         Made for all, not only HR
                     </h2>
 
