@@ -140,6 +140,10 @@
     background: linear-gradient(to right, rgba(230, 239, 255, 1), rgba(242, 230, 255, 1));
   }
 
+  .bg-made-for-all-gradient {
+    background: linear-gradient(to right, #6EBC44, #4BA4E5);
+  }
+
   .bg-operation {
     background: rgba(248, 248, 254, 1);
   }
@@ -183,12 +187,22 @@
   .animate-slide-in-out-reverse {
     animation: slide-in-out-reverse 4s ease-in-out infinite;
   }
+
+  /* Background Animation - Bottom to Top, Infinite */
+  .animate-slide-bottom-top {
+    animation: slide-bottom-top 4s ease-in-out infinite;
+  }
+
+  /* Kiosk Image Animation - Right to Left, Once */
+  .animate-slide-right-left {
+    animation: slide-right-left 2s ease-out forwards;
+  }
 }
 
 body {
   color: hsl(var(--foreground));
   background: hsl(var(--background));
-  font-feature-settings: "rlig" 1, "calt" 1;
+  font-feature-settings: "rlig"1, "calt"1;
 }
 
 /* Custom Scrollbar */
@@ -313,5 +327,41 @@ html {
   100% {
     transform: translateX(50px);
     opacity: 0;
+  }
+}
+
+/* Keyframes for background sliding from bottom to top */
+@keyframes slide-bottom-top {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  25% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  75% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Keyframes for kiosk image sliding from right to left */
+@keyframes slide-right-left {
+  0% {
+    transform: translateX(100%) translateY(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) translateY(-50%);
+    opacity: 1;
   }
 }

@@ -66,14 +66,14 @@ export default function TestimonialsSection() {
     const next = testimonials[(currentTestimonial + 1) % testimonials.length]
 
     return (
-        <section className="py-10 bg-white">
-            <div className="flex flex-col mx-10 lg:flex-row gap-8">
+        <section className="px-5 md:px-20 pb-10 bg-white">
+            <div className="flex flex-col lg:flex-row gap-8">
                 {/* Left Side - Title (20% width) */}
                 <div className="lg:w-1/5 flex flex-col justify-center">
                     <p className='font-semibold text-lg uppercase spacing-md tracking-[6px] text-primary'>
                         Testimonials
                     </p>
-                    <p className="text-4xl md:text-5xl font-merriweather text-black mb-6 leading-tight">
+                    <p className="text-4xl md:text-5xl font-merriweather text-black md:mb-6 leading-tight">
                         What our<br />
                         clients say
                     </p>
@@ -81,10 +81,10 @@ export default function TestimonialsSection() {
 
                 {/* Right Side - Testimonials (80% width) */}
                 <div className="lg:w-4/5">
-                    <div className="flex gap-4 mb-8">
+                    <div className="flex flex-wrap md:flex-nowrap gap-4 mb-8">
                         {/* Current Testimonial - 70% */}
-                        <div className="w-[70%]">
-                            <div className={`flex flex-col justify-between rounded-2xl px-8 py-12 h-full shadow-lg transition-all duration-500 bg-[url('/icons/TestimonialsGreenBG.png')] bg-cover bg-center bg-no-repeat text-white`}>
+                        <div className="md:w-[70%]">
+                            <div className={`flex flex-col justify-between rounded-2xl px-4 md:px-8 py-6 md:py-12 h-full shadow-lg transition-all duration-500 bg-[url('/icons/TestimonialsGreenBG.png')] bg-cover bg-center bg-no-repeat text-white`}>
 
                                 {/* Testimonial Content */}
                                 <blockquote className={`text-xl font-semibold leading-relaxed text-white`}>
@@ -93,7 +93,7 @@ export default function TestimonialsSection() {
 
                                 <div className="flex gap-6 mt-8">
                                     {/* Avatar */}
-                                    <div className={`w-20 h-20 rounded-full flex items-center justify-center text-lg font-bold bg-white/20 text-white border-2 border-white/30`}>
+                                    <div className={`w-20 h-20 rounded-full flex items-center justify-center text-lg font-bold bg-white/20 text-white border-2 border-white/30 flex-shrink-0`}>
                                         <Image
                                             src={current.profileImage}
                                             alt={current.name}
@@ -119,8 +119,8 @@ export default function TestimonialsSection() {
                         </div>
 
                         {/* Next Testimonial Preview - 30% */}
-                        <div className="w-[30%]">
-                            <div className={`flex flex-col justify-between rounded-2xl px-8 py-12 h-full shadow-lg transition-all duration-500 cursor-pointer bg-[url('/icons/TestimonialsLightBG.png')] bg-cover bg-center bg-no-repeat text-black`}
+                        <div className="md:w-[30%]">
+                            <div className={`flex flex-col justify-between rounded-2xl px-4 md:px-8 py-6 md:py-12 h-full shadow-lg transition-all duration-500 cursor-pointer bg-[url('/icons/TestimonialsLightBG.png')] bg-cover bg-center bg-no-repeat text-black`}
                                 onClick={nextTestimonial}>
 
                                 {/* Testimonial Content */}

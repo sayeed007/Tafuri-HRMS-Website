@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${merriweather.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className='font-proxima'>
+      <body className='font-proxima min-h-screen bg-body overflow-x-clip'>
         <Header />
         {children}
         <RequestDemoPopup />

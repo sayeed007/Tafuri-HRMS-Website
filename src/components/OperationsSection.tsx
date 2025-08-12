@@ -32,17 +32,17 @@ const operations = [
 
 export default function OperationsSection() {
     return (
-        <section className="py-10 bg-operation px-10 md:px-20">
-            <div className="mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="px-5 md:px-20 py-10 bg-operation w-full">
+            <div className="mx-auto sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mv-4 md:mb-16">
                     <h2 className="text-3xl md:text-4xl font-merriweather font-normal text-black mb-4">
                         All your operations. All in one place
                     </h2>
                 </div>
 
                 {/* Operations Grid */}
-                <div className="mx-25 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
+                <div className="md:mx-25 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
                     {operations.map((operation) => {
                         const IconComponent = operation.icon
                         return (

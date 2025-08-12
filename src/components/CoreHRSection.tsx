@@ -12,8 +12,8 @@ const features = [
 
 export default function CoreHRSection() {
     return (
-        <section className="py-10 mx-20">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="px-5 md:px-20 pt-10">
+            <div className="grid lg:grid-cols-2 md:gap-16 items-center">
                 {/* Left Content */}
                 <div>
                     <h2 className="text-3xl md:text-4xl font-merriweather font-bold text-black mb-6 leading-tight">
@@ -42,23 +42,14 @@ export default function CoreHRSection() {
                     </div>
                 </div>
 
-                {/* Right Content - Multiple Design Options */}
-                <div className="relative">
-                    {/* Option 1: Background Image with Content Overlay */}
-                    <div
-                        className="relative h-96 lg:h-[480px] bg-[url('/icons/CoreHRBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl"
-                    >
-                        {/* Content overlay */}
-                        <div className="relative z-10 p-8 h-full flex flex-col justify-center">
-                            <Image
-                                src={'/icons/CoreHRImage.png'}
-                                alt={'CoreHRImage'}
-                                width={1280}
-                                height={600}
-                                className="absolute w-[680px] top-[75px] right-[55px] h-auto"
-                            />
-                        </div>
-                    </div>
+                <div className="relative h-96 lg:h-[480px] bg-[url('/icons/CoreHRBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl">
+                    <Image
+                        src={'/icons/CoreHRImage.png'}
+                        alt={'CoreHRImage'}
+                        width={1280}
+                        height={600}
+                        className="absolute w-[680px] top-[75px] md:right-[55px] h-auto"
+                    />
                 </div>
             </div>
         </section>

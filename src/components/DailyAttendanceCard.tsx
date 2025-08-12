@@ -3,12 +3,12 @@ import Image from "next/image";
 
 const DailyAttendanceCard = () => {
   return (
-    <div className="absolute top-[85px] left-[50px] bg-white rounded-lg p-4 w-full max-w-[200px] shadow-elevation-5 z-10">
+    <div className="w-[250px] md:absolute md:top-[85px] md:left-[50px] bg-white rounded-lg p-4 md:max-w-[200px] shadow-elevation-5 z-10">
       <h2 className="text-xs font-semibold text-black text-center">
         Daily Attendance
       </h2>
 
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center mb-2">
         <Image
           src={'/gif/DailyAttendance.gif'}
           alt={'CoreHRPoint'}

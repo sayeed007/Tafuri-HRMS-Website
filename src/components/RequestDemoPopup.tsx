@@ -102,7 +102,7 @@ const RequestDemoPopup = () => {
                             </div>
 
                             {/* Right Side - Image Placeholder */}
-                            <div className="flex-1 relative flex px-10 items-center justify-center">
+                            <div className="flex-1 relative flex px-10 py-4 items-center justify-center">
                                 {/* Image Placeholder */}
                                 <Image
                                     src={'/icons/RequestDemoPopup.png'}

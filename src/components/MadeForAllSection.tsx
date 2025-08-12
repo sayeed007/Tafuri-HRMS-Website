@@ -11,17 +11,31 @@ const features = [
 
 export default function MadeForAllSection() {
     return (
-        <section className="py-10 mx-20">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="px-5 md:px-20 pb-10">
+            <div className="grid lg:grid-cols-2  gap-6 md:gap-16 items-center">
                 {/* Left Content */}
-                <div className="relative z-10 p-8 h-full flex flex-col justify-center">
-                    <Image
-                        src={'/icons/MadeForAll.png'}
-                        alt={'MadeForAll'}
-                        width={350}
-                        height={350}
-                    />
+                <div className="relative z-10 h-full flex flex-col justify-center items-center">
+                    <div className="relative w-[350px] h-[350px]">
+                        <Image
+                            src={'/icons/MadeForAll.png'}
+                            alt={'MadeForAll'}
+                            width={350}
+                            height={350}
+                            className="absolute inset-0"
+                        />
+                        <video
+                            width={350}
+                            height={350}
+                            autoPlay
+                            loop
+                            muted
+                            className="absolute inset-0 object-cover opacity-80 w-[157px] h-[85vw] left-[97px] top-[2px] rounded-[20px]"
+                        >
+                            <source src="/videos/MadeForAll.mp4" type="video/mp4" />
+                        </video>
+                    </div>
                 </div>
+
 
                 {/* Right Content - Multiple Design Options */}
                 <div>

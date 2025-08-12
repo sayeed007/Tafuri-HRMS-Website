@@ -3,8 +3,8 @@ import React from 'react';
 
 const EmployeePerformanceCard = () => {
   return (
-    <div className='absolute top-[60px] right-0'>
-      <div className="relative bg-white rounded-lg p-4 w-[250px] h-[140px] ">
+    <div className='w-[250px] md:absolute md:top-[60px] md:right-0 '>
+      <div className="relative bg-white rounded-lg p-4 md:max-w-[250px] h-[140px] ">
         <h2 className="text-xs font-semibold text-black">
           Employee Performance
         </h2>

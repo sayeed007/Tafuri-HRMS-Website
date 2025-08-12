@@ -43,7 +43,7 @@ export default function Footer() {
 
                     {/* Product Links */}
                     <div>
-                        <h3 className="text-xl font-semibold mb-6 tracking-[1.2px]">PRODUCT</h3>
+                        <div className="text-xl font-semibold mb-6 tracking-[1.2px]">PRODUCT</div>
                         <ul className="space-y-3">
                             {navItems.map((nav) => (
                                 <li key={nav.name}>
@@ -59,7 +59,7 @@ export default function Footer() {
 
                     {/* Company Links */}
                     <div>
-                        <h3 className="text-xl font-semibold mb-6 tracking-[1.2px]">CONTACT</h3>
+                        <div className="text-xl font-semibold mb-6 tracking-[1.2px]">CONTACT</div>
                         <p className='text-lg text-black mb-3'>+88 01755 645081</p>
                         <p className='text-lg text-black mb-3'>sales@tafurihr.com</p>
 
@@ -92,12 +92,24 @@ export default function Footer() {
                     <div className='flex gap-4'>
                         {/* Facebook */}
                         <div className='h-10 w-10 bg-black rounded-full flex items-center justify-center'>
-                            <Image src={'/icons/Facebook.png'} alt={'Facebook'} width={6} height={12} />
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61566912183130"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image src={'/icons/Facebook.png'} alt={'Facebook'} width={6} height={12} />
+                            </a>
                         </div>
 
                         {/* Linkedin */}
                         <div className='h-10 w-10 bg-black rounded-full flex items-center justify-center'>
-                            <Image src={'/icons/Linkedin.png'} alt={'Linkedin'} width={12} height={12} />
+                            <a
+                                href="https://www.linkedin.com/company/tafuri-hrms/posts/?feedView=all"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Image src={'/icons/Linkedin.png'} alt={'Linkedin'} width={12} height={12} />
+                            </a>
                         </div>
                     </div>
                 </div>

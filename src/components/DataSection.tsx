@@ -14,8 +14,8 @@ const features = [
 
 export default function DataSection() {
     return (
-        <section className="py-10 mx-20">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="px-5 md:px-20 py-10">
+            <div className="grid lg:grid-cols-2 gap-10 items-center">
                 {/* Left Content */}
                 <div>
                     <h2 className="text-3xl md:text-4xl font-merriweather font-bold text-black mb-6 leading-tight">
@@ -44,9 +44,8 @@ export default function DataSection() {
 
                 {/* Right Content - Multiple Design Options */}
                 <div
-                    className="relative h-96 lg:h-[550px] bg-[url('/icons/DataSectionBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl"
+                    className="flex flex-col justify-center items-center gap-4 relative md:h-[550px] bg-[url('/icons/DataSectionBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl overflow-x-clip"
                 >
-                    {/* Content overlay */}
                     <DailyAttendanceCard />
                     <EmployeePerformanceCard />
                     <EmployeeGrowthCard />

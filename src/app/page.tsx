@@ -12,7 +12,7 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-body overflow-x-clip">
+    <div className='bg-body'>
       <HeroSection />
       <OperationsSection />
       <FeaturesSection />
@@ -23,6 +23,6 @@ export default function Home() {
       <PartnersSection />
       <TestimonialsSection />
       <MobileAppSection />
-    </main>
+    </div>
   )
 }
