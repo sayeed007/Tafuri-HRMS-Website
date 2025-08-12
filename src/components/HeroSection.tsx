@@ -1,5 +1,5 @@
 // components/HeroSection.tsx
-import { Button } from '@/components/ui/button'
+import { Button } from './ui/button'
 
 export default function HeroSection() {
     return (
@@ -18,12 +18,14 @@ export default function HeroSection() {
                     Take the Hassle Out of HR- Automate, Manage, and Grow
                 </p>
 
-                <Button
-                    size="lg"
-                    className="bg-button-gradient hover:bg-button-gradient-hover text-white px-12 py-8 rounded-full text-lg font-semibold mb-8"
-                >
-                    Request Demo
-                </Button>
+                <a href={'/request-demo'}>
+                    <Button
+                        size="lg"
+                        className="cursor-pointer bg-button-gradient hover:bg-button-gradient-hover text-white px-12 py-8 rounded-full text-lg font-semibold mb-8"
+                    >
+                        Request Demo
+                    </Button>
+                </a>
 
                 {/* Promo Video */}
                 <div className="relative lg:ml-8 w-full md:w-9/10 md:h-[550px] rounded-lg overflow-hidden mb-6">

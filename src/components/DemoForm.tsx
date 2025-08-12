@@ -317,7 +317,7 @@ export default function DemoForm() {
                 <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-6 px-6 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2"
+                    className="cursor-pointer w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-6 px-6 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2"
                 >
                     <span className='text-base font-semibold'>
                         {isSubmitting ? 'Submitting...' : 'Submit'}

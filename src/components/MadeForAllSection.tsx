@@ -29,7 +29,7 @@ export default function MadeForAllSection() {
                             autoPlay
                             loop
                             muted
-                            className="absolute inset-0 object-cover opacity-80 w-[157px] h-[85vw] left-[97px] top-[2px] rounded-[20px]"
+                            className="absolute inset-0 object-cover opacity-80 w-[157px] h-[85vw] md:h-[355px] left-[97px] top-[2px] rounded-[20px]"
                         >
                             <source src="/videos/MadeForAll.mp4" type="video/mp4" />
                         </video>

@@ -70,7 +70,7 @@ export default function MobileMenu({ navItems, currentPath }: MobileMenuProps) {
 
                     <div className="pt-4 border-t border-gray-100 mt-4">
                         <Button
-                            className="w-full bg-button-gradient hover:bg-button-gradient-hover shadow-card text-white py-2 rounded-4xl"
+                            className="cursor-pointer w-full bg-button-gradient hover:bg-button-gradient-hover shadow-card text-white py-2 rounded-4xl"
                             onClick={() => {
                                 router.push('/request-demo')
                                 setIsMobileMenuOpen(false)
