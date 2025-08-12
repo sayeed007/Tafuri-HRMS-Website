@@ -7,7 +7,7 @@ export default function FeaturesPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
             {/* Header Section */}
-            <div className="container mx-auto px-4 py-16">
+            <div className="container mx-auto px-5 md:px-20 py-10">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-6xl font-bold font-merriweather text-black mb-6">
                         Powerful HR Features

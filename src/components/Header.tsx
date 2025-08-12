@@ -36,7 +36,7 @@ export default function Header() {
 
             {/* Navigation */}
             <div className="w-full px-5 md:px-20 flex justify-between items-center h-16 bg-white">
-                <div className="flex items-center">
+                <a href={'/'}>
                     <div className="flex items-center space-x-2">
                         <Image
                             src={'/icons/TafuriHR-Logo.png'}
@@ -46,8 +46,7 @@ export default function Header() {
                             priority
                         />
                     </div>
-                </div>
-
+                </a>
                 <Navigation />
             </div>
         </header>

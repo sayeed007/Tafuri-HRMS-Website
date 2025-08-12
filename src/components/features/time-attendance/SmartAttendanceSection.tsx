@@ -37,66 +37,64 @@ export default function SmartAttendanceSection() {
     ];
 
     return (
-        <section className="py-16">
-            <div className="container mx-auto px-4">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-8">
-                        <div className="space-y-4">
-                            <h2 className="text-3xl lg:text-4xl font-merriweather font-bold text-black">
-                                Smart Attendance Tracking for a More Efficient Workforce.
-                            </h2>
-                        </div>
+        <section className="py-10 px-5 md:px-20">
+            <div className="grid lg:grid-cols-2 md:gap-12 items-center">
+                <div className="space-y-8">
+                    <div className="space-y-4">
+                        <h2 className="text-3xl lg:text-4xl font-merriweather font-bold text-black">
+                            Smart Attendance Tracking for a More Efficient Workforce.
+                        </h2>
+                    </div>
 
-                        <div className="space-y-6">
-                            {accordionItems.map((item, index) => {
-                                const isExpanded = expandedItems.has(index);
-                                return (
-                                    <div key={index} className="border-b border-border-color overflow-hidden">
-                                        <div className="w-full text-left transition-colors duration-200">
+                    <div className="space-y-6">
+                        {accordionItems.map((item, index) => {
+                            const isExpanded = expandedItems.has(index);
+                            return (
+                                <div key={index} className="border-b border-border-color overflow-hidden">
+                                    <div className="w-full text-left transition-colors duration-200">
 
-                                            {/* HEADER */}
-                                            <button
-                                                className="flex items-center justify-between w-full p-4 hover:shadow-md transition-shadow"
-                                            >
-                                                <span className="font-bold text-black">{item.title}</span>
+                                        {/* HEADER */}
+                                        <button
+                                            className="flex items-center justify-between w-full p-4 hover:shadow-md transition-shadow"
+                                        >
+                                            <span className="font-bold text-black">{item.title}</span>
 
-                                                <Image
-                                                    src={isExpanded ? '/icons/ArrowUpLight.png' : "/icons/ArrowDownLight.png"}
-                                                    alt={'toggleItem'}
-                                                    width={20}
-                                                    height={20}
-                                                    className={"w-5 h-5 cursor-pointer transition-transform duration-200"}
-                                                    onClick={() => toggleItem(index)}
-                                                />
-                                            </button>
+                                            <Image
+                                                src={isExpanded ? '/icons/ArrowUpLight.png' : "/icons/ArrowDownLight.png"}
+                                                alt={'toggleItem'}
+                                                width={20}
+                                                height={20}
+                                                className={"w-5 h-5 cursor-pointer transition-transform duration-200"}
+                                                onClick={() => toggleItem(index)}
+                                            />
+                                        </button>
 
-                                            {/* CONTENT */}
-                                            <div className={cn(
-                                                "overflow-hidden transition-all duration-300 ease-in-out",
-                                                isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                                            )}>
-                                                <div className="pl-4 pt-4 pb-2">
-                                                    <p className="text-grey-4 leading-relaxed">
-                                                        {item.content}
-                                                    </p>
-                                                </div>
+                                        {/* CONTENT */}
+                                        <div className={cn(
+                                            "overflow-hidden transition-all duration-300 ease-in-out",
+                                            isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                                        )}>
+                                            <div className="pl-4 pt-4 pb-2">
+                                                <p className="text-grey-4 leading-relaxed">
+                                                    {item.content}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                );
-                            })}
-                        </div>
+                                </div>
+                            );
+                        })}
                     </div>
+                </div>
 
-                    <div className="flex justify-end p-6">
-                        <Image
-                            src={'/features/SmartAttendance.png'}
-                            alt={'SmartAttendance'}
-                            width={1200}
-                            height={600}
-                            className="w-[550px] h-[430px]"
-                        />
-                    </div>
+                <div className="flex justify-end p-6">
+                    <Image
+                        src={'/features/SmartAttendance.png'}
+                        alt={'SmartAttendance'}
+                        width={1200}
+                        height={600}
+                        className="w-[550px] h-[430px]"
+                    />
                 </div>
             </div>
         </section>
