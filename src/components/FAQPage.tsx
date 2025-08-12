@@ -122,9 +122,9 @@ export default function FAQPage({ data }: FAQPageProps) {
     }, [activeSection, isScrolling, data]);
 
     return (
-        <div className="flex flex-col lg:flex-row gap-8 h-[calc(100vh-200px)]">
+        <div className="flex flex-col lg:flex-row gap-8 md:h-[calc(100vh-200px)]">
             {/* Left Sidebar - FAQ Sections */}
-            <div className="lg:w-1/4">
+            <div className="hidden md:flex lg:w-1/4">
                 <nav className="space-y-2 sticky top-0">
                     {(data || []).map((section) => (
                         <button

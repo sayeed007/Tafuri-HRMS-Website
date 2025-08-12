@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const EmployeeGrowthCard = () => {
   return (
-    <div className="md:absolute md:top-[230px] md:right-[110px] bg-white rounded-lg p-4 w-[350px] md:w-[400px] h-[300px] ">
+    <div className="md:absolute md:top-[230px] md:right-[110px] bg-white rounded-lg p-4 w-[100%] md:w-[400px] h-[300px] ">
       <h2 className="text-xs font-semibold text-black text-center">
         Employee Growth
       </h2>

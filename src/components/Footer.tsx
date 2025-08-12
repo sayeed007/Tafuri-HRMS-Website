@@ -68,9 +68,9 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className='flex justify-between items-center'>
+                <div className='flex flex-wrap justify-between items-center'>
                     {/* Certifications */}
-                    <div className="flex gap-5">
+                    <div className="w-full md:w-1/2 flex justify-center md:justify-start gap-5">
                         <Image
                             src={'/icons/ISO27001.png'}
                             alt={'ISO27001'}
@@ -89,7 +89,7 @@ export default function Footer() {
                     </div>
 
                     {/* CONTACT - Social Media */}
-                    <div className='flex gap-4'>
+                    <div className='w-full md:w-1/2 flex justify-center md:justify-end my-4 md:my-0  gap-4'>
                         {/* Facebook */}
                         <div className='h-10 w-10 bg-black rounded-full flex items-center justify-center'>
                             <a
