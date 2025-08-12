@@ -5,6 +5,38 @@
         {
             "question": "How do I manage employee records?",
             "answer": "The HR module provides comprehensive employee record management including personal information, employment history, documents, and performance tracking."
+        },
+        {
+            "question": "How do I send a resignation?",
+            "answer": "To send a resignation, go to the 'E- Resignation' section of the HRMS. Fill out the resignation form, specify your last working day and the reason for resignation, and submit it for manager approval."
+        },
+        {
+            "question": "Can I generate letters from the HRMS?",
+            "answer": "Yes, the 'HR Letter' module allows to generate letters like Appointment Letters, Experience Letters, and other HR-related documents using pre-defined templates."
+        },
+        {
+            "question": "Does the HRMS support employee engagement surveys?",
+            "answer": "Yes, the 'Employee Engagement' module allows to create, distribute, and analyze surveys to gather employee feedback."
+        },
+        {
+            "question": "Can I manage recruitment through HRMS?",
+            "answer": "Yes, the system includes a 'Career Module' for posting job openings, tracking applicants, and managing hiring workflows."
+        },
+        {
+            "question": "How do I review employee performance?",
+            "answer": "Use the 'Performance Management' module to view reports, set goals, and track employee performance metrics."
+        },
+        {
+            "question": "Can I access HR policies through the HRMS?",
+            "answer": "Yes, all types of policies are available in the ‘Terms and policies’ section."
+        },
+        {
+            "question": "Can I assign roles and permissions?",
+            "answer": "Yes, specific roles and permissions can be assigned from ‘role-based access’ feature."
+        },
+        {
+            "question": "How can I book a meeting room?",
+            "answer": "To book a meeting room navigate to the Room Booking section, check the availability and book a meeting room."
         }
     ]
 }

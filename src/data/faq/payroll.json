@@ -4,7 +4,7 @@
     "faqs": [
         {
             "question": "Does the HRMS account for deductions like absences, lateness, taxes, and other bills in payroll?",
-            "answer": "Yes, our HRMS system automatically calculates all deductions including absences, lateness penalties, taxes, and other configured deductions during payroll processing."
+            "answer": "Yes, our HRMS system automatically calculates all deductions including absences, lateness penalties, taxes, and other configured deductions during payroll processing. These are reflected in the pay slip."
         },
         {
             "question": "What are all the things I can do with Tafuri HR payroll?",
@@ -20,7 +20,7 @@
         },
         {
             "question": "Can I customize earning and deduction during Final Settlement?",
-            "answer": "Yes, during final settlement processing, you have full control to customize earnings and deductions specific to that employee\"s final settlement calculation."
+            "answer": "Yes, during final settlement processing, you have full control to customize earnings and deductions specific to that employee's final settlement calculation."
         }
     ]
 }

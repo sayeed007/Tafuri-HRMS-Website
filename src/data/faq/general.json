@@ -1,0 +1,34 @@
+{
+    "title": "General",
+    "slug": "general",
+    "faqs": [
+        {
+            "question": "What is the purpose of Tafuri HRMS?",
+            "answer": "The purpose of Tafuri HRMS is to automate and streamline HR processes such as payroll, recruitment, performance evaluation, leave management, attendance management, mobile sim management, transport management and employee data management."
+        },
+        {
+            "question": "Who can use the HRMS?",
+            "answer": "The system can be used by HR teams, managers, employees, and administrators within an organization, depending on their assigned roles and permissions."
+        },
+        {
+            "question": "How can One access the HRMS?",
+            "answer": "One can access the HRMS through their organization’s designated login portal or application using login credentials."
+        },
+        {
+            "question": "Is the HRMS mobile-friendly?",
+            "answer": "Yes, the HRMS is accessible via desktop and mobile devices for convenient access anytime, anywhere."
+        },
+        {
+            "question": "Is training available for the HRMS?",
+            "answer": "Yes, training materials such as user guides and live demos are available."
+        },
+        {
+            "question": "Is my data secure?",
+            "answer": "Yes, the HRMS complies with industry security standards, ensuring encryption, role-based access control, and regular data backups."
+        },
+        {
+            "question": "Can I set up automated notifications?",
+            "answer": "Yes, automated alerts and notifications can be configured for approvals and reminders"
+        }
+    ]
+}

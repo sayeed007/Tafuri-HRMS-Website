@@ -5,6 +5,10 @@
         {
             "question": "How do I create shift schedules?",
             "answer": "You can create flexible shift schedules using our intuitive scheduler. Define shift patterns, assign employees, and manage rotations with ease."
+        },
+        {
+            "question": "Can I manage shift schedules in HRMS?",
+            "answer": "Yes, the system supports shift scheduling with different rosters."
         }
     ]
 }

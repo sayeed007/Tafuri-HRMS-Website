@@ -5,6 +5,10 @@
         {
             "question": "How do I track time for different projects?",
             "answer": "You can easily track time by selecting the project from the dropdown menu when starting your timer. The system automatically categorizes your time entries by project."
+        },
+        {
+            "question": "Can I request manual attendance?",
+            "answer": "Yes, manual attendance requests can be sent from the Attendance section by editing the In Time and Out time of an employee."
         }
     ]
 }

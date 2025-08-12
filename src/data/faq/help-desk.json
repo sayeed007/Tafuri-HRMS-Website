@@ -5,6 +5,14 @@
         {
             "question": "How do I contact support?",
             "answer": "You can reach our support team through the built-in help desk system, email, or phone. We provide 24/7 technical support for all users."
+        },
+        {
+            "question": "Can I inform any issue throughout the system?",
+            "answer": "Yes, the HRMS allows to generate ticket for any issues or concerns. Navigate to the 'Help Desk' section, describe the issue, and submit the ticket."
+        },
+        {
+            "question": "What should I do if I forget my password?",
+            "answer": "Click on the Reset Password button from the employee profile and set a new password."
         }
     ]
 }
