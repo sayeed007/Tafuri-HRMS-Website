@@ -28,7 +28,7 @@ const features = [
 export default function FeaturesSection() {
     return (
         <section className="px-5 md:px-20 py-10">
-            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            <div className="flex flex-wrap justify-evenly gap-8 lg:gap-12">
                 {features.map((feature, index) => {
                     return (
                         <div
