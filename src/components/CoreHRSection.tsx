@@ -12,7 +12,7 @@ const features = [
 
 export default function CoreHRSection() {
     return (
-        <section className="px-5 md:px-20 pt-10">
+        <section className="px-5 md:px-20 py-5">
             <div className="grid lg:grid-cols-2 md:gap-16 items-center">
                 {/* Left Content */}
                 <div>

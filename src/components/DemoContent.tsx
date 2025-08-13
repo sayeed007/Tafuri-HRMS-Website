@@ -12,7 +12,7 @@ export default function DemoContent() {
     ];
 
     return (
-        <div className="lg:w-1/2 lg:pr-12">
+        <div className="w-full lg:w-1/2 lg:pr-12">
             {/* Main Heading */}
             <div className="mb-8">
                 <h2 className="text-4xl md:text-5xl font-merriweather font-bold text-black leading-tight">

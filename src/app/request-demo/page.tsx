@@ -4,9 +4,9 @@ import DemoSection from '@/components/DemoSection'
 
 export default function RequestDemoPage() {
     return (
-        <main>
+        <div className='bg-body'>
             <ContactSection />
             <DemoSection />
-        </main>
+        </div>
     )
 }

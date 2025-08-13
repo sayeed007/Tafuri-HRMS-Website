@@ -18,7 +18,7 @@ export default function PartnersCarouselSmall() {
     const [isPaused, setIsPaused] = useState(false)
 
     // Duplicate partners array for seamless loop
-    const duplicatedPartners = [...partners, ...partners]
+    const duplicatedPartners = [...partners, ...partners, ...partners, ...partners]
 
     return (
         <div className="overflow-hidden">
@@ -33,14 +33,14 @@ export default function PartnersCarouselSmall() {
                 {duplicatedPartners.map((partner, index) => (
                     <div
                         key={`${partner.name}-${index}`}
-                        className="flex-shrink-0 group opacity-60 hover:opacity-100 transition-opacity duration-300"
+                        className="flex-shrink-0 group hover:opacity-100 transition-opacity duration-300"
                     >
                         <Image
                             src={partner.logo}
                             alt={partner.name}
-                            className="object-contain group-hover:scale-105 transition-transform duration-300"
+                            className="w-[80px] h-[50px] object-contain group-hover:scale-105 transition-transform duration-300"
                             width={80}
-                            height={30}
+                            height={50}
                         />
                     </div>
                 ))}

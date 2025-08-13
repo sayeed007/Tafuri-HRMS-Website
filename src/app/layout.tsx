@@ -6,6 +6,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import RequestDemoPopup from '@/components/RequestDemoPopup';
 import type { Metadata } from 'next';
+import { Toaster } from '@/components/ui/sonner';
 
 // Google Fonts
 const poppins = Poppins({
@@ -50,6 +51,26 @@ export default function RootLayout({
         {children}
         <RequestDemoPopup />
         <Footer />
+        {/* <Toaster /> */}
+        <Toaster
+          position="top-right"
+          expand={true}
+          richColors={true}
+          closeButton={true}
+          toastOptions={{
+            style: {
+              background: 'white',
+              border: '1px solid #e5e7eb',
+              borderRadius: '12px',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              padding: '16px',
+              fontSize: '14px',
+              fontWeight: '500',
+            },
+            className: 'sonner-toast',
+            duration: 3000,
+          }}
+        />
       </body>
     </html>
   );

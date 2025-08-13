@@ -3,10 +3,12 @@
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { AlertTriangle, CheckCircle2, XCircle } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
+import { toast } from 'sonner'
 
 
 
@@ -115,12 +117,21 @@ export default function DemoForm() {
         e.preventDefault()
 
         if (!validateForm()) {
+            toast.error("Validation Failed", {
+                description: "Please fill in all required fields correctly.",
+                icon: <AlertTriangle className="h-5 w-5" />,
+            })
             return
         }
 
         setIsSubmitting(true)
 
         try {
+            // Show loading toast
+            const loadingToast = toast.loading("Submitting your form...", {
+                description: "Please wait while we process your information.",
+            })
+
             // Prepare the data for submission
             const submissionData = {
                 ...formData,
@@ -136,24 +147,61 @@ export default function DemoForm() {
                 body: JSON.stringify(submissionData),
             })
 
+            // Dismiss loading toast
+            toast.dismiss(loadingToast)
+
             if (response.ok) {
                 // Reset form on success
                 setFormData({ ...initialFormData })
-                alert('Form submitted successfully!')
+
+                // Beautiful success toast
+                toast.success("🎉 Success!", {
+                    description: "Your form has been submitted successfully. We'll get back to you soon!",
+                    icon: <CheckCircle2 className="h-5 w-5 text-green-600" />,
+                    duration: 6000,
+                    action: {
+                        label: "View Details",
+                        onClick: () => console.log("View submission details"),
+                    },
+                    style: {
+                        background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
+                        borderColor: '#16a34a',
+                        color: '#15803d',
+                    },
+                })
             } else {
-                throw new Error('Failed to submit form')
+                const errorData = await response.json()
+                throw new Error(errorData.message || 'Failed to submit form')
             }
         } catch (error) {
             console.error('Error submitting form:', error)
-            alert('Error submitting form. Please try again.')
+
+            // Beautiful error toast
+            toast.error("❌ Submission Failed", {
+                description: error instanceof Error
+                    ? error.message
+                    : "Something went wrong. Please check your connection and try again.",
+                icon: <XCircle className="h-5 w-5 text-red-600" />,
+                duration: 8000,
+                action: {
+                    label: "Try Again",
+                    onClick: () => handleSubmit(e),
+                },
+                style: {
+                    background: 'linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)',
+                    borderColor: '#dc2626',
+                    color: '#dc2626',
+                },
+            })
         } finally {
             setIsSubmitting(false)
         }
     }
 
+
     return (
         <>
-            <form onSubmit={handleSubmit} className="lg:w-1/2">
+            <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
                 {/* Name */}
                 <div className="mb-6">
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-2">
@@ -291,7 +339,7 @@ export default function DemoForm() {
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-4">
                         How many employee do you have?
                     </label>
-                    <div className="grid grid-cols-5 gap-4">
+                    <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
                         {['1-50', '51-100', '101-200', '201-500', '500+'].map((range) => (
                             <label key={range} className="flex items-center cursor-pointer">
                                 <input

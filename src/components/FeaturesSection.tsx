@@ -40,7 +40,10 @@ export default function FeaturesSection() {
                                     alt={feature.title}
                                     width={feature.width}
                                     height={feature.height}
-                                    className="object-contain"
+                                    // Inline style avoids Tailwind's JIT limitations for dynamic arbitrary values
+                                    style={{ width: feature.width, height: feature.height }}
+                                    className={`object-contain`}
+                                    unoptimized
                                 />
                             </div>
 

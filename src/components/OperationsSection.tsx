@@ -50,12 +50,15 @@ export default function OperationsSection() {
                                 key={operation.title}
                                 className="group flex flex-col items-center justify-between min-w-[155px] min-hh-[175px] p-6 rounded-xl bg-white border border-card-border cursor-pointer transition-shadow duration-300 ease-in-out operations-card"
                             >
-                                <Image
-                                    src={IconComponent}
-                                    alt={IconComponent}
-                                    width={64}
-                                    height={64}
-                                />
+                                <div className="relative w-16 h-16">
+                                    <Image
+                                        src={IconComponent}
+                                        alt={IconComponent}
+                                        fill
+                                        sizes="64px"
+                                        className="object-contain"
+                                    />
+                                </div>
                                 <h3 className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight">
                                     {operation.title}
                                 </h3>

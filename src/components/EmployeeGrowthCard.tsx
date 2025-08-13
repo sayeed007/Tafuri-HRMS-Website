@@ -15,7 +15,8 @@ const EmployeeGrowthCard = () => {
             alt={'EmployeeGrowth'}
             width={500}
             height={500}
-            className="max-w-[114%]"
+            className="max-w-[114%] w-[500px] h-auto"
+            unoptimized
           />
         </div>
       </div>

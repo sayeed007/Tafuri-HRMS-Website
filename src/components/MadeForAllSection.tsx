@@ -11,28 +11,31 @@ const features = [
 
 export default function MadeForAllSection() {
     return (
-        <section className="px-5 md:px-20 pb-10">
+        <section className="px-5 md:px-20 py-5">
             <div className="grid lg:grid-cols-2  gap-6 md:gap-16 items-center">
                 {/* Left Content */}
-                <div className="relative z-10 h-full flex flex-col justify-center items-center">
-                    <div className="relative w-[350px] h-[350px]">
+                <div className="relative z-10 h-full flex flex-col justify-center items-center overflow-x-clip">
+                    <div className="relative w-[330px] max-w-full h-[350px] ">
                         <Image
-                            src={'/icons/MadeForAll.png'}
+                            src={'/icons/MadeForAllBG.png'}
                             alt={'MadeForAll'}
-                            width={350}
-                            height={350}
+                            fill
+                            sizes="330px"
                             className="absolute inset-0"
                         />
-                        <video
-                            width={350}
-                            height={350}
-                            autoPlay
-                            loop
-                            muted
-                            className="absolute inset-0 object-cover opacity-80 w-[157px] h-[85vw] md:h-[355px] left-[97px] top-[2px] rounded-[20px]"
-                        >
-                            <source src="/videos/MadeForAll.mp4" type="video/mp4" />
-                        </video>
+                        <div className='w-[149px] h-[350px] bg-white absolute inset-0 left-[91px] top-[0px] rounded-[20px] border-2 border-black'>
+                            <video
+                                width={350}
+                                height={350}
+                                autoPlay
+                                loop
+                                muted
+                                className="object-cover opacity-80 w-[149px] h-[350px] rounded-[20px]"
+                            >
+                                <source src="/videos/MadeForAll.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+
                     </div>
                 </div>
 

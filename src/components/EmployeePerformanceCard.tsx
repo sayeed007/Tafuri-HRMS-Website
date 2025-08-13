@@ -15,6 +15,8 @@ const EmployeePerformanceCard = () => {
             alt={'EmployeePerformancePercent'}
             width={90}
             height={50}
+            unoptimized
+            className="w-[90px] h-[50px]"
           />
           <div className="flex flex-col gap-2">
             <div className="w-32 h-3 bg-gray-200 rounded-full"></div>
@@ -22,13 +24,14 @@ const EmployeePerformanceCard = () => {
           </div>
         </div>
 
-        <div className="absolute top-[-30px] left-[-20px]">
+        <div className="absolute bottom-0 left-[-20px]">
           <Image
             src={'/gif/EmployeePerformanceLeader.gif'}
             alt={'EmployeePerformanceLeader'}
             width={300}
             height={65}
-            className='max-w-[120%]'
+            className='max-w-[120%] w-[300px] h-[65px]'
+            unoptimized
           />
         </div>
       </div>

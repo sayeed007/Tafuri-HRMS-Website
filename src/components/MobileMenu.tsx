@@ -102,6 +102,7 @@ export default function MobileMenu({ navItems, currentPath }: MobileMenuProps) {
                                                 alt={'ArrowDown'}
                                                 width={10}
                                                 height={5}
+                                                className="w-auto"
                                             />
                                         </span>
                                     </button>

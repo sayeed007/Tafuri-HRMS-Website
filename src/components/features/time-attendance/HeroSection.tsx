@@ -45,6 +45,7 @@ export default function HeroSection() {
                         width={200}
                         height={100}
                         className="absolute right-[-20px] md:right-[-50px] top-4/6"
+                        unoptimized
                     />
                 </div>
             </div>

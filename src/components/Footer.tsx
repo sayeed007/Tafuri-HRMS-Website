@@ -22,15 +22,17 @@ export default function Footer() {
                 <div className="grid lg:grid-cols-3 md:grid-cols-1 gap-8">
                     {/* Company Info */}
                     <div className="lg:col-span-1">
-                        <div className="flex items-center space-x-2 mb-6">
-                            <Image
-                                src={'/icons/TafuriHR-Logo.png'}
-                                alt={'TafuriHR-Logo'}
-                                width={191}
-                                height={41}
-                                priority
-                            />
-                        </div>
+                        <a href={'/'}>
+                            <div className="flex items-center cursor-pointer space-x-2 mb-6">
+                                <Image
+                                    src={'/icons/TafuriHR-Logo.png'}
+                                    alt={'TafuriHR-Logo'}
+                                    width={191}
+                                    height={41}
+                                    priority
+                                />
+                            </div>
+                        </a>
 
                         <p className="text-black text-2xl font-semibold mb-6 leading-relaxed">
                             Reduce administrative

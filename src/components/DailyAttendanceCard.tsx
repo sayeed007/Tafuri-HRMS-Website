@@ -14,6 +14,8 @@ const DailyAttendanceCard = () => {
           alt={'CoreHRPoint'}
           width={150}
           height={150}
+          unoptimized
+          className="w-[150px] h-[150px]"
         />
       </div>
 
