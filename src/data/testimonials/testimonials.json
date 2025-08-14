@@ -1,0 +1,37 @@
+{
+    "testimonials": [
+        {
+            "id": 1,
+            "name": "Sadman Safiul",
+            "role": "Senior Product Manager",
+            "company": "Chhaya Technologies Limited",
+            "content": "Tafuri HRMS has significantly streamlined our organizational workflows by centralizing employee management and automating attendance tracking. Its intuitive platform helps us efficiently monitor our field sales force, enhancing accountability and operational transparency.",
+            "rating": 5,
+            "avatar": "SR",
+            "profileImage": "/Testimonials/SadmanSafiul.png",
+            "cardType": "green"
+        },
+        {
+            "id": 2,
+            "name": "Khurram Abbasi",
+            "role": "COO",
+            "company": "Intellexis",
+            "content": "Curls Blocks has completely transformed the way we approach design at our company. The versatility and flexibility of the library have allowed us to create consistent and beautiful designs across all our platforms. Highly recommended!",
+            "rating": 5,
+            "avatar": "MA",
+            "profileImage": "/Testimonials/KhurramAbbasi.png",
+            "cardType": "white"
+        },
+        {
+            "id": 3,
+            "name": "Sarah Johnson",
+            "role": "Operations Manager",
+            "company": "Innovation Hub",
+            "content": "Outstanding platform with intuitive design. The kiosk integration has made our office completely paperless, and employee satisfaction has increased significantly.",
+            "rating": 5,
+            "avatar": "SJ",
+            "profileImage": "/Testimonials/SadmanSafiul.png",
+            "cardType": "green"
+        }
+    ]
+}

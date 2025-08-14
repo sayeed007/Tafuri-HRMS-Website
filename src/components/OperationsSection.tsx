@@ -1,6 +1,20 @@
 // components/OperationsSection.tsx
+'use client'
 
 import Image from "next/image"
+import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
+import {
+    containerVariants,
+    cardVariants,
+    headerVariants,
+    hoverLift,
+    iconHover,
+    tapScale,
+    textColorHover,
+    defaultViewport,
+    partialViewport
+} from "@/lib/animations/variants"
 
 const operations = [
     { icon: '/icons/EmployeeOnboarding.png', title: 'Employee Onboarding' },
@@ -31,41 +45,101 @@ const operations = [
 ]
 
 export default function OperationsSection() {
+    const [isHydrated, setIsHydrated] = useState(false)
+
+    useEffect(() => {
+        // Delay to ensure smooth transition
+        const timer = setTimeout(() => setIsHydrated(true), 100)
+        return () => clearTimeout(timer)
+    }, [])
+
+    // Fallback static content for SSR
+    const StaticCard = ({ operation }: { operation: typeof operations[0] }) => (
+        <div className="group flex flex-col items-center justify-between min-w-[155px] min-hh-[175px] p-6 rounded-xl bg-white border border-card-border cursor-pointer transition-shadow duration-300 ease-in-out hover:shadow-xl">
+            <div className="relative w-16 h-16">
+                <Image
+                    src={operation.icon}
+                    alt={`${operation.title} Icon for TafuriHR`}
+                    fill
+                    sizes="64px"
+                    className="object-contain"
+                />
+            </div>
+            <h3 className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight">
+                {operation.title}
+            </h3>
+        </div>
+    )
+
     return (
         <section className="px-5 md:px-20 py-10 bg-operation w-full">
             <div className="mx-auto sm:px-6 lg:px-8">
                 {/* Section Header */}
-                <div className="text-center mv-4 md:mb-16">
-                    <h2 className="text-3xl md:text-4xl font-merriweather font-normal text-black mb-4">
-                        All your operations. All in one place
-                    </h2>
-                </div>
+                {isHydrated ? (
+                    <motion.div
+                        className="text-center mv-4 md:mb-16"
+                        variants={headerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={defaultViewport}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-merriweather font-normal text-black mb-4">
+                            All your operations. All in one place
+                        </h2>
+                    </motion.div>
+                ) : (
+                    <div className="text-center mv-4 md:mb-16">
+                        <h2 className="text-3xl md:text-4xl font-merriweather font-normal text-black mb-4">
+                            All your operations. All in one place
+                        </h2>
+                    </div>
+                )}
 
                 {/* Operations Grid */}
-                <div className="md:mx-25 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
-                    {operations.map((operation) => {
-                        const IconComponent = operation.icon
-                        return (
-                            <div
+                {isHydrated ? (
+                    <motion.div
+                        className="md:mx-25 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8"
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={partialViewport}
+                    >
+                        {operations.map((operation) => (
+                            <motion.div
                                 key={operation.title}
-                                className="group flex flex-col items-center justify-between min-w-[155px] min-hh-[175px] p-6 rounded-xl bg-white border border-card-border cursor-pointer transition-shadow duration-300 ease-in-out operations-card"
+                                variants={cardVariants}
+                                whileHover={hoverLift}
+                                whileTap={tapScale}
+                                className="group flex flex-col items-center justify-between min-w-[155px] min-hh-[175px] p-6 rounded-xl bg-white border border-card-border cursor-pointer transition-shadow duration-300 ease-in-out hover:shadow-xl"
                             >
-                                <div className="relative w-16 h-16">
+                                <motion.div
+                                    className="relative w-16 h-16"
+                                    whileHover={iconHover}
+                                >
                                     <Image
-                                        src={IconComponent}
+                                        src={operation.icon}
                                         alt={`${operation.title} Icon for TafuriHR`}
                                         fill
                                         sizes="64px"
                                         className="object-contain"
                                     />
-                                </div>
-                                <h3 className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight">
+                                </motion.div>
+                                <motion.h3
+                                    className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight"
+                                    whileHover={textColorHover}
+                                >
                                     {operation.title}
-                                </h3>
-                            </div>
-                        )
-                    })}
-                </div>
+                                </motion.h3>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                ) : (
+                    <div className="md:mx-25 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
+                        {operations.map((operation) => (
+                            <StaticCard key={operation.title} operation={operation} />
+                        ))}
+                    </div>
+                )}
             </div>
         </section>
     )

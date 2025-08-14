@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     siteName: 'TafuriHR',
     images: [
       {
-        url: '/TafuriHR_logo.png',
+        url: '/TafuriHR_Icon.png',
         width: 1200,
         height: 630,
-        alt: 'TafuriHR Logo',
+        alt: 'TafuriHR Icon',
       },
     ],
     locale: 'en_US',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'TafuriHR - HR Management Software',
     description: 'Automate and manage HR tasks with TafuriHR’s comprehensive platform.',
-    images: ['/TafuriHR_logo.png'],
+    images: ['/TafuriHR_Icon.png'],
     creator: '@TafuriHR',
   },
   robots: {
@@ -72,8 +72,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/TafuriHR_logo.png',
-    apple: '/TafuriHR_logo.png',
+    icon: '/TafuriHR_Icon.png',
+    apple: '/TafuriHR_Icon.png',
   },
 };
 
@@ -96,7 +96,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'TafuriHR',
               url: 'https://www.tafurihr.com',
-              logo: 'https://www.tafurihr.com/TafuriHR_logo.png',
+              logo: 'https://www.tafurihr.com/TafuriHR_Icon.png',
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+88 01755 645081',
@@ -125,7 +125,7 @@ export default function RootLayout({
                 name: 'TafuriHR',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://www.tafurihr.com/TafuriHR_logo.png',
+                  url: 'https://www.tafurihr.com/TafuriHR_Icon.png',
                 },
               },
             }),
