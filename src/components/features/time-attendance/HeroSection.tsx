@@ -4,7 +4,10 @@ import Image from "next/image"
 // Hero Section Component
 export default function HeroSection() {
     return (
-        <section className="bg-body-gradient py-10 px-5 md:px-20">
+        <section
+            className="bg-body-gradient py-10 px-5 md:px-20"
+            aria-labelledby="features-attendance-hero-section"
+        >
             <div className="grid lg:grid-cols-2 md:gap-12 items-center">
                 <div className="space-y-8">
                     <h1 className="text-4xl lg:text-5xl font-merriweather font-bold text-black leading-tight">

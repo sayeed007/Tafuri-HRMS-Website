@@ -37,7 +37,10 @@ export default function SmartAttendanceSection() {
     ];
 
     return (
-        <section className="py-10 px-5 md:px-20">
+        <section
+            className="py-10 px-5 md:px-20"
+            aria-labelledby="smart-attendance-section"
+        >
             <div className="grid lg:grid-cols-2 md:gap-12 items-center">
                 <div className="space-y-8">
                     <div className="space-y-4">

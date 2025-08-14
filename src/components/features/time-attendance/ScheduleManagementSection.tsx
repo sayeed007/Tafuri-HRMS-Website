@@ -10,7 +10,10 @@ export default function ScheduleManagementSection() {
     ]
 
     return (
-        <section className="py-10 bg-white px-5 md:px-20">
+        <section
+            className="py-10 bg-white px-5 md:px-20"
+            aria-labelledby="schedule-management-section"
+        >
             <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
                 <div className="flex justify-start relative">
                     <Image

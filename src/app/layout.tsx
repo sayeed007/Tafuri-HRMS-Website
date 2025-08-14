@@ -35,12 +35,12 @@ export const metadata: Metadata = {
   description: 'Streamline HR processes with TafuriHR, an AI-powered HR management platform for employee onboarding, payroll, time tracking, and more.',
   keywords: 'HR management software, TafuriHR, employee onboarding, payroll management, time tracking, HR automation, AI-powered HR, workforce management',
   alternates: {
-    canonical: 'https://www.tafurihr.com',
+    canonical: 'https://tafurihr.com',
   },
   openGraph: {
     title: 'TafuriHR - AI-Powered HR Management Platform',
     description: 'Transform your HR operations with TafuriHR’s all-in-one platform for payroll, onboarding, leave management, and more.',
-    url: 'https://www.tafurihr.com',
+    url: 'https://tafurihr.com',
     siteName: 'TafuriHR',
     images: [
       {
@@ -95,8 +95,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'TafuriHR',
-              url: 'https://www.tafurihr.com',
-              logo: 'https://www.tafurihr.com/TafuriHR_Icon.png',
+              url: 'https://tafurihr.com',
+              logo: 'https://tafurihr.com/TafuriHR_Icon.png',
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+88 01755 645081',
@@ -118,14 +118,14 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'WebPage',
               name: 'TafuriHR - HR Management Solution',
-              url: 'https://www.tafurihr.com',
+              url: 'https://tafurihr.com',
               description: 'TafuriHR offers a comprehensive HR management platform to automate employee onboarding, payroll, time tracking, and more.',
               publisher: {
                 '@type': 'Organization',
                 name: 'TafuriHR',
                 logo: {
                   '@type': 'ImageObject',
-                  url: 'https://www.tafurihr.com/TafuriHR_Icon.png',
+                  url: 'https://tafurihr.com/TafuriHR_Icon.png',
                 },
               },
             }),

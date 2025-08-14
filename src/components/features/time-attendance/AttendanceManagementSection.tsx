@@ -30,7 +30,10 @@ export default function AttendanceManagementSection() {
     ]
 
     return (
-        <section className="py-10 px-5 md:px-20">
+        <section
+            className="py-10 px-5 md:px-20"
+            aria-labelledby="attendance-management-section"
+        >
             <div className="flex flex-wrap justify-between mb-6 md:mb-12">
                 <h2 className="w-full md:w-1/2 text-3xl lg:text-4xl font-merriweather font-bold text-black mb-4">
                     Attendance Management

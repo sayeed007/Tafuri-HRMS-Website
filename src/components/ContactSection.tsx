@@ -1,7 +1,10 @@
 // components/ContactSection.tsx
 export default function ContactSection() {
     return (
-        <section className="px-5 md:px-20 py-10">
+        <section
+            className="px-5 md:px-20 py-10"
+            aria-labelledby="contact-section"
+        >
             {/* Header */}
             <div className="text-center font-merriweather mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">

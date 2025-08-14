@@ -4,7 +4,10 @@ import DemoForm from './DemoForm'
 
 export default function DemoSection() {
     return (
-        <section className="bg-white">
+        <section
+            className="bg-white"
+            aria-labelledby="demo-section"
+        >
             <div className="px-5 md:px-20 py-10 flex flex-col lg:flex-row gap-12 items-start">
                 <DemoContent />
                 <DemoForm />

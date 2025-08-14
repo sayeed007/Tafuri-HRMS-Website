@@ -16,9 +16,8 @@ const navItems: NavItem[] = [
 export default function Footer() {
 
     return (
-        <footer className="bg-footer-gradient py-10">
-            <div className="mx-10">
-
+        <footer className="bg-footer-gradient w-full">
+            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-5'>
                 <div className="grid lg:grid-cols-3 md:grid-cols-1 gap-8">
                     {/* Company Info */}
                     <div className="lg:col-span-1">

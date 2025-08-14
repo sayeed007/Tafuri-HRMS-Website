@@ -21,38 +21,42 @@ export default function PartnersSection() {
     const duplicatedPartners = [...partners, ...partners, ...partners, ...partners]
 
     return (
-        <section className="px-5 md:px-20 py-10 bg-white overflow-hidden">
-            <div className="text-center mb-6">
-                <h2 className="text-4xl md:text-4xl font-merriweather font-bold text-black mb-4">
-                    Key partners in our journey
-                </h2>
-            </div>
+        <section
+            className="w-full bg-white overflow-hidden"
+            aria-labelledby="partners-section"
+        >
+            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-10'>
+                <div className="text-center mb-6">
+                    <h2 className="text-4xl md:text-4xl font-merriweather font-bold text-black mb-4">
+                        Key partners in our journey
+                    </h2>
+                </div>
 
-            {/* Carousel Container */}
-            <div
-                className="relative flex space-x-6 md:space-x-8 animate-scroll md:gap-20 gap-8 justify-start md:justify-center items-center"
-                style={{
-                    animationPlayState: isPaused ? 'paused' : 'running'
-                }}
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
-            >
-                {duplicatedPartners.map((partner, index) => (
-                    <div
-                        key={`${partner.name}-${index}`}
-                        className="flex-shrink-0 group"
-                    >
-                        <Image
-                            src={partner.logo}
-                            alt={partner.name}
-                            className="w-[120px] h-[50px] object-contain group-hover:scale-105 transition-transform duration-300"
-                            width={120}
-                            height={50}
-                        />
-                    </div>
-                ))}
+                {/* Carousel Container */}
+                <div
+                    className="relative flex space-x-6 md:space-x-8 animate-scroll md:gap-20 gap-8 justify-start md:justify-center items-center"
+                    style={{
+                        animationPlayState: isPaused ? 'paused' : 'running'
+                    }}
+                    onMouseEnter={() => setIsPaused(true)}
+                    onMouseLeave={() => setIsPaused(false)}
+                >
+                    {duplicatedPartners.map((partner, index) => (
+                        <div
+                            key={`${partner.name}-${index}`}
+                            className="flex-shrink-0 group"
+                        >
+                            <Image
+                                src={partner.logo}
+                                alt={partner.name}
+                                className="w-[120px] h-[50px] object-contain group-hover:scale-105 transition-transform duration-300"
+                                width={120}
+                                height={50}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
-
             <style jsx>{`
                 @keyframes scroll {
                     0% {

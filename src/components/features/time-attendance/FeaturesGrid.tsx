@@ -26,7 +26,10 @@ export default function FeaturesGrid() {
     ];
 
     return (
-        <section className="w-full pb-12 bg-body-gradient px-5 md:px-20">
+        <section
+            className="w-full pb-12 bg-body-gradient px-5 md:px-20"
+            aria-labelledby="features-section"
+        >
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {features.map((feature, index) => {
                     return (
