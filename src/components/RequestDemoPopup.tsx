@@ -107,9 +107,11 @@ const RequestDemoPopup = () => {
                                 <Image
                                     src={'/icons/RequestDemoPopup.png'}
                                     alt={'RequestDemoPopup'}
-                                    width={1200}
-                                    height={600}
-                                    priority
+                                    width={800}
+                                    height={400}
+                                    loading="lazy"
+                                    sizes="(max-width: 768px) 100vw, 600px"
+                                    quality={85}
                                     className='max-w-[100%] shadow-request-demo'
                                 />
                             </div>

@@ -38,7 +38,6 @@ export default function MobileAppSection() {
                             alt="Tafuri HR mobile app interface showcasing HR management features on smartphone"
                             width={1800}
                             height={800}
-                            priority
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             className="w-full h-auto max-w-sm"
                         />
