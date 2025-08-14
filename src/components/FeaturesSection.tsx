@@ -37,7 +37,7 @@ export default function FeaturesSection() {
                             <div className='h-[160px] w-full flex items-center justify-center'>
                                 <Image
                                     src={feature.icon}
-                                    alt={feature.title}
+                                    alt={`${feature.title} Animation for TafuriHR`}
                                     width={feature.width}
                                     height={feature.height}
                                     // Inline style avoids Tailwind's JIT limitations for dynamic arbitrary values

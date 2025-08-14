@@ -23,13 +23,13 @@ export default function AnimatedKioskCard() {
                     {/* Animated Kiosk Container */}
                     <div className="absolute right-0 top-0 bottom-0 w-1/3 lg:w-1/4 overflow-hidden">
                         {/* Sliding Background */}
-                        <div className="absolute inset-0 animate-slide-in-out backdrop-blur-70 bg-[url('/icons/KioskCardImageBG.png')] bg-cover bg-center bg-no-repeat"></div>
+                        <div className="absolute inset-0 animate-slide-in-out backdrop-blur-70 bg-[url('/icons/KioskCardImage.png')] bg-contain bg-center bg-no-repeat"></div>
 
                         {/* Kiosk Image */}
                         <div className="absolute right-4 top-[200px] md:top-[300px] -translate-y-1/2 animate-slide-in-out">
                             <Image
                                 src={'/icons/Kiosk.png'}
-                                alt={'Kiosk'}
+                                alt={'TafuriHR Kiosk Device for HR Automation'}
                                 width={200}
                                 height={200}
                                 className='object-contain'

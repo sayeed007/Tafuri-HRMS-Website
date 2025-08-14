@@ -21,7 +21,7 @@ export default function CoreHRSection() {
                     </h2>
 
                     <p className="text-base text-grey-3 mb-8 leading-relaxed">
-                        Core HR, Redefined: Streamlining essential HR tasks with simplicity and efficiency, empowering teams to focus on people, not paperwork.
+                        Streamlining essential HR tasks with simplicity and efficiency, empowering teams to focus on people, not paperwork.
                     </p>
 
                     {/* Feature List */}
@@ -45,7 +45,7 @@ export default function CoreHRSection() {
                 <div className="relative h-96 lg:h-[480px] bg-[url('/icons/CoreHRBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl">
                     <Image
                         src={'/icons/CoreHRImage.png'}
-                        alt={'CoreHRImage'}
+                        alt={'Core HR Image for TafuriHR'}
                         width={1280}
                         height={600}
                         className="absolute w-[680px] top-[75px] md:right-[55px] h-auto"

@@ -8,7 +8,9 @@ export default function HeroSection() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-merriweather font-bold text-black leading-tight mb-6">
                     Transform your business
                     <br />
-                    with AI-powered{' '}
+                    with AI-powered
+                    <br />
+                    HR Management Software{' '}
                     <span className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
                         #TAFURIHR
                     </span>
@@ -37,7 +39,8 @@ export default function HeroSection() {
                         playsInline
                         // poster="/images/video-poster.jpg" // Optional: Add a poster image
                         preload="metadata"
-                        aria-hidden="true"
+                        // aria-hidden="true"
+                        aria-label="TafuriHR promotional video showcasing HR management features"
                     >
                         <source src="/videos/Tafurihrms_promo.mp4" type="video/mp4" />
                         Your browser does not support the video tag.

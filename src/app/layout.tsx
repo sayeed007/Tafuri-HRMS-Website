@@ -1,4 +1,3 @@
-// app/layout.tsx
 import { Poppins, Merriweather } from 'next/font/google';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
@@ -32,10 +31,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'TafuriHR - HR Management Solution',
-  description: 'Streamline your HR processes with TafuriHR, a comprehensive HR management platform.',
+  title: 'TafuriHR - Comprehensive HR Management Software Solution',
+  description: 'Streamline HR processes with TafuriHR, an AI-powered HR management platform for employee onboarding, payroll, time tracking, and more.',
+  keywords: 'HR management software, TafuriHR, employee onboarding, payroll management, time tracking, HR automation, AI-powered HR, workforce management',
+  alternates: {
+    canonical: 'https://www.tafurihr.com',
+  },
+  openGraph: {
+    title: 'TafuriHR - AI-Powered HR Management Platform',
+    description: 'Transform your HR operations with TafuriHR’s all-in-one platform for payroll, onboarding, leave management, and more.',
+    url: 'https://www.tafurihr.com',
+    siteName: 'TafuriHR',
+    images: [
+      {
+        url: '/TafuriHR_logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'TafuriHR Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TafuriHR - HR Management Software',
+    description: 'Automate and manage HR tasks with TafuriHR’s comprehensive platform.',
+    images: ['/TafuriHR_logo.png'],
+    creator: '@TafuriHR',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: '/TafuriHR_logo.png',
+    apple: '/TafuriHR_logo.png',
   },
 };
 
@@ -45,13 +83,60 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${merriweather.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className='font-proxima min-h-screen bg-body overflow-x-clip'>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${merriweather.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+    >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'TafuriHR',
+              url: 'https://www.tafurihr.com',
+              logo: 'https://www.tafurihr.com/TafuriHR_logo.png',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+88 01755 645081',
+                email: 'sales@tafurihr.com',
+                contactType: 'Sales',
+                areaServed: 'Global',
+              },
+              sameAs: [
+                'https://www.facebook.com/profile.php?id=61566912183130',
+                'https://www.linkedin.com/company/tafuri-hrms/posts/?feedView=all',
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              name: 'TafuriHR - HR Management Solution',
+              url: 'https://www.tafurihr.com',
+              description: 'TafuriHR offers a comprehensive HR management platform to automate employee onboarding, payroll, time tracking, and more.',
+              publisher: {
+                '@type': 'Organization',
+                name: 'TafuriHR',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://www.tafurihr.com/TafuriHR_logo.png',
+                },
+              },
+            }),
+          }}
+        />
+      </head>
+      <body className="font-proxima min-h-screen bg-body overflow-x-clip">
         <Header />
-        {children}
+        <main>{children}</main>
         <RequestDemoPopup />
         <Footer />
-        {/* <Toaster /> */}
         <Toaster
           position="top-right"
           expand={true}

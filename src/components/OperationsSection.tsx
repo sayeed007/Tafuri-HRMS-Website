@@ -53,7 +53,7 @@ export default function OperationsSection() {
                                 <div className="relative w-16 h-16">
                                     <Image
                                         src={IconComponent}
-                                        alt={IconComponent}
+                                        alt={`${operation.title} Icon for TafuriHR`}
                                         fill
                                         sizes="64px"
                                         className="object-contain"

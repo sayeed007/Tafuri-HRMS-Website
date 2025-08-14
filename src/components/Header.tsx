@@ -12,6 +12,7 @@ export default function Header() {
                     <a
                         href="mailto:sales@tafurihr.com"
                         className="text-white font-semibold text-base ml-2"
+                        title="Contact TafuriHR Sales Team"
                     >
                         sales@tafurihr.com
                     </a>
