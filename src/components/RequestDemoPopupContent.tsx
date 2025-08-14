@@ -1,3 +1,4 @@
+'use server'
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -51,7 +52,7 @@ const RequestDemoPopupContent: React.FC<RequestDemoPopupContentProps> = ({
           </div>
           <div className="flex-1 relative flex px-10 py-4 items-center justify-center">
             <Image
-              src="/icons/RequestDemoPopup.png"
+              src="/icons/RequestDemoPopup-min.webp"
               alt="Request Demo Popup"
               width={800}
               height={400}
