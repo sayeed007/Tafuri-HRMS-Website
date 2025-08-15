@@ -32,7 +32,7 @@ const operations = [
     { icon: '/icons/RealTimeNotification.png', title: 'Real-time Notifications' },
 
     { icon: '/icons/TransportBenefitManagement.png', title: 'Car/Bike Benefit Management' },
-    { icon: '/icons/RecrutmentManagement.png', title: 'Recruitment Management' },
+    { icon: '/icons/RecruitmentManagement.png', title: 'Recruitment Management' },
     { icon: '/icons/DocumentManagement.png', title: 'Digital Document Management' },
     { icon: '/icons/EmployeeTracking.png', title: 'Employee Tracking' },
     { icon: '/icons/GratuityManagement.png', title: 'Gratuity Management' },

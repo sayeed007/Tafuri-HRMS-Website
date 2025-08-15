@@ -1,8 +1,22 @@
 'use client';
 
+import {
+    answerVariants,
+    containerVariants,
+    defaultViewport,
+    fadeInLeft,
+    fadeInRight,
+    faqItemVariants,
+    hoverScale,
+    iconHover,
+    sectionTitleVariants,
+    sidebarItemVariants,
+    tapScale
+} from '@/lib/animations/variants';
 import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 // Types
 interface FAQ {
@@ -17,9 +31,10 @@ interface FAQSection {
 }
 
 interface FAQPageProps {
-    // You can pass data as props or load from files
     data?: FAQSection[];
 }
+
+
 
 export default function FAQPage({ data }: FAQPageProps) {
     const [activeSection, setActiveSection] = useState<string>('');
@@ -122,13 +137,24 @@ export default function FAQPage({ data }: FAQPageProps) {
     }, [activeSection, isScrolling, data]);
 
     return (
-        <div className="flex flex-col lg:flex-row gap-8 md:h-[calc(100vh-200px)]">
+        <motion.div
+            className="flex flex-col lg:flex-row gap-8 md:h-[calc(100vh-200px)]"
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            viewport={defaultViewport}
+        >
             {/* Left Sidebar - FAQ Sections */}
-            <div className="hidden md:flex lg:w-1/4">
+            <motion.div
+                className="hidden md:flex lg:w-1/4"
+                variants={fadeInLeft}
+            >
                 <nav className="space-y-2 sticky top-0">
-                    {(data || []).map((section) => (
-                        <button
+                    {(data || []).map((section, index) => (
+                        <motion.button
                             key={section.slug}
+                            custom={index}
+                            variants={sidebarItemVariants}
                             onClick={() => handleNavigationClick(section.slug)}
                             className={cn(
                                 "cursor-pointer w-full text-left px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200",
@@ -136,15 +162,20 @@ export default function FAQPage({ data }: FAQPageProps) {
                                     ? "text-primary shadow-sm bg-primary/10"
                                     : "text-gray-700 hover:bg-gray-100 hover:text-black"
                             )}
+                            whileHover={hoverScale}
+                            whileTap={tapScale}
                         >
                             {section.title}
-                        </button>
+                        </motion.button>
                     ))}
                 </nav>
-            </div>
+            </motion.div>
 
             {/* Right Content - All FAQ Questions and Answers with Scroll */}
-            <div className="lg:w-3/4">
+            <motion.div
+                className="lg:w-3/4"
+                variants={fadeInRight}
+            >
                 <div
                     ref={contentRef}
                     className="h-full overflow-y-auto scroll-smooth pr-2"
@@ -152,7 +183,7 @@ export default function FAQPage({ data }: FAQPageProps) {
                 >
                     <div className="space-y-12">
                         {(data || []).map((section) => (
-                            <div
+                            <motion.div
                                 key={section.slug}
                                 ref={(el) => {
                                     if (el) {
@@ -160,67 +191,108 @@ export default function FAQPage({ data }: FAQPageProps) {
                                     }
                                 }}
                                 className="scroll-mt-4"
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-100px" }}
+                                variants={containerVariants}
                             >
                                 {/* Section Title */}
-                                <div className="mb-6">
+                                <motion.div
+                                    className="mb-6"
+                                    variants={sectionTitleVariants}
+                                >
                                     <h2 className="text-3xl font-merriweather font-bold text-black">
                                         {section.title}
                                     </h2>
-                                </div>
+                                </motion.div>
 
                                 {/* FAQ Items for this section */}
-                                <div className="space-y-4">
+                                <motion.div
+                                    className="space-y-4"
+                                    variants={containerVariants}
+                                >
                                     {section.faqs.map((faq, index) => {
                                         const faqId = `${section.slug}-${index}`;
                                         const isExpanded = expandedFAQs.has(faqId);
 
                                         return (
-                                            <div
+                                            <motion.div
                                                 key={index}
+                                                custom={index}
+                                                variants={faqItemVariants}
                                                 className="border-b py-2 border-off-white-5 overflow-hidden"
+                                                whileHover={{ backgroundColor: "rgba(0,0,0,0.02)" }}
+                                                transition={{ duration: 0.2 }}
                                             >
-                                                <div
+                                                <motion.div
                                                     className="w-full py-4 text-left flex items-center justify-between transition-colors duration-200"
+                                                    whileHover={{ x: 4 }}
+                                                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
                                                 >
                                                     <span className="font-medium text-black pr-8">
                                                         {faq.question}
                                                     </span>
 
-                                                    <div
+                                                    <motion.div
                                                         className="cursor-pointer flex-shrink-0"
                                                         onClick={() => toggleFAQ(section.slug, index)}
+                                                        whileHover={iconHover}
+                                                        whileTap={tapScale}
                                                     >
-                                                        <Plus
-                                                            className={cn(
-                                                                "w-5 h-5 text-gray-500 transition-transform duration-200",
-                                                                isExpanded && "rotate-45"
-                                                            )}
-                                                        />
-                                                    </div>
-                                                </div>
+                                                        <motion.div
+                                                            animate={{
+                                                                rotate: isExpanded ? 45 : 0,
+                                                                scale: isExpanded ? 1.1 : 1
+                                                            }}
+                                                            transition={{
+                                                                type: "spring",
+                                                                stiffness: 200,
+                                                                damping: 15
+                                                            }}
+                                                        >
+                                                            <Plus className="w-5 h-5 text-gray-500" />
+                                                        </motion.div>
+                                                    </motion.div>
+                                                </motion.div>
 
-                                                <div
-                                                    className={cn(
-                                                        "overflow-hidden transition-all duration-300 ease-in-out",
-                                                        isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                                                <AnimatePresence mode="wait">
+                                                    {isExpanded && (
+                                                        <motion.div
+                                                            key={faqId}
+                                                            variants={answerVariants}
+                                                            initial="hidden"
+                                                            animate="visible"
+                                                            exit="exit"
+                                                            className="overflow-hidden"
+                                                        >
+                                                            <div className="px-6 pb-4">
+                                                                <motion.div
+                                                                    className="h-px bg-gray-200 mb-4"
+                                                                    initial={{ width: 0 }}
+                                                                    animate={{ width: "100%" }}
+                                                                    transition={{ delay: 0.1, duration: 0.3 }}
+                                                                />
+                                                                <motion.p
+                                                                    className="text-grey-2 leading-relaxed"
+                                                                    initial={{ opacity: 0, y: 10 }}
+                                                                    animate={{ opacity: 1, y: 0 }}
+                                                                    transition={{ delay: 0.2, duration: 0.3 }}
+                                                                >
+                                                                    {faq.answer}
+                                                                </motion.p>
+                                                            </div>
+                                                        </motion.div>
                                                     )}
-                                                >
-                                                    <div className="px-6 pb-4">
-                                                        <div className="h-px bg-gray-200 mb-4"></div>
-                                                        <p className="text-grey-2 leading-relaxed">
-                                                            {faq.answer}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                                </AnimatePresence>
+                                            </motion.div>
                                         );
                                     })}
-                                </div>
-                            </div>
+                                </motion.div>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 }

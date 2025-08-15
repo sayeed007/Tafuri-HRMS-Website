@@ -105,6 +105,157 @@ export const fadeInRight: Variants = {
     }
 }
 
+export const fadeInUpHeroSection: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            stiffness: 80,
+            damping: 20,
+            duration: 0.3
+        }
+    }
+}
+
+// Custom backdrop variant for smooth overlay animation
+export const backdropVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { duration: 0.3, ease: "easeOut" }
+    },
+    exit: {
+        opacity: 0,
+        transition: { duration: 0.2 }
+    }
+};
+
+// Enhanced popup container variant with smooth entry
+export const popupContainerVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        scale: 0.8,
+        y: 50
+    },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            stiffness: 120,
+            damping: 20,
+            staggerChildren: 0.1,
+            delayChildren: 0.2
+        }
+    },
+    exit: {
+        opacity: 0,
+        scale: 0.8,
+        y: 50,
+        transition: { duration: 0.2 }
+    }
+};
+
+// Custom variant for the header section
+export const headerContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1
+        }
+    }
+};
+
+export const contactCardVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.95, y: 20 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 20
+        }
+    }
+};
+
+
+// Custom variants for FAQ-specific animations
+export const sidebarItemVariants: Variants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (index: number) => ({
+        opacity: 1,
+        x: 0,
+        transition: {
+            delay: index * 0.1,
+            type: "spring",
+            stiffness: 100,
+            damping: 20
+        }
+    })
+};
+
+export const faqItemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: index * 0.05,
+            type: "spring",
+            stiffness: 100,
+            damping: 20
+        }
+    })
+};
+
+export const answerVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        height: 0,
+        y: -10
+    },
+    visible: {
+        opacity: 1,
+        height: "auto",
+        y: 0,
+        transition: {
+            duration: 0.3,
+            ease: "easeOut",
+            opacity: { delay: 0.1 }
+        }
+    },
+    exit: {
+        opacity: 0,
+        height: 0,
+        y: -10,
+        transition: {
+            duration: 0.2,
+            ease: "easeIn"
+        }
+    }
+};
+
+export const sectionTitleVariants: Variants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 20
+        }
+    }
+};
+
+
 // =============================================================================
 // SCALE ANIMATIONS
 // =============================================================================

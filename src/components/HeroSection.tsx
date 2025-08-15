@@ -3,8 +3,6 @@
 
 import {
     createFadeInWithDelay,
-    defaultViewport,
-    fadeInUp,
     hoverScale,
     scaleIn,
     tapScale
@@ -21,49 +19,44 @@ export default function HeroSection() {
             <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20'>
                 <div className="flex flex-col items-center justify-center py-8">
                     {/* Main Heading with staggered word animation */}
-                    <motion.h1
-                        className="text-4xl md:text-5xl lg:text-6xl font-merriweather font-bold text-black text-center leading-tight mb-6"
-                        variants={fadeInUp}
+
+
+                    <motion.div
+                        className="text-5xl font-merriweather font-bold text-black text-center mb-3"
+                        variants={createFadeInWithDelay(0.1)}
                         initial="hidden"
                         animate="visible"
-                        viewport={defaultViewport}
                     >
-                        <motion.span
-                            variants={createFadeInWithDelay(0.1)}
-                            initial="hidden"
-                            animate="visible"
+                        Transform your business
+                    </motion.div>
+                    <motion.div
+                        className="text-5xl font-merriweather font-bold text-black text-center mb-3"
+                        variants={createFadeInWithDelay(0.2)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        with AI-powered
+                    </motion.div>
+                    <motion.div
+                        className="text-5xl font-merriweather font-bold text-black text-center mb-3"
+                        variants={createFadeInWithDelay(0.3)}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        HR Management Software
+                        <span
+                            className="text-5xl font-merriweather font-bold text-center mb-3 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
+
                         >
-                            Transform your business
-                        </motion.span>
-                        <br />
-                        <motion.span
-                            variants={createFadeInWithDelay(0.3)}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            with AI-powered
-                        </motion.span>
-                        <br />
-                        <motion.span
-                            variants={createFadeInWithDelay(0.5)}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            HR Management Software{' '}
-                        </motion.span>
-                        <motion.span
-                            className="bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
-                            variants={createFadeInWithDelay(0.7)}
-                            initial="hidden"
-                            animate="visible"
-                        >
-                            #TAFURIHR
-                        </motion.span>
-                    </motion.h1>
+                            {' '}#TAFURIHR
+                        </span>
+                    </motion.div>
+
+                    {/* </motion.h1> */}
 
                     {/* Subtitle */}
                     <motion.p
-                        className="text-lg md:text-xl text-grey-2 mb-4"
+                        className="text-lg md:text-xl text-grey-2 my-6 mb-4"
                         variants={createFadeInWithDelay(0.9)}
                         initial="hidden"
                         animate="visible"

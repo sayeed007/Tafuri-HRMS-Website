@@ -88,6 +88,18 @@ export default function RootLayout({
       className={`${poppins.variable} ${merriweather.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
+        <link rel="preload" as="image" href="/icons/RequestDemoPopupLight-min.webp" type="image/webp" />
+        <link rel="preload" as="image" href="/icons/RequestDemoPopup.png" type="image/png" />
+
+        {/* <link rel="preload" href="/fonts/proxima-nova/proxima-nova-regular.woff2" as="font" type="font/woff2" />
+        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-regular.woff" as="font" type="font/woff2" />
+        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-semibold.woff2" as="font" type="font/woff2" />
+        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-semibold.woff" as="font" type="font/woff2" />
+        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-bold.woff2" as="font" type="font/woff2" />
+        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-bold.woff" as="font" type="font/woff2" /> */}
+
+
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
