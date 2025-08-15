@@ -29,7 +29,7 @@ export default function CoreHRSection() {
             className="w-full"
             aria-labelledby="data-section"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-5'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-5'>
                 <div className="grid lg:grid-cols-2 md:gap-16 items-center">
                     {/* Left Content */}
                     <motion.div

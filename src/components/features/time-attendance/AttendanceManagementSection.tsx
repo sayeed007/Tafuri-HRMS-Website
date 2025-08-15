@@ -1,7 +1,17 @@
+"use client"
 import { Card, CardContent } from "@/components/ui/card"
+import { motion } from "framer-motion"
+import {
+    containerVariants,
+    headerVariants,
+    cardVariants,
+    fadeInUp,
+    defaultViewport,
+    hoverLift,
+    tapScale
+} from "@/lib/animations/variants"
 
 export default function AttendanceManagementSection() {
-
     const benefits = [
         {
             title: "Increased Accuracy",
@@ -30,35 +40,59 @@ export default function AttendanceManagementSection() {
     ]
 
     return (
-        <section
-            className="py-10 px-5 md:px-20"
+        <motion.section
+            className="container mx-auto py-10 px-5 md:px-20"
             aria-labelledby="attendance-management-section"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={containerVariants}
         >
-            <div className="flex flex-wrap justify-between mb-6 md:mb-12">
-                <h2 className="w-full md:w-1/2 text-3xl lg:text-4xl font-merriweather font-bold text-black mb-4">
+            <motion.div
+                className="flex flex-wrap justify-between mb-6 md:mb-12"
+                variants={containerVariants}
+            >
+                <motion.h2
+                    className="w-full md:w-1/2 text-3xl lg:text-4xl font-merriweather font-bold text-black mb-4"
+                    variants={headerVariants}
+                >
                     Attendance Management
                     <br />
                     Made Simple
-                </h2>
-                <div className="w-full md:w-1/2">
+                </motion.h2>
+                <motion.div
+                    className="w-full md:w-1/2"
+                    variants={fadeInUp}
+                >
                     <p className="text-base text-grey-2 max-w-3xl">
                         Transform the way you manage attendance—simplify the process, gain insights, and
                         empower your team. Let our Attendance Management system be your solution for a
                         more efficient, compliant, and productive workspace.
                     </p>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-8">
+            <motion.div
+                className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-8"
+                variants={containerVariants}
+            >
                 {benefits.map((benefit, index) => (
-                    <Card key={index} className="p-6 border-0 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out">
-                        <CardContent className="space-y-3 p-0">
-                            <h3 className="text-xl font-bold text-black">{benefit.title}</h3>
-                            <p className="text-base text-grey-2 leading-relaxed">{benefit.description}</p>
-                        </CardContent>
-                    </Card>
+                    <motion.div
+                        key={index}
+                        variants={cardVariants}
+                        whileHover={hoverLift}
+                        whileTap={tapScale}
+                        custom={index}
+                    >
+                        <Card className="p-6 border-0 shadow-sm hover:shadow-md transition-all duration-300 ease-in-out">
+                            <CardContent className="space-y-3 p-0">
+                                <h3 className="text-xl font-bold text-black">{benefit.title}</h3>
+                                <p className="text-base text-grey-2 leading-relaxed">{benefit.description}</p>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
                 ))}
-            </div>
-        </section>
+            </motion.div>
+        </motion.section>
     )
 }

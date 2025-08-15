@@ -20,7 +20,7 @@ export default function MobileAppSection() {
             className="w-full"
             aria-labelledby="mobile-app-heading"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
                 <motion.div
                     className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 md:gap-16 items-center"
                     variants={containerVariants}

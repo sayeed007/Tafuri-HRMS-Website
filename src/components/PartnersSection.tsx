@@ -25,7 +25,7 @@ export default function PartnersSection() {
             className="w-full bg-white overflow-hidden"
             aria-labelledby="partners-section"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
                 <div className="text-center mb-6">
                     <h2 className="text-4xl md:text-4xl font-merriweather font-bold text-black mb-4">
                         Key partners in our journey

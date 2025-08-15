@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
             className="w-full bg-white"
             aria-labelledby="testimonials-heading"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
                 <motion.div
                     className="flex flex-col lg:flex-row gap-8"
                     variants={containerVariants}

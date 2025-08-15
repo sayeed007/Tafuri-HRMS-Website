@@ -16,7 +16,7 @@ export default function AnimatedKioskCard() {
             className="w-full"
             aria-labelledby="animated-kiosk"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
                 <motion.div
                     className="h-[330px] rounded-4xl bg-[url('/icons/KioskCardBG.png')] bg-cover bg-center bg-no-repeat"
                     variants={scaleIn}

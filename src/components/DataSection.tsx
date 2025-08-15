@@ -27,7 +27,7 @@ export default function DataSection() {
             className="w-full"
             aria-labelledby="data-section"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-5'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-5'>
                 <motion.div
                     className="grid lg:grid-cols-2 gap-10 items-center"
                     variants={containerVariants}

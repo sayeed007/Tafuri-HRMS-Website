@@ -1,5 +1,5 @@
-// components/DemoForm.tsx
-'use client'
+"use client"
+// src\components\request - demo\DemoForm.tsx
 
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -9,8 +9,15 @@ import { useState } from 'react'
 import PhoneInput from 'react-phone-number-input'
 import 'react-phone-number-input/style.css'
 import { toast } from 'sonner'
-
-
+import { motion, AnimatePresence } from "framer-motion"
+import {
+    containerVariants,
+    fadeInUp,
+    buttonVariants,
+    defaultViewport,
+    hoverScale,
+    tapScale
+} from "@/lib/animations/variants"
 
 interface FormErrors {
     name?: string
@@ -32,7 +39,6 @@ const initialFormData = {
 
 export default function DemoForm() {
     const [formData, setFormData] = useState({ ...initialFormData })
-
     const [errors, setErrors] = useState<FormErrors>({})
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -177,7 +183,7 @@ export default function DemoForm() {
             console.error('Error submitting form:', error)
 
             // Beautiful error toast
-            toast.error("❌ Submission Failed", {
+            toast.error("⌐ Submission Failed", {
                 description: error instanceof Error
                     ? error.message
                     : "Something went wrong. Please check your connection and try again.",
@@ -198,12 +204,21 @@ export default function DemoForm() {
         }
     }
 
-
     return (
         <>
-            <form onSubmit={handleSubmit} className="w-full lg:w-1/2">
+            <motion.form
+                onSubmit={handleSubmit}
+                className="w-full lg:w-1/2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={defaultViewport}
+                variants={containerVariants}
+            >
                 {/* Name */}
-                <div className="mb-6">
+                <motion.div
+                    className="mb-6"
+                    variants={fadeInUp}
+                >
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-2">
                         Name <span className='text-red-500'>*</span>
                     </label>
@@ -215,7 +230,7 @@ export default function DemoForm() {
                             height={20}
                             className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
                         />
-                        <input
+                        <motion.input
                             type="text"
                             name="name"
                             value={formData.name}
@@ -225,13 +240,30 @@ export default function DemoForm() {
                                 "w-full pl-12 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all",
                                 errors.name ? "border-red-500" : "border-gray-300"
                             )}
+                            whileFocus={{ scale: 1.02 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         />
                     </div>
-                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
-                </div>
+                    <AnimatePresence>
+                        {errors.name && (
+                            <motion.p
+                                className="text-red-500 text-sm mt-1"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                {errors.name}
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
 
                 {/* Company Name */}
-                <div className="mb-6">
+                <motion.div
+                    className="mb-6"
+                    variants={fadeInUp}
+                >
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-2">
                         Company name <span className='text-red-500'>*</span>
                     </label>
@@ -243,7 +275,7 @@ export default function DemoForm() {
                             height={20}
                             className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
                         />
-                        <input
+                        <motion.input
                             type="text"
                             name="companyName"
                             value={formData.companyName}
@@ -253,13 +285,30 @@ export default function DemoForm() {
                                 "w-full pl-12 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all",
                                 errors.companyName ? "border-red-500" : "border-gray-300"
                             )}
+                            whileFocus={{ scale: 1.02 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         />
                     </div>
-                    {errors.companyName && <p className="text-red-500 text-sm mt-1">{errors.companyName}</p>}
-                </div>
+                    <AnimatePresence>
+                        {errors.companyName && (
+                            <motion.p
+                                className="text-red-500 text-sm mt-1"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                {errors.companyName}
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
 
                 {/* Business Email */}
-                <div className="mb-6">
+                <motion.div
+                    className="mb-6"
+                    variants={fadeInUp}
+                >
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-2">
                         Business email
                     </label>
@@ -271,7 +320,7 @@ export default function DemoForm() {
                             height={20}
                             className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400"
                         />
-                        <input
+                        <motion.input
                             type="email"
                             name="email"
                             value={formData.email}
@@ -281,17 +330,38 @@ export default function DemoForm() {
                                 "w-full pl-12 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all",
                                 errors.email ? "border-red-500" : "border-gray-300"
                             )}
+                            whileFocus={{ scale: 1.02 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         />
                     </div>
-                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                </div>
+                    <AnimatePresence>
+                        {errors.email && (
+                            <motion.p
+                                className="text-red-500 text-sm mt-1"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                {errors.email}
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
 
                 {/* Phone Number */}
-                <div className="mb-6">
+                <motion.div
+                    className="mb-6"
+                    variants={fadeInUp}
+                >
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-2">
                         Phone no <span className='text-red-500'>*</span>
                     </label>
-                    <div className="relative border-1 border-[#d1d5db] rounded-lg">
+                    <motion.div
+                        className="relative border-1 border-[#d1d5db] rounded-lg"
+                        whileFocus={{ scale: 1.02 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                    >
                         <PhoneInput
                             international
                             defaultCountry="BD"
@@ -306,12 +376,27 @@ export default function DemoForm() {
                                 '--PhoneInputCountrySelectArrow-color': '#6b7280',
                             } as React.CSSProperties}
                         />
-                    </div>
-                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-                </div>
+                    </motion.div>
+                    <AnimatePresence>
+                        {errors.phone && (
+                            <motion.p
+                                className="text-red-500 text-sm mt-1"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                {errors.phone}
+                            </motion.p>
+                        )}
+                    </AnimatePresence>
+                </motion.div>
 
                 {/* Message */}
-                <div className="mb-6">
+                <motion.div
+                    className="mb-6"
+                    variants={fadeInUp}
+                >
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-2">
                         Message
                     </label>
@@ -323,25 +408,41 @@ export default function DemoForm() {
                             height={20}
                             className="absolute left-3 top-3 h-5 w-5 text-gray-400"
                         />
-                        <textarea
+                        <motion.textarea
                             name="message"
                             value={formData.message}
                             onChange={handleInputChange}
                             placeholder="Tell us about your requirements"
                             rows={4}
                             className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
+                            whileFocus={{ scale: 1.02 }}
+                            transition={{ type: "spring", stiffness: 300 }}
                         />
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Employee Count */}
-                <div className="mb-8">
+                <motion.div
+                    className="mb-8"
+                    variants={fadeInUp}
+                >
                     <label className="block text-grey-2 text-base font-poppins font-semibold mb-4">
                         How many employee do you have?
                     </label>
-                    <div className="grid grid-cols-3 md:grid-cols-5 gap-4">
-                        {['1-50', '51-100', '101-200', '201-500', '500+'].map((range) => (
-                            <label key={range} className="flex items-center cursor-pointer">
+                    <motion.div
+                        className="grid grid-cols-3 md:grid-cols-5 gap-4"
+                        variants={containerVariants}
+                    >
+                        {['1-50', '51-100', '101-200', '201-500', '500+'].map((range, index) => (
+                            <motion.label
+                                key={range}
+                                className="flex items-center cursor-pointer"
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.1 + index * 0.05 }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
                                 <input
                                     type="radio"
                                     name="employeeCount"
@@ -356,30 +457,46 @@ export default function DemoForm() {
                                 )}>
                                     {range}
                                 </span>
-                            </label>
+                            </motion.label>
                         ))}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Submit Button */}
-                <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="cursor-pointer w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-6 px-6 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2"
+                <motion.div
+                    variants={buttonVariants}
+                    whileHover={hoverScale}
+                    whileTap={tapScale}
                 >
-                    <span className='text-base font-semibold'>
-                        {isSubmitting ? 'Submitting...' : 'Submit'}
-                    </span>
-                    {!isSubmitting && (
-                        <Image
-                            src={'/icons/ArrowRight.png'}
-                            alt={'ArrowRight'}
-                            width={20}
-                            height={20}
-                        />
-                    )}
-                </Button>
-            </form>
+                    <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="cursor-pointer w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white py-6 px-6 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2"
+                    >
+                        <motion.span
+                            className='text-base font-semibold'
+                            animate={isSubmitting ? { opacity: [1, 0.5, 1] } : { opacity: 1 }}
+                            transition={isSubmitting ? { duration: 1, repeat: Infinity } : {}}
+                        >
+                            {isSubmitting ? 'Submitting...' : 'Submit'}
+                        </motion.span>
+                        {!isSubmitting && (
+                            <motion.div
+                                initial={{ x: 0 }}
+                                whileHover={{ x: 5 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
+                                <Image
+                                    src={'/icons/ArrowRight.png'}
+                                    alt={'ArrowRight'}
+                                    width={20}
+                                    height={20}
+                                />
+                            </motion.div>
+                        )}
+                    </Button>
+                </motion.div>
+            </motion.form>
 
             <style jsx global>
                 {`

@@ -41,7 +41,7 @@ export default function FeaturesSection() {
             className="px-5 md:px-20 py-10"
             aria-labelledby="feature-section"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
                 <motion.div
                     className="flex flex-wrap justify-evenly gap-8 lg:gap-12"
                     variants={containerVariants}

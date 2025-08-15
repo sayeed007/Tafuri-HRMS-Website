@@ -1,6 +1,6 @@
-// pages/request-demo/page.tsx or components/RequestDemoPage.tsx
-import ContactSection from '@/components/ContactSection'
-import DemoSection from '@/components/DemoSection'
+// src\app\request-demo\page.tsx
+import ContactSection from '@/components/request-demo/ContactSection'
+import DemoSection from '@/components/request-demo/DemoSection'
 
 export default function RequestDemoPage() {
     return (

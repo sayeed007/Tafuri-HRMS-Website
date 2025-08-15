@@ -1,10 +1,19 @@
 "use client"
-import { cn } from "@/lib/utils";
+import {
+    answerVariants,
+    containerVariants,
+    defaultViewport,
+    fadeInLeft,
+    fadeInRight,
+    headerVariants,
+    hoverScale,
+    tapScale
+} from "@/lib/animations/variants";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
 export default function SmartAttendanceSection() {
-
     const [expandedItems, setExpandedItems] = useState<Set<number>>(new Set([0])); // First item expanded by default
 
     const toggleItem = (index: number) => {
@@ -37,69 +46,112 @@ export default function SmartAttendanceSection() {
     ];
 
     return (
-        <section
-            className="py-10 px-5 md:px-20"
+        <motion.section
+            className="container mx-auto py-10 px-5 md:px-20"
             aria-labelledby="smart-attendance-section"
+            initial="hidden"
+            whileInView="visible"
+            viewport={defaultViewport}
+            variants={containerVariants}
         >
             <div className="grid lg:grid-cols-2 md:gap-12 items-center">
-                <div className="space-y-8">
-                    <div className="space-y-4">
-                        <h2 className="text-3xl lg:text-4xl font-merriweather font-bold text-black">
+                <motion.div
+                    className="space-y-8"
+                    variants={fadeInLeft}
+                >
+                    <motion.div
+                        className="space-y-4"
+                        variants={containerVariants}
+                    >
+                        <motion.h2
+                            className="text-3xl lg:text-4xl font-merriweather font-bold text-black"
+                            variants={headerVariants}
+                        >
                             Smart Attendance Tracking for a More Efficient Workforce.
-                        </h2>
-                    </div>
+                        </motion.h2>
+                    </motion.div>
 
-                    <div className="space-y-6">
+                    <motion.div
+                        className="space-y-6"
+                        variants={containerVariants}
+                    >
                         {accordionItems.map((item, index) => {
                             const isExpanded = expandedItems.has(index);
                             return (
-                                <div key={index} className="border-b border-border-color overflow-hidden">
+                                <motion.div
+                                    key={index}
+                                    className="border-b border-border-color overflow-hidden"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 + index * 0.1 }}
+                                >
                                     <div className="w-full text-left transition-colors duration-200">
-
                                         {/* HEADER */}
-                                        <button
+                                        <motion.button
                                             className="flex items-center justify-between w-full p-4 hover:shadow-md transition-shadow"
+                                            whileHover={hoverScale}
+                                            whileTap={tapScale}
                                         >
                                             <span className="font-bold text-black">{item.title}</span>
 
-                                            <Image
-                                                src={isExpanded ? '/icons/ArrowUpLight.png' : "/icons/ArrowDownLight.png"}
-                                                alt={'toggleItem'}
-                                                width={20}
-                                                height={20}
-                                                className={"w-5 h-5 cursor-pointer transition-transform duration-200"}
+                                            <motion.div
+                                                animate={{ rotate: isExpanded ? 180 : 0 }}
+                                                transition={{ duration: 0.3 }}
                                                 onClick={() => toggleItem(index)}
-                                            />
-                                        </button>
+                                            >
+                                                <Image
+                                                    src="/icons/ArrowDownLight.png"
+                                                    alt={'toggleItem'}
+                                                    width={20}
+                                                    height={20}
+                                                    className="w-5 h-5 cursor-pointer"
+                                                />
+                                            </motion.div>
+                                        </motion.button>
 
                                         {/* CONTENT */}
-                                        <div className={cn(
-                                            "overflow-hidden transition-all duration-300 ease-in-out",
-                                            isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                                        )}>
-                                            <div className="pl-4 pt-4 pb-2">
-                                                <p className="text-grey-4 leading-relaxed">
-                                                    {item.content}
-                                                </p>
-                                            </div>
-                                        </div>
+                                        <AnimatePresence initial={false}>
+                                            {isExpanded && (
+                                                <motion.div
+                                                    variants={answerVariants}
+                                                    initial="hidden"
+                                                    animate="visible"
+                                                    exit="exit"
+                                                    className="overflow-hidden"
+                                                >
+                                                    <div className="pl-4 pt-4 pb-2">
+                                                        <p className="text-grey-4 leading-relaxed">
+                                                            {item.content}
+                                                        </p>
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
                                     </div>
-                                </div>
+                                </motion.div>
                             );
                         })}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                <div className="flex justify-end p-6">
-                    <Image
-                        src={'/features/SmartAttendance.png'}
-                        alt={'SmartAttendance'}
-                        width={1200}
-                        height={600}
-                        className="w-[550px] h-[430px]"
-                    />
-                </div>
+                <motion.div
+                    className="flex justify-end p-6"
+                    variants={fadeInRight}
+                >
+                    <motion.div
+                        whileHover={{ scale: 1.02, rotateY: 5 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                        <Image
+                            src={'/features/SmartAttendance.png'}
+                            alt={'SmartAttendance'}
+                            width={1200}
+                            height={600}
+                            className="w-[550px] h-[430px]"
+                        />
+                    </motion.div>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     )
 }

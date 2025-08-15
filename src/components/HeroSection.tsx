@@ -16,7 +16,7 @@ export default function HeroSection() {
             className="relative bg-hero-gradient overflow-hidden"
             aria-labelledby="hero-section"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20'>
+            <div className='container  w-full mx-auto px-5 md:px-20'>
                 <div className="flex flex-col items-center justify-center py-8">
                     {/* Main Heading with staggered word animation */}
 

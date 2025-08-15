@@ -28,7 +28,7 @@ export default function MadeForAllSection() {
             className="w-full"
             aria-labelledby="made-for-all-section"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-5'>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-5'>
                 <div className="grid lg:grid-cols-2 gap-6 md:gap-16 items-center">
                     {/* Left Content - Mobile/Video */}
                     <motion.div

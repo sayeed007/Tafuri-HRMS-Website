@@ -7,7 +7,7 @@ export default function Header() {
         <header className="w-full shadow-sm sticky top-0 z-500">
             {/* Contacts */}
             <div className="h-[30px] bg-primary flex items-center w-full">
-                <div className='max-w-[1528px] w-full mx-auto flex items-center justify-between text-white font-semibold text-sm px-5 md:px-20'>
+                <div className='container  w-full mx-auto flex items-center justify-between text-white font-semibold text-sm px-5 md:px-20'>
                     <div className="flex gap-2 items-center">
                         <Image src={'/icons/Mail.png'} alt={'Mail'} width={20} height={20} />
                         <a
@@ -39,7 +39,7 @@ export default function Header() {
 
             {/* Navigation */}
             <div className="h-16 bg-white flex items-center w-full">
-                <div className='max-w-[1528px] w-full mx-auto bg-white h-16'>
+                <div className='container  w-full mx-auto bg-white h-16'>
                     <div className="w-full px-5 md:px-20 flex justify-between items-center h-16 bg-white">
                         <a href={'/'}>
                             <div className="flex items-center space-x-2">

@@ -76,7 +76,7 @@ export default function OperationsSection() {
             className="bg-operation w-full"
             aria-labelledby="operations-section"
         >
-            <div className='max-w-[1528px] w-full mx-auto px-5 md:px-20 py-10 '>
+            <div className='container  w-full mx-auto px-5 md:px-20 py-10 '>
                 <div className="mx-auto sm:px-6 lg:px-8">
                     {/* Section Header */}
                     {isHydrated ? (
