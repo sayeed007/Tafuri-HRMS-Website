@@ -120,6 +120,13 @@ export default function HeroSection() {
                         >
                             <source src="/videos/Tafurihrms_promo.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
+                            <track
+                                kind="captions"
+                                src="/videos/Tafurihrms_promo.vtt"
+                                srcLang="en"
+                                label="English Captions"
+                                default
+                            />
                         </video>
                     </motion.div>
                 </div>

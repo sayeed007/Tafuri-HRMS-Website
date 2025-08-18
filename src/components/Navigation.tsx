@@ -43,7 +43,7 @@ export default function Navigation() {
                             className={`flex items-center px-3 py-2 text-lg font-semibold transition-colors 
                                 ${(currentPath === item.href) || (item.name === 'Features' && currentPath?.includes(item.href))
                                     ? 'text-primary font-bold'
-                                    : 'text-grey-1 hover:text-black'
+                                    : 'text-black hover:text-primary'
                                 }`}
                         >
                             {item.name}

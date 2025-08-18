@@ -4,9 +4,7 @@ import { RequestDemoPopupImageURL } from '@/data/imageData/RequestDemoPopup';
 import {
     containerVariants,
     fadeInLeft,
-    fadeInRight,
     hoverLift,
-    hoverScale,
     iconHover,
     popupContainerVariants,
     scaleIn,
@@ -111,6 +109,14 @@ const RequestDemoPopup: React.FC = () => {
                     animate="visible"
                     exit="exit"
                 >
+                    <motion.h2
+                        id="popup-title"
+                        className="sr-only" // Visually hidden but accessible to screen readers
+                        variants={fadeInLeft}
+                    >
+                        Tafuri HR Demo Request Popup
+                    </motion.h2>
+
                     <motion.button
                         onClick={handleClose}
                         className="cursor-pointer absolute top-6 right-6 z-10 p-2 hover:bg-gray-100 rounded-full transition-colors group"

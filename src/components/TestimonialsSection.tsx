@@ -13,7 +13,7 @@ import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
-import TestimonialData from '../data/testimonials/testimonials.json';
+import TestimonialData from '../data/testimonials/testimonials.json'
 
 
 export default function TestimonialsSection() {
@@ -75,7 +75,11 @@ export default function TestimonialsSection() {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.5 }}
                             >
-                                <article className="flex flex-col justify-between rounded-2xl px-4 md:px-8 py-6 md:py-12 h-full shadow-lg transition-all duration-500 bg-[url('/icons/TestimonialsGreenBG.png')] bg-cover bg-center bg-no-repeat text-white">
+                                <motion.article
+                                    className="flex flex-col justify-between rounded-2xl px-4 md:px-8 py-6 md:py-12 h-full shadow-lg transition-all duration-500 bg-[url('/icons/TestimonialsGreenBG.png')] bg-cover bg-center bg-no-repeat text-white"
+                                    whileHover={hoverLift}
+                                    whileTap={tapScale}
+                                >
                                     {/* Testimonial Content */}
                                     <blockquote className="text-xl font-semibold leading-relaxed text-white">
                                         {`"${current.content}"`}
@@ -107,7 +111,7 @@ export default function TestimonialsSection() {
                                             </div>
                                         </div>
                                     </footer>
-                                </article>
+                                </motion.article>
                             </motion.div>
 
                             {/* Next Testimonial Preview - 30% */}
@@ -116,9 +120,9 @@ export default function TestimonialsSection() {
                                 key={`next-${next.id}`}
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.5, delay: 0.1 }}
+                                transition={{ duration: 0.5 }}
                             >
-                                <motion.article
+                                <motion.button
                                     className="flex flex-col justify-between rounded-2xl px-4 md:px-8 py-6 md:py-12 h-full shadow-lg transition-all duration-500 cursor-pointer bg-[url('/icons/TestimonialsLightBG.png')] bg-cover bg-center bg-no-repeat text-black"
                                     onClick={nextTestimonial}
                                     whileHover={hoverLift}
@@ -161,7 +165,7 @@ export default function TestimonialsSection() {
                                             </p>
                                         </div>
                                     </footer>
-                                </motion.article>
+                                </motion.button>
                             </motion.div>
                         </div>
 

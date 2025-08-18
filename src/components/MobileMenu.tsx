@@ -92,7 +92,7 @@ export default function MobileMenu({ navItems, currentPath }: MobileMenuProps) {
                                         onClick={toggleFeaturesMenu}
                                         className={`w-full flex items-center justify-between px-3 py-3 text-base font-medium transition-colors rounded-lg hover:bg-gray-50 ${currentPath === item.href
                                             ? 'text-primary font-semibold bg-gray-50'
-                                            : 'text-grey-2 hover:text-black'
+                                            : 'text-black hover:text-primary'
                                             }`}
                                     >
                                         <span>{item.name}</span>
