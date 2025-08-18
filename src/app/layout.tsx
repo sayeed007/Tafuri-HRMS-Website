@@ -2,6 +2,7 @@ import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import RequestDemoPopup from '@/components/RequestDemoPopup';
 import { Toaster } from '@/components/ui/sonner';
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Merriweather, Poppins } from 'next/font/google';
 import './globals.css';
@@ -142,28 +143,32 @@ export default function RootLayout({
       </head>
       <body className="font-proxima min-h-screen bg-body overflow-x-clip">
         <Header />
-        <main>{children}</main>
-        <RequestDemoPopup />
-        <Footer />
-        <Toaster
-          position="top-right"
-          expand={true}
-          richColors={true}
-          closeButton={true}
-          toastOptions={{
-            style: {
-              background: 'white',
-              border: '1px solid #e5e7eb',
-              borderRadius: '12px',
-              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-              padding: '16px',
-              fontSize: '14px',
-              fontWeight: '500',
-            },
-            className: 'sonner-toast',
-            duration: 3000,
-          }}
-        />
+        <main>
+          {children}
+          <Footer />
+          <RequestDemoPopup />
+          <Toaster
+            position="top-right"
+            expand={true}
+            richColors={true}
+            closeButton={true}
+            toastOptions={{
+              style: {
+                background: 'white',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                padding: '16px',
+                fontSize: '14px',
+                fontWeight: '500',
+              },
+              className: 'sonner-toast',
+              duration: 3000,
+            }}
+          />
+          <SpeedInsights />
+        </main>
+
       </body>
     </html>
   );
