@@ -54,7 +54,7 @@ export default function Navigation() {
                                         alt={'ArrowDown'}
                                         width={10}
                                         height={5}
-                                        className="w-auto"
+                                    // className="w-[10px] h-[5px]"
                                     />
                                 </span>
                             )}

@@ -1,11 +1,14 @@
-import { Poppins, Merriweather } from 'next/font/google';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import RequestDemoPopup from '@/components/RequestDemoPopup';
-import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/sonner';
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono, Merriweather, Poppins } from 'next/font/google';
+import './globals.css';
+
+// PRE Import for better LCP performance
+import { RequestDemoPopupImageURL } from '@/data/imageData/RequestDemoPopup';
+console.info(RequestDemoPopupImageURL); // for not showing warning
 
 // Google Fonts
 const poppins = Poppins({
@@ -88,16 +91,9 @@ export default function RootLayout({
       className={`${poppins.variable} ${merriweather.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
+        {/* Preload the LCP image */}
         <link rel="preload" as="image" href="/icons/RequestDemoPopupLight-min.webp" type="image/webp" />
-        <link rel="preload" as="image" href="/icons/RequestDemoPopup.png" type="image/png" />
-
-        {/* <link rel="preload" href="/fonts/proxima-nova/proxima-nova-regular.woff2" as="font" type="font/woff2" />
-        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-regular.woff" as="font" type="font/woff2" />
-        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-semibold.woff2" as="font" type="font/woff2" />
-        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-semibold.woff" as="font" type="font/woff2" />
-        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-bold.woff2" as="font" type="font/woff2" />
-        <link rel="preload" href="/fonts/proxima-nova/proxima-nova-bold.woff" as="font" type="font/woff2" /> */}
-
+        <link rel="preload" as="image" href="/icons/TafuriHR-Logo.png" type="image/png" />
 
 
         <script

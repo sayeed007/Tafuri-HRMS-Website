@@ -1,12 +1,26 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import { RequestDemoPopupImageURL } from '@/data/imageData/RequestDemoPopup';
+import {
+    backdropVariants,
+    containerVariants,
+    fadeInLeft,
+    fadeInRight,
+    hoverLift,
+    hoverScale,
+    iconHover,
+    popupContainerVariants,
+    scaleIn,
+    tapScale
+} from '@/lib/animations/variants';
+import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import React, { useEffect, useRef, useState } from 'react';
 
 const LOCAL_STORAGE_KEY = 'hr-popup-seen';
-const POPUP_DELAY_MS = 1000;
+const POPUP_DELAY_MS = 500;
 
 const RequestDemoPopup: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -18,13 +32,15 @@ const RequestDemoPopup: React.FC = () => {
         try {
             const hasSeenPopup = localStorage.getItem(LOCAL_STORAGE_KEY);
             if (!hasSeenPopup) {
-                const timer = setTimeout(() => {
-                    setIsOpen(true);
-                    setIsLoaded(true);
-                    // Move focus to the first button when popup opens
+                // const timer = setTimeout(() => {
+                setIsOpen(true);
+                setIsLoaded(true);
+                // Move focus to the first button when popup opens
+                setTimeout(() => {
                     firstFocusableRef.current?.focus();
-                }, POPUP_DELAY_MS);
-                return () => clearTimeout(timer);
+                }, 300); // Delay focus to allow animation to complete
+                // }, POPUP_DELAY_MS);
+                // return () => clearTimeout(timer);
             } else {
                 setIsLoaded(true);
             }
@@ -88,65 +104,108 @@ const RequestDemoPopup: React.FC = () => {
     }
 
     return (
-        <>
+        <AnimatePresence mode="wait">
             {isOpen && (
-                <div
-                    className="fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 z-50 animate-in fade-in duration-100"
+                <motion.div
+                    className="fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 z-50"
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby="popup-title"
                     ref={dialogRef}
+                    variants={backdropVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
                 >
-                    <div className="bg-footer-gradient rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-100">
-                        <button
+                    <motion.div
+                        className="bg-footer-gradient rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+                        variants={popupContainerVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                    >
+                        <motion.button
                             onClick={handleClose}
                             className="cursor-pointer absolute top-6 right-6 z-10 p-2 hover:bg-gray-100 rounded-full transition-colors group"
                             aria-label="Close popup"
+                            variants={scaleIn}
+                            whileHover={iconHover}
+                            whileTap={tapScale}
                         >
                             <X className="w-6 h-6 text-grey-2 group-hover:text-gray-800" />
-                        </button>
+                        </motion.button>
 
                         <div className="flex flex-col lg:flex-row min-h-[500px]">
-                            <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
+                            <motion.div
+                                className="flex-1 p-8 lg:p-12 flex flex-col justify-center"
+                                variants={containerVariants}
+                                initial="hidden"
+                                animate="visible"
+                            >
                                 <div className="max-w-lg">
-                                    <h1
+                                    <motion.h1
                                         id="popup-title"
                                         className="text-4xl lg:text-5xl font-bold font-merriweather text-black leading-tight mb-6"
+                                        variants={fadeInLeft}
                                     >
                                         Easy-to-Track HR Solution That Works the Way You Do
-                                    </h1>
-                                    <p className="text-2xl text-black mb-8 leading-relaxed">
+                                    </motion.h1>
+
+                                    <motion.p
+                                        className="text-2xl text-black mb-8 leading-relaxed"
+                                        variants={fadeInLeft}
+                                    >
                                         See how Tafuri HR reduces administrative and repetitive tasks
-                                    </p>
-                                    <Link href="/request-demo" passHref>
-                                        <button
-                                            ref={firstFocusableRef}
-                                            onClick={handleRequestDemo}
-                                            className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-200"
-                                        >
-                                            Request Demo
-                                        </button>
-                                    </Link>
+                                    </motion.p>
+
+                                    <motion.div variants={fadeInLeft}>
+                                        <Link href="/request-demo" passHref>
+                                            <motion.button
+                                                ref={firstFocusableRef}
+                                                onClick={handleRequestDemo}
+                                                className="cursor-pointer bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-full text-lg transition-all duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-200"
+                                                whileHover={hoverLift}
+                                                whileTap={tapScale}
+                                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                            >
+                                                Request Demo
+                                            </motion.button>
+                                        </Link>
+                                    </motion.div>
                                 </div>
-                            </div>
-                            <div className="flex-1 relative flex px-10 py-4 items-center justify-center">
-                                <Image
-                                    src="/icons/RequestDemoPopup.png"
-                                    alt="Request Demo Popup"
-                                    width={800}
-                                    height={400}
-                                    loading="eager"
-                                    priority={true}
-                                    sizes="(max-width: 768px) 100vw, 600px"
-                                    quality={85}
-                                    className="max-w-[100%] shadow-request-demo"
-                                />
-                            </div>
+                            </motion.div>
+
+                            <motion.div
+                                className="flex-1 relative flex px-10 py-4 items-center justify-center"
+                                variants={fadeInRight}
+                                initial="hidden"
+                                animate="visible"
+                                transition={{ delay: 0.4 }}
+                            >
+                                <motion.div
+                                    whileHover={hoverScale}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                >
+                                    <Image
+                                        src="/icons/RequestDemoPopup.png"
+                                        alt="Request Demo Popup"
+                                        width={500}
+                                        height={250}
+                                        priority={true}
+                                        fetchPriority="high"
+                                        placeholder="blur"
+                                        blurDataURL={RequestDemoPopupImageURL}
+                                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 600px, 800px"
+                                        className="shadow-request-demo"
+                                        quality={70}
+                                    />
+                                </motion.div>
+                            </motion.div>
                         </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             )}
-        </>
+        </AnimatePresence>
     );
 };
 
