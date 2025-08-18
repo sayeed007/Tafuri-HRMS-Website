@@ -12,7 +12,7 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 
 export default function Home() {
   return (
-    <div className='bg-body'>
+    <div className='bg-body overflow-x-clip'>
       <HeroSection />
       <OperationsSection />
       <FeaturesSection />

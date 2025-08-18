@@ -95,8 +95,7 @@ const RequestDemoPopup: React.FC = () => {
 
     return (
         <div
-            className={`w-full overflow-x-clip fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 transition-all duration-200 ${shouldShow ? 'z-50 opacity-100 pointer-events-auto' : '-z-10 opacity-0 pointer-events-none'
-                }`}
+            className={`w-full fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 transition-all duration-200 ${shouldShow ? 'z-50 opacity-100 pointer-events-auto' : '-z-10 opacity-0 pointer-events-none'}`}
             role="dialog"
             aria-modal="true"
             aria-labelledby="popup-title"
@@ -106,7 +105,7 @@ const RequestDemoPopup: React.FC = () => {
             {/* <AnimatePresence mode="wait"> */}
             {shouldShow && (
                 <motion.div
-                    className="bg-footer-gradient rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative"
+                    className="bg-footer-gradient rounded-2xl max-w-6xl w-9/10 mx-auto max-h-[90vh] overflow-y-auto shadow-2xl relative"
                     variants={popupContainerVariants}
                     initial="hidden"
                     animate="visible"
@@ -174,7 +173,7 @@ const RequestDemoPopup: React.FC = () => {
                             </div>
                         </motion.div>
 
-                        <div className="flex-1 relative flex px-10 py-4 items-center justify-center">
+                        <div className="hidden md:flex flex-1 relative px-10 py-4 items-center justify-center">
                             <Image
                                 src="/icons/RequestDemoPopupLight-min.webp"
                                 alt="Request Demo Popup"
