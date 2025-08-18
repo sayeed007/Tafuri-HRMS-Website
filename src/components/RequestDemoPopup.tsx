@@ -83,19 +83,19 @@ const RequestDemoPopup: React.FC = () => {
         setShouldShow(false);
         try {
             localStorage.setItem(LOCAL_STORAGE_KEY, 'true');
-            router.push('/request-demo');
         } catch (error) {
             console.error('Error setting localStorage:', error);
         }
     };
 
     const handleRequestDemo = () => {
+        router.push('/request-demo');
         handleClose(); // Close popup and mark as seen before navigation
     };
 
     return (
         <div
-            className={`fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 transition-all duration-200 ${shouldShow ? 'z-50 opacity-100 pointer-events-auto' : '-z-10 opacity-0 pointer-events-none'
+            className={`w-full overflow-x-clip fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 transition-all duration-200 ${shouldShow ? 'z-50 opacity-100 pointer-events-auto' : '-z-10 opacity-0 pointer-events-none'
                 }`}
             role="dialog"
             aria-modal="true"
@@ -174,32 +174,21 @@ const RequestDemoPopup: React.FC = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div
-                            className="flex-1 relative flex px-10 py-4 items-center justify-center"
-                            variants={fadeInRight}
-                            initial="hidden"
-                            animate="visible"
-                            transition={{ delay: 0.4 }}
-                        >
-                            <motion.div
-                                whileHover={hoverScale}
-                                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                            >
-                                <Image
-                                    src="/icons/RequestDemoPopupLight-min.webp"
-                                    alt="Request Demo Popup"
-                                    width={500}
-                                    height={250}
-                                    priority={true}
-                                    fetchPriority="high"
-                                    placeholder="blur"
-                                    blurDataURL={RequestDemoPopupImageURL}
-                                    sizes="(max-width: 768px) 90vw, (max-width: 1024px) 500px, 500px"
-                                    className="shadow-request-demo"
-                                    quality={30}
-                                />
-                            </motion.div>
-                        </motion.div>
+                        <div className="flex-1 relative flex px-10 py-4 items-center justify-center">
+                            <Image
+                                src="/icons/RequestDemoPopupLight-min.webp"
+                                alt="Request Demo Popup"
+                                width={500}
+                                height={250}
+                                priority={true}
+                                fetchPriority="high"
+                                placeholder="blur"
+                                blurDataURL={RequestDemoPopupImageURL}
+                                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 500px, 500px"
+                                className="shadow-request-demo max-w-full"
+                                quality={30}
+                            />
+                        </div>
                     </div>
                 </motion.div>
             )}

@@ -19,9 +19,21 @@ export default function HeroSection() {
             <div className='container  w-full mx-auto px-5 md:px-20'>
                 <div className="flex flex-col items-center justify-center py-8">
                     {/* Main Heading with staggered word animation */}
+                    <div className="text-5xl font-merriweather font-bold text-black text-center leading-normal">
+                        Transform your business
+                        <br />
+                        with AI-powered
+                        <br />
+                        HR Management Software
+                        <span
+                            className="text-5xl font-merriweather font-bold text-center bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
 
+                        >
+                            {' '}#TAFURIHR
+                        </span>
+                    </div>
 
-                    <motion.div
+                    {/* <motion.div
                         className="text-5xl font-merriweather font-bold text-black text-center mb-3"
                         variants={createFadeInWithDelay(0.1)}
                         initial="hidden"
@@ -38,19 +50,19 @@ export default function HeroSection() {
                         with AI-powered
                     </motion.div>
                     <motion.div
-                        className="text-5xl font-merriweather font-bold text-black text-center mb-3"
-                        variants={createFadeInWithDelay(0.3)}
+                        className="text-5xl font-merriweather font-bold text-black text-center mb-3 leading-normal"
+                        variants={createFadeInWithDelay(0.0)}
                         initial="hidden"
                         animate="visible"
                     >
                         HR Management Software
                         <span
-                            className="text-5xl font-merriweather font-bold text-center mb-3 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
+                            className="text-5xl font-merriweather font-bold text-center bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
 
                         >
                             {' '}#TAFURIHR
                         </span>
-                    </motion.div>
+                    </motion.div> */}
 
                     {/* </motion.h1> */}
 
