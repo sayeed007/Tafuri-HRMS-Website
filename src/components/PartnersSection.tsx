@@ -49,9 +49,9 @@ export default function PartnersSection() {
                             <Image
                                 src={partner.logo}
                                 alt={partner.name}
-                                className="w-[120px] h-[50px] object-contain group-hover:scale-105 transition-transform duration-300"
+                                className="w-[120px] h-[80px] object-contain group-hover:scale-105 transition-transform duration-300"
                                 width={120}
-                                height={50}
+                                height={80}
                             />
                         </div>
                     ))}

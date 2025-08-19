@@ -53,7 +53,7 @@ export default function DataSection() {
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex items-start space-x-4 py-2"
+                                    className="flex items-start space-x-4"
                                     variants={featureItemVariants}
                                     custom={index}
                                 >

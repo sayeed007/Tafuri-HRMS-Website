@@ -92,7 +92,7 @@ export default function MadeForAllSection() {
                                     autoPlay
                                     loop
                                     muted
-                                    className="object-cover opacity-80 w-[149px] h-[350px] rounded-[20px]"
+                                    className="object-fill opacity-80 w-[149px] h-[350px] rounded-[20px]"
                                     initial={{ opacity: 0 }}
                                     whileInView={{
                                         opacity: 0.8,
@@ -134,7 +134,7 @@ export default function MadeForAllSection() {
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex items-start space-x-4 py-2"
+                                    className="flex items-start space-x-4"
                                     custom={index}
                                     variants={featureItemVariants}
                                     whileHover={{

@@ -12,6 +12,7 @@ import {
 } from '@/lib/animations/variants'
 import { motion } from 'framer-motion'
 import Image from "next/image"
+import LaptopVideoFrame from './LaptopVideoFrame'
 
 const features = [
     'A scalable employee information platform.',
@@ -20,8 +21,6 @@ const features = [
     'Simplified support ticket management for smooth service.',
     'Advanced and insightful analytics',
 ]
-
-
 
 export default function CoreHRSection() {
     return (
@@ -69,7 +68,7 @@ export default function CoreHRSection() {
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
-                                    className="flex items-start space-x-4 py-2"
+                                    className="flex items-start space-x-4"
                                     custom={index}
                                     variants={featureItemVariants}
                                     whileHover={{
@@ -106,46 +105,36 @@ export default function CoreHRSection() {
                         </motion.div>
                     </motion.div>
 
-                    {/* Right Content - Image */}
+                    {/* Right Content - Laptop with Video */}
                     <motion.div
-                        className="relative h-96 lg:h-[480px] bg-[url('/icons/CoreHRBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl"
                         variants={fadeInRight}
                         initial="hidden"
                         whileInView="visible"
                         viewport={defaultViewport}
-                        whileHover={{
-                            scale: 1.02,
-                            transition: { duration: 0.3 }
-                        }}
+                        className="bg-[url('/icons/CoreHRBG.png')] bg-contain bg-center bg-no-repeat rounded-2xl p-4"
                     >
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9, x: 50 }}
-                            whileInView={{
-                                opacity: 1,
-                                scale: 1,
-                                x: 0,
-                                transition: {
-                                    duration: 0.8,
-                                    delay: 0.3,
-                                    type: "spring",
-                                    stiffness: 100
-                                }
+                        <LaptopVideoFrame
+                            frameSrc="/icons/Laptop.png"
+                            videoSrc="/videos/StreamlinedCoreHR.mp4"
+                            frameWidth={1280}     // natural image width of /icons/Laptop.png
+                            frameHeight={720}     // natural image height of /icons/Laptop.png
+                            className="mx-auto max-w-[680px]"
+                            screenInsets={{
+                                // MOBILE-FIRST insets (percent strings)
+                                // Example guesses—measure your actual asset for pixel-perfect fit:
+                                top: '5%',
+                                right: '11%',
+                                bottom: '11%', // unused
+                                left: '15%',
                             }}
-                            whileHover={{
-                                scale: 1.05,
-                                y: -5,
-                                transition: { duration: 0.3 }
+                            screenInsetsMd={{
+                                // Optional nudges for md+ if needed
+                                top: '9%',
+                                right: '12.5%',
+                                bottom: '21%',
+                                left: '12.5%',
                             }}
-                            viewport={defaultViewport}
-                        >
-                            <Image
-                                src={'/icons/CoreHRImage.png'}
-                                alt={'Core HR Image for TafuriHR'}
-                                width={1280}
-                                height={600}
-                                className="absolute w-[680px] top-[75px] md:right-[55px] h-auto"
-                            />
-                        </motion.div>
+                        />
                     </motion.div>
                 </div>
             </div>

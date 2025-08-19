@@ -8,8 +8,8 @@ import { Geist, Geist_Mono, Merriweather, Poppins } from 'next/font/google';
 import './globals.css';
 
 // PRE Import for better LCP performance
-import { RequestDemoPopupImageURL } from '@/data/imageData/RequestDemoPopup';
-console.info(RequestDemoPopupImageURL); // for not showing warning
+// import { RequestDemoPopupImageURL } from '@/data/imageData/RequestDemoPopup';
+// console.info(RequestDemoPopupImageURL); // for not showing warning
 
 // Google Fonts
 const poppins = Poppins({
