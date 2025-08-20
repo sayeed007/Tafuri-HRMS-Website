@@ -102,7 +102,7 @@ export default function OperationsSection() {
                     {/* Operations Grid */}
                     {isHydrated ? (
                         <motion.div
-                            className="md:mx-25 grid grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-8"
+                            className="md:mx-15 grid grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-6"
                             style={{
                                 gridTemplateRows: 'repeat(4, auto)',
                             }}
@@ -140,7 +140,7 @@ export default function OperationsSection() {
                                             />
                                         </motion.div>
                                         <motion.h3
-                                            className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight"
+                                            className="mt-4 text-sm text-grey-2 font-semibold text-center leading-tight"
                                             whileHover={textColorHover}
                                         >
                                             {operation.title}

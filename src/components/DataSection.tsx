@@ -11,7 +11,8 @@ import {
     fadeInUp,
     fadeInLeft,
     fadeInRight,
-    featureItemVariants
+    featureItemVariants,
+    defaultViewport
 } from '@/lib/animations/variants'
 
 const features = [
@@ -49,15 +50,29 @@ export default function DataSection() {
                         <motion.div
                             className="space-y-4"
                             variants={containerVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={defaultViewport}
                         >
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}
                                     className="flex items-start space-x-4"
-                                    variants={featureItemVariants}
                                     custom={index}
+                                    variants={featureItemVariants}
+                                    whileHover={{
+                                        x: 10,
+                                        transition: { duration: 0.2 }
+                                    }}
                                 >
-                                    <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5">
+                                    <motion.div
+                                        className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mt-0.5"
+                                        whileHover={{
+                                            scale: 1.2,
+                                            rotate: 360,
+                                            transition: { duration: 0.5 }
+                                        }}
+                                    >
                                         <Image
                                             src="/icons/CoreHRPoint.png"
                                             alt=""
@@ -66,10 +81,15 @@ export default function DataSection() {
                                             aria-hidden="true"
                                             loading="lazy"
                                         />
-                                    </div>
-                                    <span className="text-black text-base font-semibold leading-relaxed">
+                                    </motion.div>
+                                    <motion.span
+                                        className="text-black text-base font-semibold leading-relaxed"
+                                        whileHover={{
+                                            transition: { duration: 0.2 }
+                                        }}
+                                    >
                                         {feature}
-                                    </span>
+                                    </motion.span>
                                 </motion.div>
                             ))}
                         </motion.div>

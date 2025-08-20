@@ -157,7 +157,7 @@ export default function FAQPage({ data }: FAQPageProps) {
                             variants={sidebarItemVariants}
                             onClick={() => handleNavigationClick(section.slug)}
                             className={cn(
-                                "cursor-pointer w-full text-left px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-200",
+                                "cursor-pointer w-full text-left px-4 py-3 rounded-lg text-base font-semibold transition-all duration-200",
                                 activeSection === section.slug
                                     ? "text-primary shadow-sm bg-primary/10"
                                     : "text-gray-700 hover:bg-gray-100 hover:text-black"

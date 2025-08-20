@@ -160,7 +160,6 @@ export default function MadeForAllSection() {
                                     <motion.span
                                         className="text-black text-base font-semibold leading-relaxed"
                                         whileHover={{
-                                            color: "#2563eb",
                                             transition: { duration: 0.2 }
                                         }}
                                     >

@@ -15,7 +15,7 @@ export default function DemoSection() {
             viewport={defaultViewport}
             variants={containerVariants}
         >
-            <div className="container mx-auto px-5 md:px-20 py-10 flex flex-col lg:flex-row gap-12 items-start">
+            <div className="container mx-auto px-5 md:px-20 py-15 flex flex-col lg:flex-row gap-12 items-start">
                 <DemoContent />
                 <DemoForm />
             </div>

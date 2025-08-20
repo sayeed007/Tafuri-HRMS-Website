@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
                                     }}
                                 >
                                     {/* Testimonial Content */}
-                                    <blockquote className="text-base font-semibold leading-relaxed text-black">
+                                    <blockquote className="text-base font-semibold leading-relaxed text-black text-left">
                                         {`"${next.content.substring(0, 80)}..."`}
                                     </blockquote>
 
