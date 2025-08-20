@@ -16,7 +16,7 @@ export default function HeroSection() {
             className="relative bg-hero-gradient overflow-hidden"
             aria-labelledby="hero-section"
         >
-            <div className='container  w-full mx-auto px-5 md:px-20'>
+            <div className='container w-full mx-auto px-5 md:px-20'>
                 <div className="flex flex-col items-center justify-center py-8">
                     {/* Main Heading with staggered word animation */}
                     <div className="text-5xl font-merriweather font-bold text-black text-center leading-normal">
@@ -24,7 +24,6 @@ export default function HeroSection() {
                         <br />
                         with AI-powered
                         <br />
-                        HR Management Software
                         <span
                             className="text-5xl font-merriweather font-bold text-center bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent"
 

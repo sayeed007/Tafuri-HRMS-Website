@@ -12,6 +12,7 @@ import {
     tapScale
 } from '@/lib/animations/variants';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 // Types (should match your FAQ data structure)
 interface FAQ {
@@ -88,24 +89,27 @@ export default function FAQPageClient({ data }: FAQPageClientProps) {
                         </motion.p>
                     </div>
 
-                    <motion.button
-                        className="cursor-pointer px-6 py-2 border border-brand rounded-[30px] text-base font-merriweather font-semibold text-brand hover:bg-gray-50 transition-colors duration-200"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            delay: 0.8,
-                            type: "spring",
-                            stiffness: 200,
-                            damping: 15
-                        }}
-                        whileHover={{
-                            scale: 1.05,
-                            backgroundColor: "rgba(0,0,0,0.05)"
-                        }}
-                        whileTap={tapScale}
-                    >
-                        Contact Sales
-                    </motion.button>
+                    <Link href={`/request-demo`}>
+                        <motion.button
+                            className="cursor-pointer px-6 py-2 border border-brand rounded-[30px] text-base font-merriweather font-semibold text-brand hover:bg-gray-50 transition-colors duration-200"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{
+                                delay: 0.8,
+                                type: "spring",
+                                stiffness: 200,
+                                damping: 15
+                            }}
+                            whileHover={{
+                                scale: 1.05,
+                                backgroundColor: "rgba(0,0,0,0.05)"
+                            }}
+                            whileTap={tapScale}
+                        >
+                            Contact Support
+                        </motion.button>
+                    </Link>
+
                 </motion.div>
             </motion.div>
 

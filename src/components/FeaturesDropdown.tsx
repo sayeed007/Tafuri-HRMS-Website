@@ -20,7 +20,8 @@ export default function FeaturesDropdown({ isVisible, onClose }: FeaturesDropdow
     const featureItems: FeatureItem[] = featuresData.features
 
     const handleFeatureClick = (slug: string) => {
-        router.push(`/features/${slug}`)
+        // TODO: Will implement later as all feature page is not designed yet
+        // router.push(`/features/${slug}`)
         onClose()
     }
 

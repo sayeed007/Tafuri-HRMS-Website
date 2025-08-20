@@ -20,9 +20,9 @@ export default function MobileAppSection() {
             className="w-full"
             aria-labelledby="mobile-app-heading"
         >
-            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container w-full mx-auto px-5 md:px-20 py-10'>
                 <motion.div
-                    className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 md:gap-16 items-center"
+                    className="grid grid-cols-1 md:grid-cols-3 md:gap-16 items-center"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -36,10 +36,11 @@ export default function MobileAppSection() {
                         <Image
                             src="/icons/MobileAppView.png"
                             alt="Tafuri HR mobile app interface showcasing HR management features on smartphone"
-                            width={1800}
-                            height={800}
+                            width={2000}
+                            height={1500}
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            className="w-full h-auto max-w-sm"
+                            className="w-full h-auto object-fill"
+                            quality={100}
                         />
                     </motion.div>
 
@@ -68,7 +69,7 @@ export default function MobileAppSection() {
                         >
                             {/* App Store - QR to download */}
                             <motion.div
-                                className="w-full flex flex-col items-center md:w-1/2 space-y-4 mb-8"
+                                className="w-full flex flex-col items-center md:items-start md:w-1/2 space-y-4 mb-8"
                                 variants={scaleIn}
                             >
                                 <Image
@@ -101,7 +102,6 @@ export default function MobileAppSection() {
                                                 <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" aria-hidden="true" />
                                             ))}
                                         </div>
-                                        <div className="text-sm text-black">App Rating</div>
                                     </div>
 
                                     <div className="text-center">
@@ -113,7 +113,7 @@ export default function MobileAppSection() {
 
                             {/* Play Store - QR to download */}
                             <motion.div
-                                className="w-full flex flex-col items-center md:w-1/2 space-y-4 mb-8"
+                                className="w-full flex flex-col items-center md:items-start md:w-1/2 space-y-4 mb-8"
                                 variants={scaleIn}
                             >
                                 <Image
@@ -146,7 +146,6 @@ export default function MobileAppSection() {
                                                 <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" aria-hidden="true" />
                                             ))}
                                         </div>
-                                        <div className="text-sm text-black">App Rating</div>
                                     </div>
 
                                     <div className="text-center">

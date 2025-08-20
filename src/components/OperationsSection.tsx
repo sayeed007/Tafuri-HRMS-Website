@@ -76,7 +76,7 @@ export default function OperationsSection() {
             className="bg-operation w-full"
             aria-labelledby="operations-section"
         >
-            <div className='container  w-full mx-auto px-5 md:px-20 py-10 '>
+            <div className='container w-full mx-auto px-5 md:px-20 py-10 '>
                 <div className="mx-auto sm:px-6 lg:px-8">
                     {/* Section Header */}
                     {isHydrated ? (
@@ -102,46 +102,68 @@ export default function OperationsSection() {
                     {/* Operations Grid */}
                     {isHydrated ? (
                         <motion.div
-                            className="md:mx-25 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8"
+                            className="md:mx-25 grid grid-cols-2 lg:grid-cols-6 gap-4 lg:gap-8"
+                            style={{
+                                gridTemplateRows: 'repeat(4, auto)',
+                            }}
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="visible"
                             viewport={partialViewport}
                         >
-                            {operations.map((operation) => (
-                                <motion.div
-                                    key={operation.title}
-                                    variants={cardVariants}
-                                    whileHover={hoverLift}
-                                    whileTap={tapScale}
-                                    className="group flex flex-col items-center justify-between min-w-[155px] min-hh-[175px] p-6 rounded-xl bg-white border border-card-border cursor-pointer transition-shadow duration-300 ease-in-out hover:shadow-xl"
-                                >
+                            {operations.map((operation, index) => {
+                                // For the last 4 items (index 18-21), position them in the center of the grid
+                                const isLastRow = index >= 18;
+                                const lastRowStyle = isLastRow ? {
+                                    gridColumn: `${(index - 18) + 2} / span 1` // Start from column 2 to center 4 items
+                                } : {};
+
+                                return (
                                     <motion.div
-                                        className="relative w-16 h-16"
-                                        whileHover={iconHover}
+                                        key={operation.title}
+                                        variants={cardVariants}
+                                        whileHover={hoverLift}
+                                        whileTap={tapScale}
+                                        className="group flex flex-col items-center justify-between min-w-[155px] min-hh-[175px] p-6 rounded-xl bg-white border border-card-border cursor-pointer transition-shadow duration-300 ease-in-out hover:shadow-xl"
+                                        style={lastRowStyle}
                                     >
-                                        <Image
-                                            src={operation.icon}
-                                            alt={`${operation.title} Icon for TafuriHR`}
-                                            fill
-                                            sizes="64px"
-                                            className="object-contain"
-                                        />
+                                        <motion.div
+                                            className="relative w-16 h-16"
+                                            whileHover={iconHover}
+                                        >
+                                            <Image
+                                                src={operation.icon}
+                                                alt={`${operation.title} Icon for TafuriHR`}
+                                                fill
+                                                sizes="64px"
+                                                className="object-contain"
+                                            />
+                                        </motion.div>
+                                        <motion.h3
+                                            className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight"
+                                            whileHover={textColorHover}
+                                        >
+                                            {operation.title}
+                                        </motion.h3>
                                     </motion.div>
-                                    <motion.h3
-                                        className="mt-4 text-base text-grey-2 font-semibold text-center leading-tight"
-                                        whileHover={textColorHover}
-                                    >
-                                        {operation.title}
-                                    </motion.h3>
-                                </motion.div>
-                            ))}
+                                );
+                            })}
                         </motion.div>
                     ) : (
                         <div className="md:mx-25 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-8">
-                            {operations.map((operation) => (
-                                <StaticCard key={operation.title} operation={operation} />
-                            ))}
+                            {operations.map((operation, index) => {
+                                // For the last 4 items (index 18-21), position them in the center of the grid
+                                const isLastRow = index >= 18;
+                                const lastRowStyle = isLastRow ? {
+                                    gridColumn: `${(index - 18) + 2} / span 1` // Start from column 2 to center 4 items
+                                } : {};
+
+                                return (
+                                    <div key={operation.title} style={lastRowStyle}>
+                                        <StaticCard operation={operation} />
+                                    </div>
+                                );
+                            })}
                         </div>
                     )}
                 </div>

@@ -36,7 +36,7 @@ export default function TestimonialsSection() {
             className="w-full bg-white"
             aria-labelledby="testimonials-heading"
         >
-            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container w-full mx-auto px-5 md:px-20 py-10'>
                 <motion.div
                     className="flex flex-col lg:flex-row gap-8"
                     variants={containerVariants}
@@ -87,13 +87,13 @@ export default function TestimonialsSection() {
 
                                     <footer className="flex gap-6 mt-8">
                                         {/* Avatar */}
-                                        <div className="w-20 h-20 rounded-full flex items-center justify-center text-lg font-bold bg-white/20 text-white border-2 border-white/30 flex-shrink-0">
+                                        <div className="w-15 h-15 rounded-full flex items-center justify-center text-lg font-bold bg-white/20 text-white border-2 border-white/30 flex-shrink-0">
                                             <Image
                                                 src={current.profileImage}
                                                 alt={`Profile photo of ${current.name}`}
-                                                width={71}
-                                                height={71}
-                                                className='rounded-full'
+                                                width={60}
+                                                height={60}
+                                                className='rounded-full w-14 h-14'
                                                 loading="lazy"
                                             />
                                         </div>
@@ -144,13 +144,13 @@ export default function TestimonialsSection() {
 
                                     <footer className="flex gap-4 mt-8 items-center">
                                         {/* Avatar */}
-                                        <div className="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 text-lg font-bold bg-white/20 text-white border-2 border-white/30">
+                                        <div className="w-15 h-15 rounded-full flex items-center justify-center flex-shrink-0 text-lg font-bold bg-white/20 text-white border-2 border-white/30">
                                             <Image
                                                 src={next.profileImage}
                                                 alt={`Profile photo of ${next.name}`}
-                                                width={64}
-                                                height={64}
-                                                className='rounded-full max-w-[120%]'
+                                                width={60}
+                                                height={60}
+                                                className='rounded-full max-w-[120%] w-14 h-14'
                                                 loading="lazy"
                                             />
                                         </div>

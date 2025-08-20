@@ -8,7 +8,7 @@ export default async function FAQPageRoute() {
 
   return (
     <div className='w-full bg-body'>
-      <div className='container  w-full mx-auto px-5 md:px-20 py-6'>
+      <div className='container w-full mx-auto px-5 md:px-20 py-6'>
         <FAQPageClient data={faqData} />
       </div>
     </div>

@@ -38,10 +38,10 @@ const features = [
 export default function FeaturesSection() {
     return (
         <section
-            className="px-5 md:px-20 py-10"
+            className="px-5 md:px-20 pt-10 pb-5"
             aria-labelledby="feature-section"
         >
-            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container w-full mx-auto px-5 md:px-20'>
                 <motion.div
                     className="flex flex-wrap justify-evenly gap-8 lg:gap-12"
                     variants={containerVariants}

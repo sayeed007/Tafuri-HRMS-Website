@@ -16,7 +16,7 @@ export default function AnimatedKioskCard() {
             className="w-full"
             aria-labelledby="animated-kiosk"
         >
-            <div className='container  w-full mx-auto px-5 md:px-20 py-10'>
+            <div className='container w-full mx-auto px-5 md:px-20 py-10'>
                 <motion.div
                     className="h-[330px] rounded-4xl bg-[url('/icons/KioskCardBG.png')] bg-cover bg-center bg-no-repeat"
                     variants={scaleIn}
@@ -30,6 +30,8 @@ export default function AnimatedKioskCard() {
                 >
                     <div className="relative rounded-4xl overflow-hidden shadow-2xl w-full min-h-[330px] flex items-center">
                         {/* Main Content */}
+
+                        {/* LEFT - Text COntent */}
                         <motion.div
                             className="relative flex flex-col z-10 px-8 md:p-8 lg:p-12 w-2/3 lg:w-3/4"
                             variants={fadeInLeft}
@@ -38,7 +40,7 @@ export default function AnimatedKioskCard() {
                             viewport={defaultViewport}
                         >
                             <motion.h2
-                                className="text-white text-2xl lg:text-4xl font-bold leading-tight mb-6"
+                                className="text-white text-xl md:text-2xl lg:text-4xl font-bold leading-tight mb-6"
                                 initial={{ opacity: 0, x: -30 }}
                                 whileInView={{
                                     opacity: 1,
@@ -52,8 +54,8 @@ export default function AnimatedKioskCard() {
                                 more efficient.
                             </motion.h2>
 
-                            <motion.button
-                                className="text-left text-white font-semibold font-poppins underline underline-offset-4 hover:underline-offset-8 transition-all duration-300 text-lg"
+                            {/* <motion.button
+                                className="text-left text-xl md:text-2xl text-white font-semibold font-poppins underline underline-offset-4 hover:underline-offset-8 transition-all duration-300"
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{
                                     opacity: 1,
@@ -68,10 +70,10 @@ export default function AnimatedKioskCard() {
                                 viewport={defaultViewport}
                             >
                                 Learn More
-                            </motion.button>
+                            </motion.button> */}
                         </motion.div>
 
-                        {/* Animated Kiosk Container */}
+                        {/* RIGHT - Animated Kiosk Container */}
                         <motion.div
                             className="absolute right-0 top-0 bottom-0 w-1/3 lg:w-1/4 overflow-hidden"
                             variants={fadeInRight}
@@ -93,8 +95,8 @@ export default function AnimatedKioskCard() {
 
                             {/* Kiosk Image with floating animation */}
                             <motion.div
-                                className="absolute right-4 top-[200px] md:top-[300px] -translate-y-1/2"
-                                initial={{ x: 100, opacity: 0, scale: 0.8 }}
+                                className="absolute z-50 md:right-12 top-[200px] md:top-[300px] -translate-y-1/2"
+                                // initial={{ x: 100, opacity: 0, scale: 0.8 }}
                                 whileInView={{
                                     x: 0,
                                     opacity: 1,

@@ -57,12 +57,12 @@ export default function PartnersCarouselSmall() {
                 }
                 
                 .animate-scroll-small {
-                    animation: scroll-small 40s linear infinite;
+                    animation: scroll-small 20s linear infinite;
                 }
                 
                 @media (max-width: 768px) {
                     .animate-scroll-small {
-                        animation: scroll-small 25s linear infinite;
+                        animation: scroll-small 20s linear infinite;
                     }
                 }
             `}</style>

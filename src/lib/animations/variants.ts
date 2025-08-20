@@ -627,3 +627,92 @@ export const learnMoreVariants: Variants = {
         }
     }
 };
+
+
+// Enhanced variants for immediate visibility (no scroll needed) - 
+// For Request Demo Section 
+export const immediateContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.3,
+            staggerChildren: 0.15,
+            delayChildren: 0.1
+        }
+    }
+};
+
+export const heroHeaderVariants: Variants = {
+    hidden: { opacity: 0, y: 40, scale: 0.95 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 120,
+            damping: 20,
+            duration: 0.8
+        }
+    }
+}
+
+export const enhancedContactCardVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 50,
+        scale: 0.9,
+        rotateX: 15
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        transition: {
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            duration: 0.7
+        }
+    }
+}
+
+export const contactInfoVariants: Variants = {
+    hidden: { opacity: 0, y: 20, scale: 0.9 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            type: "spring",
+            stiffness: 150,
+            damping: 20,
+            delay: 0.2
+        }
+    }
+}
+
+export const enhancedHoverLift: TargetAndTransition = {
+    y: -8,
+    scale: 1.03,
+    rotateX: -5,
+    boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
+    transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        duration: 0.3
+    }
+}
+
+export const pulseAnimation: TargetAndTransition = {
+    scale: [1, 1.02, 1],
+    transition: {
+        duration: 2,
+        repeat: Infinity,
+        repeatType: "reverse" as const,
+        ease: "easeInOut"
+    }
+}

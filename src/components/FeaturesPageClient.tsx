@@ -89,8 +89,9 @@ export default function FeaturesPageClient({ data }: FeaturesPageClientProps) {
                             }}
                             whileTap={tapScale}
                         >
-                            <Link
-                                href={`/features/${feature.slug}`}
+                            {/* TODO: Replace the div with a Link and uncomment the href for using routing */}
+                            <div
+                                // href={`/features/${feature.slug}`}
                                 className="block bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer group h-full"
                             >
                                 <motion.div
@@ -113,8 +114,9 @@ export default function FeaturesPageClient({ data }: FeaturesPageClientProps) {
                                         {feature.description}
                                     </motion.p>
 
+                                    {/* TODO: Uncomment this section when feature is ready */}
                                     {/* Learn More Link */}
-                                    <motion.div
+                                    {/* <motion.div
                                         className="flex items-center text-blue-600 font-medium text-sm group-hover:text-blue-700 transition-colors duration-300"
                                         variants={learnMoreVariants}
                                         whileHover={{ x: 4 }}
@@ -135,9 +137,9 @@ export default function FeaturesPageClient({ data }: FeaturesPageClientProps) {
                                         >
                                             <ArrowRight className="w-4 h-4" />
                                         </motion.div>
-                                    </motion.div>
+                                    </motion.div> */}
                                 </motion.div>
-                            </Link>
+                            </div>
                         </motion.div>
                     ))}
                 </motion.div>

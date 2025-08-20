@@ -18,6 +18,7 @@ import { useRouter } from 'next/navigation';
 import React, { useEffect, useRef, useState } from 'react';
 
 const LOCAL_STORAGE_KEY = 'hr-popup-seen';
+const POPUP_SHOW_AFTER = 15000;
 
 const RequestDemoPopup: React.FC = () => {
     const router = useRouter();
@@ -29,11 +30,13 @@ const RequestDemoPopup: React.FC = () => {
         try {
             const hasSeenPopup = localStorage.getItem(LOCAL_STORAGE_KEY);
             if (!hasSeenPopup) {
-                setShouldShow(true);
-                // Move focus to the first button when popup shows
-                setTimeout(() => {
+                const timer = setTimeout(() => {
+                    setShouldShow(true);
+                    // Move focus to the first button when popup shows
                     firstFocusableRef.current?.focus();
-                }, 300); // Delay focus to allow animation to complete
+                }, POPUP_SHOW_AFTER); // 1 second delay for better UX
+
+                return () => clearTimeout(timer);
             }
         } catch (error) {
             console.error('Error accessing localStorage:', error);
@@ -93,7 +96,7 @@ const RequestDemoPopup: React.FC = () => {
 
     return (
         <div
-            className={`w-full fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 transition-all duration-200 ${shouldShow ? 'z-50 opacity-100 pointer-events-auto' : '-z-10 opacity-0 pointer-events-none'}`}
+            className={`w-full fixed inset-0 bg-[rgba(8,7,8,0.3)] flex items-center justify-center p-4 transition-all duration-200 ${shouldShow ? 'z-5000 opacity-100 pointer-events-auto' : '-z-10 opacity-0 pointer-events-none'}`}
             role="dialog"
             aria-modal="true"
             aria-labelledby="popup-title"
