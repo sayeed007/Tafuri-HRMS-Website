@@ -7,30 +7,30 @@
             "company": "Chhaya Technologies Limited",
             "content": "Tafuri HRMS has significantly streamlined our organizational workflows by centralizing employee management and automating attendance tracking. Its intuitive platform helps us efficiently monitor our field sales force, enhancing accountability and operational transparency.",
             "rating": 5,
-            "avatar": "SR",
+            "avatar": "SS",
             "profileImage": "/Testimonials/SadmanSafiul.png",
             "cardType": "green"
         },
         {
             "id": 2,
-            "name": "Khurram Abbasi",
-            "role": "COO",
-            "company": "Intellexis",
-            "content": "Curls Blocks has completely transformed the way we approach design at our company. The versatility and flexibility of the library have allowed us to create consistent and beautiful designs across all our platforms. Highly recommended!",
+            "name": "Md. Atikur Rahman",
+            "role": "Sr. HR Executive",
+            "company": "DBL Pharmaceuticals Ltd.",
+            "content": "Tafuri HRMS has revolutionized our HR operations by seamlessly automating attendance, leave, and payroll. Its intuitive interface and customizable workflows ensure flawless, transparent processes, while it's error-free reporting provides critical data with confidence. Backed by reliable performance and exceptional support, Tafuri HRMS is more than software—it's a strategic partner in driving HR excellence.",
             "rating": 5,
-            "avatar": "MA",
-            "profileImage": "/Testimonials/KhurramAbbasi.png",
-            "cardType": "white"
+            "avatar": "AR",
+            "profileImage": "/Testimonials/AtikurRahman.jpg",
+            "cardType": "green"
         },
         {
             "id": 3,
-            "name": "Sarah Johnson",
-            "role": "Operations Manager",
-            "company": "Innovation Hub",
-            "content": "Outstanding platform with intuitive design. The kiosk integration has made our office completely paperless, and employee satisfaction has increased significantly.",
+            "name": "Monsor Alam Naiem",
+            "role": "Executive IT",
+            "company": "Moriom Group",
+            "content": "It was my first time using tafuri hrms and it was so easy to use! I'm glad there is a platform like Tafuri HRMS to allow me carry my responsibilities like a pro user.",
             "rating": 5,
-            "avatar": "SJ",
-            "profileImage": "/Testimonials/SarahJohnson.png",
+            "avatar": "MA",
+            "profileImage": "/Testimonials/MonsorAlamNaiem.jpg",
             "cardType": "green"
         }
     ]

@@ -125,7 +125,7 @@ export default function Footer() {
 
                         {/* Social Links */}
                         <div className="flex space-x-4 text-sm">
-                            A Product of <span className='text-blue ml-2'>Neural Semiconductor</span>
+                            A Product of <a href="https://www.neural-semiconductor.com/" target="_blank" className='text-blue ml-2'>Neural Semiconductor</a>
                         </div>
                     </div>
                 </div>

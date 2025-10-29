@@ -1,7 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { motion, useMotionValue, useAnimationFrame } from 'framer-motion'
 
 const partners = [
     { name: 'SHODESH', logo: '/partners/Shodesh.jpg' },
@@ -16,17 +17,42 @@ const partners = [
 
 export default function PartnersCarouselSmall() {
     const [isPaused, setIsPaused] = useState(false)
+    const x = useMotionValue(0)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const [baseWidth, setBaseWidth] = useState(0)
 
-    // Duplicate partners array for seamless loop
-    const duplicatedPartners = [...partners, ...partners, ...partners, ...partners]
+    // Duplicate partners array three times for seamless loop
+    const duplicatedPartners = [...partners, ...partners, ...partners]
+
+    useEffect(() => {
+        if (containerRef.current) {
+            // Measure width of one set of partners
+            const singleSetWidth = containerRef.current.scrollWidth / 3
+            setBaseWidth(singleSetWidth)
+        }
+    }, [])
+
+    useAnimationFrame((time, delta) => {
+        if (isPaused || baseWidth === 0) return
+
+        // Move left at constant speed (pixels per millisecond)
+        const speed = baseWidth / 60000 // completes one loop in 60 seconds
+        const newX = x.get() - speed * delta
+
+        // Reset position seamlessly when we've scrolled one full set
+        if (Math.abs(newX) >= baseWidth) {
+            x.set(newX + baseWidth)
+        } else {
+            x.set(newX)
+        }
+    })
 
     return (
         <div className="overflow-hidden">
-            <div
-                className="flex space-x-4 animate-scroll-small gap-8 items-center"
-                style={{
-                    animationPlayState: isPaused ? 'paused' : 'running'
-                }}
+            <motion.div
+                ref={containerRef}
+                className="flex space-x-4 gap-8 items-center"
+                style={{ x }}
                 onMouseEnter={() => setIsPaused(true)}
                 onMouseLeave={() => setIsPaused(false)}
             >
@@ -44,28 +70,7 @@ export default function PartnersCarouselSmall() {
                         />
                     </div>
                 ))}
-            </div>
-
-            <style jsx>{`
-                @keyframes scroll-small {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-                
-                .animate-scroll-small {
-                    animation: scroll-small 20s linear infinite;
-                }
-                
-                @media (max-width: 768px) {
-                    .animate-scroll-small {
-                        animation: scroll-small 20s linear infinite;
-                    }
-                }
-            `}</style>
+            </motion.div>
         </div>
     )
 }

@@ -68,7 +68,7 @@ export default function MobileAppSection() {
                             variants={fadeInRight}
                         >
                             {/* App Store - QR to download */}
-                            <motion.div
+                            {/* <motion.div
                                 className="w-full flex flex-col items-center md:items-start md:w-1/2 space-y-4 mb-8"
                                 variants={scaleIn}
                             >
@@ -109,7 +109,7 @@ export default function MobileAppSection() {
                                         <div className="text-sm text-black">Downloads</div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </motion.div> */}
 
                             {/* Play Store - QR to download */}
                             <motion.div
@@ -117,7 +117,7 @@ export default function MobileAppSection() {
                                 variants={scaleIn}
                             >
                                 <Image
-                                    src="/icons/QRCode_PlayStore.png"
+                                    src="/app_store/QRCode_PlayStore.png"
                                     alt="QR code to download Tafuri HR app from Google Play Store"
                                     width={125}
                                     height={125}
@@ -125,7 +125,23 @@ export default function MobileAppSection() {
                                     loading="lazy"
                                 />
 
-                                <motion.button
+                                <motion.a
+                                    className="flex items-center justify-center space-x-3 bg-black text-white px-6 py-4 rounded-xl hover:bg-gray-800 transition-colors"
+                                    whileHover={hoverLift}
+                                    whileTap={tapScale}
+                                    aria-label="Download Tafuri HR app from Google Play Store"
+                                    href='https://surl.lu/vacwvy'
+                                    target='_blank'
+                                >
+                                    <Download className="w-5 h-5" aria-hidden="true" />
+                                    <div className="text-left">
+                                        <div className="text-xs text-gray-300">Download</div>
+                                        {/* <div className="text-xs text-gray-300">Get it on</div> */}
+                                        {/* <div className="text-sm font-semibold">Google Play</div> */}
+                                    </div>
+                                </motion.a>
+
+                                {/* <motion.button
                                     className="flex items-center justify-center space-x-3 bg-black text-white px-6 py-4 rounded-xl hover:bg-gray-800 transition-colors"
                                     whileHover={hoverLift}
                                     whileTap={tapScale}
@@ -136,9 +152,9 @@ export default function MobileAppSection() {
                                         <div className="text-xs text-gray-300">Get it on</div>
                                         <div className="text-sm font-semibold">Google Play</div>
                                     </div>
-                                </motion.button>
+                                </motion.button> */}
 
-                                <div className="flex items-center space-x-8">
+                                {/* <div className="flex items-center space-x-8">
                                     <div className="text-center">
                                         <div className="text-2xl font-bold text-black">4.9</div>
                                         <div className="flex items-center justify-center space-x-1 mb-1" role="img" aria-label="4.9 out of 5 stars">
@@ -152,7 +168,7 @@ export default function MobileAppSection() {
                                         <div className="text-2xl font-bold text-black">90K+</div>
                                         <div className="text-sm text-black">Downloads</div>
                                     </div>
-                                </div>
+                                </div> */}
                             </motion.div>
                         </motion.div>
                     </div>

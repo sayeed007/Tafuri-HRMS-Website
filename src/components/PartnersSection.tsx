@@ -1,7 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { motion, useMotionValue, useAnimationFrame } from 'framer-motion'
 
 const partners = [
     { name: 'SHODESH', logo: '/partners/Shodesh.jpg' },
@@ -16,9 +17,35 @@ const partners = [
 
 export default function PartnersSection() {
     const [isPaused, setIsPaused] = useState(false)
+    const x = useMotionValue(0)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const [baseWidth, setBaseWidth] = useState(0)
 
-    // Triple partners array for better seamless loop on mobile
-    const duplicatedPartners = [...partners, ...partners, ...partners, ...partners]
+    // Duplicate partners array three times for seamless loop
+    const duplicatedPartners = [...partners, ...partners, ...partners]
+
+    useEffect(() => {
+        if (containerRef.current) {
+            // Measure width of one set of partners
+            const singleSetWidth = containerRef.current.scrollWidth / 3
+            setBaseWidth(singleSetWidth)
+        }
+    }, [])
+
+    useAnimationFrame((time, delta) => {
+        if (isPaused || baseWidth === 0) return
+
+        // Move left at constant speed (pixels per millisecond)
+        const speed = baseWidth / 60000 // completes one loop in 60 seconds
+        const newX = x.get() - speed * delta
+
+        // Reset position seamlessly when we've scrolled one full set
+        if (Math.abs(newX) >= baseWidth) {
+            x.set(newX + baseWidth)
+        } else {
+            x.set(newX)
+        }
+    })
 
     return (
         <section
@@ -33,50 +60,31 @@ export default function PartnersSection() {
                 </div>
 
                 {/* Carousel Container */}
-                <div
-                    className="relative flex space-x-6 md:space-x-8 animate-scroll md:gap-20 gap-8 justify-start md:justify-center items-center"
-                    style={{
-                        animationPlayState: isPaused ? 'paused' : 'running'
-                    }}
-                    onMouseEnter={() => setIsPaused(true)}
-                    onMouseLeave={() => setIsPaused(false)}
-                >
-                    {duplicatedPartners.map((partner, index) => (
-                        <div
-                            key={`${partner.name}-${index}`}
-                            className="flex-shrink-0 group"
-                        >
-                            <Image
-                                src={partner.logo}
-                                alt={partner.name}
-                                className="w-[120px] h-[80px] object-contain group-hover:scale-105 transition-transform duration-300"
-                                width={120}
-                                height={80}
-                            />
-                        </div>
-                    ))}
+                <div className="relative overflow-hidden">
+                    <motion.div
+                        ref={containerRef}
+                        className="flex space-x-6 md:space-x-8 md:gap-20 gap-8 items-center"
+                        style={{ x }}
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => setIsPaused(false)}
+                    >
+                        {duplicatedPartners.map((partner, index) => (
+                            <div
+                                key={`${partner.name}-${index}`}
+                                className="flex-shrink-0 group"
+                            >
+                                <Image
+                                    src={partner.logo}
+                                    alt={partner.name}
+                                    className="w-[120px] h-[80px] object-contain group-hover:scale-105 transition-transform duration-300"
+                                    width={120}
+                                    height={80}
+                                />
+                            </div>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
-            <style jsx>{`
-                @keyframes scroll {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(calc(-100% / 3));
-                    }
-                }
-                
-                .animate-scroll {
-                    animation: scroll 20s linear infinite;
-                }
-                
-                @media (max-width: 768px) {
-                    .animate-scroll {
-                        animation: scroll 20s linear infinite;
-                    }
-                }
-            `}</style>
         </section>
     )
 }
