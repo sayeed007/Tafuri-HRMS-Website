@@ -11,11 +11,11 @@ export default function Header() {
                     <div className="flex gap-2 items-center">
                         <Image src={'/icons/Mail.png'} alt={'Mail'} width={20} height={20} />
                         <a
-                            href="mailto:sales@tafurihr.com"
+                            href="mailto:sales.global@neural-semiconductor.com"
                             className="text-white font-semibold text-base ml-2"
                             title="Contact TafuriHR Sales Team"
                         >
-                            sales@tafurihr.com
+                            sales.global@neural-semiconductor.com
                         </a>
                     </div>
                     <div className="flex gap-4 items-center">

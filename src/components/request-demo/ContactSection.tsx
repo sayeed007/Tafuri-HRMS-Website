@@ -119,7 +119,7 @@ export default function ContactSection() {
                             +88 01755 645081
                         </motion.a>
                         <motion.a
-                            href="mailto:sales@tafurihr.com"
+                            href="mailto:sales.global@neural-semiconductor.com"
                             className="block text-blue hover:text-blue-600 font-bold text-lg transition-colors duration-200"
                             whileHover={{
                                 scale: 1.05,
@@ -128,7 +128,7 @@ export default function ContactSection() {
                             }}
                             whileTap={{ scale: 0.98 }}
                         >
-                            sales@tafurihr.com
+                            sales.global@neural-semiconductor.com
                         </motion.a>
                     </motion.div>
                 </motion.div>
@@ -163,7 +163,7 @@ export default function ContactSection() {
                         out to us anytime!
                     </motion.p>
                     <motion.a
-                        href="mailto:support@tafurihr.com"
+                        href="mailto:support@neural-semiconductor.com"
                         className="block text-blue hover:text-blue-600 font-bold text-lg relative z-10 transition-colors duration-200"
                         variants={contactInfoVariants}
                         whileHover={{
@@ -173,7 +173,7 @@ export default function ContactSection() {
                         }}
                         whileTap={{ scale: 0.98 }}
                     >
-                        support@tafurihr.com
+                        support@neural-semiconductor.com
                     </motion.a>
                 </motion.div>
             </motion.div>

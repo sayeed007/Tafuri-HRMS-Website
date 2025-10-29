@@ -109,7 +109,7 @@ export default function RootLayout({
               contactPoint: {
                 '@type': 'ContactPoint',
                 telephone: '+88 01755 645081',
-                email: 'sales@tafurihr.com',
+                email: 'sales.global@neural-semiconductor.com',
                 contactType: 'Sales',
                 areaServed: 'Global',
               },

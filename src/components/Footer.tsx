@@ -62,7 +62,7 @@ export default function Footer() {
                     <div>
                         <div className="text-xl font-semibold mb-6 tracking-[1.2px]">CONTACT</div>
                         <p className='text-lg text-black mb-3'>+88 01755 645081</p>
-                        <p className='text-lg text-black mb-3'>sales@tafurihr.com</p>
+                        <p className='text-lg text-black mb-3'>sales.global@neural-semiconductor.com</p>
 
                         <p className='text-lg text-black'>House 5/B, Sector-3, Road-13,Uttara, </p>
                         <p className='text-lg text-black mb-2'>Dhaka, Bangladesh</p>
