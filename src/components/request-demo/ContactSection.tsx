@@ -162,19 +162,37 @@ export default function ContactSection() {
                         Get instant support—just reach
                         out to us anytime!
                     </motion.p>
-                    <motion.a
-                        href="mailto:support@neural-semiconductor.com"
-                        className="block text-blue hover:text-blue-600 font-bold text-lg relative z-10 transition-colors duration-200"
+
+                    <motion.div
+                        className="space-y-3 relative z-10"
                         variants={contactInfoVariants}
-                        whileHover={{
-                            scale: 1.05,
-                            color: "#2563eb",
-                            transition: { type: "spring", stiffness: 300, damping: 20 }
-                        }}
-                        whileTap={{ scale: 0.98 }}
                     >
-                        support@neural-semiconductor.com
-                    </motion.a>
+                        <motion.a
+                            href="tel:+8801708151698"
+                            className="block text-blue hover:text-blue-600 font-bold text-lg transition-colors duration-200"
+                            whileHover={{
+                                scale: 1.05,
+                                color: "#2563eb",
+                                transition: { type: "spring", stiffness: 300, damping: 20 }
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            +880 1708 151698
+                        </motion.a>
+                        <motion.a
+                            href="mailto:support@neural-semiconductor.com"
+                            className="block text-blue hover:text-blue-600 font-bold text-lg relative z-10 transition-colors duration-200"
+                            variants={contactInfoVariants}
+                            whileHover={{
+                                scale: 1.05,
+                                color: "#2563eb",
+                                transition: { type: "spring", stiffness: 300, damping: 20 }
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                        >
+                            support@neural-semiconductor.com
+                        </motion.a>
+                    </motion.div>
                 </motion.div>
             </motion.div>
         </motion.section>

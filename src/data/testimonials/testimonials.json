@@ -2,6 +2,17 @@
     "testimonials": [
         {
             "id": 1,
+            "name": "S. M. Tanvir Rahman",
+            "role": "Head of HR, Threads and Accessories Division",
+            "company": "DBL Group",
+            "content": "Tafuri HRMS has been an excellent solution for managing our HR operations efficiently. Its seamless integration of payroll, attendance, leave, and performance management has made our HR tasks more accurate and transparent. We truly appreciate how it simplifies daily HR activities and ensures error-free, smooth operations.",
+            "rating": 5,
+            "avatar": "TR",
+            "profileImage": "/Testimonials/TanvirRahman.jpg",
+            "cardType": "green"
+        },
+        {
+            "id": 2,
             "name": "Sadman Safiul",
             "role": "Senior Product Manager",
             "company": "Chhaya Technologies Limited",
@@ -12,7 +23,7 @@
             "cardType": "green"
         },
         {
-            "id": 2,
+            "id": 3,
             "name": "Md. Atikur Rahman",
             "role": "Sr. HR Executive",
             "company": "DBL Pharmaceuticals Ltd.",
@@ -23,7 +34,7 @@
             "cardType": "green"
         },
         {
-            "id": 3,
+            "id": 4,
             "name": "Monsor Alam Naiem",
             "role": "Executive IT",
             "company": "Moriom Group",
