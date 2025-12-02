@@ -1,7 +1,7 @@
 // components/MobileAppSection.tsx
 'use client'
 
-import { Download, Star } from 'lucide-react'
+import { Download } from 'lucide-react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import {
@@ -13,8 +13,50 @@ import {
     hoverLift,
     tapScale
 } from '@/lib/animations/variants'
+import { useEffect, useState } from 'react'
+import { GooglePlayAPIResponse, GooglePlayInfo } from '@/types/googlePlay'
+import StarRating from './StarRating'
 
 export default function MobileAppSection() {
+
+    const [playStoreInfo, setPlayStoreInfo] = useState<GooglePlayInfo | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        setIsLoading(true);
+        fetch("/api/google-play-info")
+            .then((res) => {
+                if (!res.ok) throw new Error("Failed to load");
+                return res.json();
+            })
+            .then((response: GooglePlayAPIResponse) => {
+                if (response.data) {
+                    setPlayStoreInfo(response.data);
+                }
+                if (response.error) {
+                    console.warn("API returned with error:", response.error);
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                setError("Failed to load app info");
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
+    }, []);
+
+    // if (error) {
+    //     return <div className="text-sm text-red-500">{error}</div>;
+    // }
+
+    // if (!playStoreInfo) {
+    //     return <div className="text-sm text-gray-500">Loading app info…</div>;
+    // }
+
+    // console.log(playStoreInfo)
+
     return (
         <section
             className="w-full"
@@ -130,45 +172,46 @@ export default function MobileAppSection() {
                                     whileHover={hoverLift}
                                     whileTap={tapScale}
                                     aria-label="Download Tafuri HR app from Google Play Store"
-                                    href='https://surl.lu/vacwvy'
+                                    // href='https://surl.lu/vacwvy'
+                                    href={playStoreInfo?.url}
                                     target='_blank'
                                 >
                                     <Download className="w-5 h-5" aria-hidden="true" />
                                     <div className="text-left">
-                                        <div className="text-xs text-gray-300">Download</div>
-                                        {/* <div className="text-xs text-gray-300">Get it on</div> */}
-                                        {/* <div className="text-sm font-semibold">Google Play</div> */}
-                                    </div>
-                                </motion.a>
-
-                                {/* <motion.button
-                                    className="flex items-center justify-center space-x-3 bg-black text-white px-6 py-4 rounded-xl hover:bg-gray-800 transition-colors"
-                                    whileHover={hoverLift}
-                                    whileTap={tapScale}
-                                    aria-label="Download Tafuri HR app from Google Play Store"
-                                >
-                                    <Download className="w-5 h-5" aria-hidden="true" />
-                                    <div className="text-left">
+                                        {/* <div className="text-xs text-gray-300">Download</div> */}
                                         <div className="text-xs text-gray-300">Get it on</div>
                                         <div className="text-sm font-semibold">Google Play</div>
                                     </div>
-                                </motion.button> */}
+                                </motion.a>
 
-                                {/* <div className="flex items-center space-x-8">
-                                    <div className="text-center">
-                                        <div className="text-2xl font-bold text-black">4.9</div>
-                                        <div className="flex items-center justify-center space-x-1 mb-1" role="img" aria-label="4.9 out of 5 stars">
-                                            {[...Array(5)].map((_, i) => (
-                                                <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" aria-hidden="true" />
-                                            ))}
+                                <div className="flex items-center space-x-8">
+                                    <div className="flex flex-col items-center">
+                                        {isLoading ? (
+                                            <div className="text-sm text-gray-500">Loading...</div>
+                                        ) : (
+                                            <StarRating
+                                                rating={playStoreInfo?.rating || 4.8}
+                                                size={16}
+                                                showNumber={false}
+                                            />
+                                        )}
+                                        <div className="text-2xl font-bold text-black mt-1">
+                                            {playStoreInfo?.ratingText || '4.8'}
                                         </div>
+                                        {playStoreInfo?.ratingsCount && (
+                                            <div className="text-xs text-gray-600">
+                                                ({playStoreInfo.ratingsCount.toLocaleString()} ratings)
+                                            </div>
+                                        )}
                                     </div>
 
                                     <div className="text-center">
-                                        <div className="text-2xl font-bold text-black">90K+</div>
+                                        <div className="text-2xl font-bold text-black">
+                                            {playStoreInfo?.installs || '10,000+'}
+                                        </div>
                                         <div className="text-sm text-black">Downloads</div>
                                     </div>
-                                </div> */}
+                                </div>
                             </motion.div>
                         </motion.div>
                     </div>
